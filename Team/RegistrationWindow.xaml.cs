@@ -10,26 +10,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Team
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для RegistrationWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class RegistrationWindow : Window
     {
-        public MainWindow()
+        public RegistrationWindow()
         {
             InitializeComponent();
         }
 
-        private void Button_ClickRegister(object sender, RoutedEventArgs e)
+        private void Button_ClickBACK(object sender, RoutedEventArgs e)
         {
-            RegistrationWindow registration = new RegistrationWindow();
-            registration.Show();
+            MainWindow main = new MainWindow();
+            main.Show();
             this.Close();
+
         }
 
         private void Button_ClickOK(object sender, RoutedEventArgs e)
