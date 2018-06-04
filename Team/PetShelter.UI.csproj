@@ -54,6 +54,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MyProfile.xaml.cs">
+      <DependentUpon>MyProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationWindow.xaml.cs">
+      <DependentUpon>RegistrationWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -66,6 +72,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MyProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegistrationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -92,6 +106,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\girl-and-dog-sunset-malibu-dog-photographer.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\footprint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\photo %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\e6bffcd2e194a6b1b8317b8f5126f7a409e150d6_Home-slider-2_v2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\pets-lineup-xlg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Dating-With-Pets-700x394.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\84-rupert-johnson-jr,pzeDhZxJfESBLEc8ihdXxw.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\462329.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

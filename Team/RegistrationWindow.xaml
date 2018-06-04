@@ -1,0 +1,52 @@
+﻿<Window x:Class="Team.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Team"
+        mc:Ignorable="d"
+        Title="RegistrationWindow" Height="480" Width="640"
+        Icon="/Images/footprint.png">
+    <Window.Background>
+        <ImageBrush ImageSource="/Images/462329.jpg" Stretch="UniformToFill" TileMode="None" />
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Foreground="Black" FontStyle="Italic" VerticalAlignment="Bottom"  HorizontalAlignment="Center" FontFamily="Gadugi" FontSize="30" Margin="0 5 10 5" FontWeight="ExtraBold">Sign up</TextBlock>
+        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right"  Grid.RowSpan="6"  >
+            <TextBlock FontSize="15" Margin="0 0 0 20" FontWeight="Bold">Name*</TextBlock>
+            <TextBlock FontSize="15" Margin="0 0 0 15" FontWeight="Bold">Surname*</TextBlock>
+            <TextBlock FontSize="15" Margin="0 0 0 18" FontWeight="Bold">Email*</TextBlock>
+            <TextBlock FontSize="15" Margin="0 0 0 17" FontWeight="Bold">City*</TextBlock>
+            <TextBlock FontSize="15" Margin="0 0 0 20" FontWeight="Bold">Phone</TextBlock>
+            <TextBlock FontSize="15" Margin="0 0 0 10" FontWeight="Bold" >Password*</TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="2" Grid.RowSpan="6"  HorizontalAlignment="Center">
+            <TextBox Name="textBoxName"  Height="27" Width="250"  Margin="0 0 0 10"></TextBox>
+            <TextBox Name="textBoxSurname" Height="27" Width="250" Margin="0 0 0 10"></TextBox>
+            <TextBox Name="textBoxEmail" Height="27" Width="250" Margin="0 0 0 10"></TextBox>
+            <TextBox Name="textBoxCity" Height="27" Width="250" Margin="0 0 0 10"></TextBox>
+            <TextBox Name="textBoxPhone" Height="27" Width="250" Margin="0 0 0 10"></TextBox>
+            <PasswordBox Name="PasswordBoxPasswordRegistration" PasswordChar="•" Height="27" Width="250" Margin="0 0 0 10"></PasswordBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Center" >
+            <Button Width="35" Height="30" FontSize="13" Margin="10" Click="Button_ClickOK">OK</Button>
+            <Button Width="39" Height="30" FontSize="13" Click="Button_ClickBACK">BACK</Button>
+        </StackPanel>
+    </Grid>
+</Window>
