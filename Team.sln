@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Team", "Team\Team.csproj", "{21A374EE-B9E8-4C57-8BD6-14C7388E3FBE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetShelter.UI", "Team\PetShelter.UI.csproj", "{21A374EE-B9E8-4C57-8BD6-14C7388E3FBE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetShelterClasses", "PetShelterClasses\PetShelterClasses.csproj", "{8FE958B0-28A0-4968-BF27-A78BB3EFB0A5}"
 EndProject
