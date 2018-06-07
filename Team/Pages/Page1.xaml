@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:Team.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Page1">
+      Title="Page1"
+      Background="Pink">
 
     <Grid>
         
