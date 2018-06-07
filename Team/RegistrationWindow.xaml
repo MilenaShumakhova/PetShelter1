@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Team"
         mc:Ignorable="d"
-        Title="RegistrationWindow" Height="480" Width="640"
+        Title="RegistrationWindow" Height="500" Width="660" MinHeight="450" WindowStartupLocation="CenterScreen"
         Icon="/Images/footprint.png">
-    <Window.Background>
+    <!--<Window.Background>
         <ImageBrush ImageSource="/Images/462329.jpg" Stretch="UniformToFill" TileMode="None" />
-    </Window.Background>
+    </Window.Background>-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -23,30 +23,50 @@
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="190"/>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition/>
 
+
+            <ColumnDefinition/>
+
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Foreground="Black" FontStyle="Italic" VerticalAlignment="Bottom"  HorizontalAlignment="Center" FontFamily="Gadugi" FontSize="30" Margin="0 5 10 5" FontWeight="ExtraBold">Sign up</TextBlock>
-        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right"  Grid.RowSpan="6"  >
-            <TextBlock FontSize="15" Margin="0 0 0 20" FontWeight="Bold">Name*</TextBlock>
-            <TextBlock FontSize="15" Margin="0 0 0 15" FontWeight="Bold">Surname*</TextBlock>
-            <TextBlock FontSize="15" Margin="0 0 0 18" FontWeight="Bold">Email*</TextBlock>
-            <TextBlock FontSize="15" Margin="0 0 0 17" FontWeight="Bold">City*</TextBlock>
-            <TextBlock FontSize="15" Margin="0 0 0 20" FontWeight="Bold">Phone</TextBlock>
-            <TextBlock FontSize="15" Margin="0 0 0 10" FontWeight="Bold" >Password*</TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Foreground="Black"  VerticalAlignment="Center"  HorizontalAlignment="Center"    FontSize="50" Margin="0 0 30 0">Sign up</TextBlock>
+  
+        <StackPanel Orientation="Vertical" Grid.Row="2"  Grid.Column="0" HorizontalAlignment="Left"  Grid.RowSpan="7"  >
+            <TextBlock FontSize="15" Margin="55 0 0 20" FontWeight="Bold" >Name*</TextBlock>
+            <TextBlock FontSize="15" Margin="55 0 0 15" FontWeight="Bold" >Surname*</TextBlock>
+            <TextBlock FontSize="15" Margin="55 0 0 18" FontWeight="Bold" >Email*</TextBlock>
+            <TextBlock FontSize="15" Margin="55 0 0 17" FontWeight="Bold" >City*</TextBlock>
+            <TextBlock FontSize="15" Margin="55 0 0 17" FontWeight="Bold" >Phone*</TextBlock>
+            <TextBlock FontSize="15" Margin="55 0 0 17" FontWeight="Bold" >Address*</TextBlock>
+
+            <TextBlock FontSize="15" Margin="55 0 0 12" FontWeight="Bold"  >Password*</TextBlock>
+            <TextBlock FontSize="15" Margin="55 5 0 10" FontWeight="Bold"  > Confirm Password*</TextBlock>
+            
         </StackPanel>
-        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="2" Grid.RowSpan="6"  HorizontalAlignment="Center">
-            <TextBox Name="textBoxName"  Height="27" Width="250"  Margin="0 0 0 10"></TextBox>
-            <TextBox Name="textBoxSurname" Height="27" Width="250" Margin="0 0 0 10"></TextBox>
-            <TextBox Name="textBoxEmail" Height="27" Width="250" Margin="0 0 0 10"></TextBox>
-            <TextBox Name="textBoxCity" Height="27" Width="250" Margin="0 0 0 10"></TextBox>
-            <TextBox Name="textBoxPhone" Height="27" Width="250" Margin="0 0 0 10"></TextBox>
-            <PasswordBox Name="PasswordBoxPasswordRegistration" PasswordChar="•" Height="27" Width="250" Margin="0 0 0 10"></PasswordBox>
+
+        
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="0 0 40 0" Grid.Column=" 1" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="7" >
+           
+            <TextBox Name="textBoxName" MaxLength="35" Height="27" Width="250"  Margin="0 0 0 10" TextChanged="textBoxName_TextChanged"></TextBox>
+            <TextBox Name="textBoxSurname" Height="27" MaxLength="35"  Width="250" Margin="0 0 0 10"></TextBox>
+            <TextBox Name="textBoxEmail" Height="27" Width="250" MaxLength="35"  Margin="0 0 0 10"></TextBox>
+            <TextBox Name="textBoxCity" Height="27" Width="250" MaxLength="35"  Margin="0 0 0 10"></TextBox>
+            <TextBox Name="textBoxPhone" Height="27" Width="250" MaxLength="35"  Margin="0 0 0 10"></TextBox>
+            <TextBox Name="textBoxAddress" Height="27" Width="250" MaxLength="35"  Margin="0 0 0 10"></TextBox>
+            <PasswordBox Name="PasswordBoxPasswordRegistration" MaxLength="35"  PasswordChar="•" Height="27" Width="250" Margin="0 0 0 10" ></PasswordBox>
+            <PasswordBox Name="PasswordBoxPasswordRegistration2"  MaxLength="35"  PasswordChar="•" Height="27" Width="250" Margin="0 0 0 10" KeyDown="PasswordBoxPasswordRegistration2_KeyDown"></PasswordBox>
+            <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                <Button Width="35" Height="30" FontSize="20" Background="MediumSeaGreen"   Margin="0 0 0 0"  Click="Button_ClickOK">OK</Button>
+                <Button Width="60" Height="30" FontSize="20"  Grid.Row="7" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="MediumSeaGreen" Margin="14 0 0 0"  Click="Button_ClickBACK">BACK</Button>
+            </StackPanel>
+
+
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Center" >
-            <Button Width="35" Height="30" FontSize="13" Margin="10" Click="Button_ClickOK">OK</Button>
-            <Button Width="39" Height="30" FontSize="13" Click="Button_ClickBACK">BACK</Button>
-        </StackPanel>
+        <!--<StackPanel Orientation="Horizontal" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" >
+        <Button Width="35" Height="30" FontSize="20" Background="LightSteelBlue" FontStyle="Italic"  FontWeight="UltraBold" Margin="0 0 0 0" FontFamily="Chiller" Click="Button_ClickOK">OK</Button>
+        <Button Width="60" Height="30" FontSize="20" FontStyle="Italic" FontFamily="Chiller" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="LightSteelBlue" Margin="14 0 0 0" FontWeight="UltraBold" Click="Button_ClickBACK">BACK</Button>
+        </StackPanel>-->
     </Grid>
 </Window>

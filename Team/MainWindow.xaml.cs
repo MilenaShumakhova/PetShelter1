@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PetShelterClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace Team
         public MainWindow()
         {
             InitializeComponent();
+            textBoxEmail.Focus();
+
         }
 
         private void Button_ClickRegister(object sender, RoutedEventArgs e)
@@ -30,13 +33,47 @@ namespace Team
             RegistrationWindow registration = new RegistrationWindow();
             registration.Show();
             this.Close();
+
         }
 
         private void Button_ClickOK(object sender, RoutedEventArgs e)
         {
-            MyProfile profile = new MyProfile();
-            profile.Show();
-            this.Close();
+            if ((textBoxEmail.Text == String.Empty) || (PasswordBoxPasswordSignin.Password == String.Empty))
+            {
+                MessageBox.Show("Please, fill all fields", "Error");
+
+            }
+            else
+            {
+                MyProfile profile = new MyProfile();
+                profile.Show();
+                this.Close();
+            }
+
+
         }
+
+        private void PasswordBoxPasswordSignin_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+            if (e.Key == Key.Enter)
+            {
+               
+                if ((textBoxEmail.Text == String.Empty) || (PasswordBoxPasswordSignin.Password == String.Empty))
+                {
+                        MessageBox.Show("Please, fill all fields", "Error");
+
+                }
+                else
+                {
+                    MyProfile profile = new MyProfile();
+                    profile.Show();
+                    this.Close();
+
+                }
+             
+            }
+        }
+        
     }
 }

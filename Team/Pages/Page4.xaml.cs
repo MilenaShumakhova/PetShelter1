@@ -10,23 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-namespace Team
+
+namespace Team.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MyProfile.xaml
+    /// Логика взаимодействия для Page4.xaml
     /// </summary>
-    public partial class MyProfile : Window
+    public partial class Page4 : Page
     {
-        public MyProfile()
+        public Page4()
         {
             InitializeComponent();
-            
-        }
-
-        private void Menu_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

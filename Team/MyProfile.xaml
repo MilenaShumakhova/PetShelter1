@@ -3,10 +3,39 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:HamburgerMenu="clr-namespace:HamburgerMenu;assembly=HamburgerMenu"
+      
         xmlns:local="clr-namespace:Team"
         mc:Ignorable="d"
-        Title="MyProfile" Height="450" Width="800">
-    <Grid>
-        <Image  ></Image>
+        Title="MyProfile" Height="480" Width="640">
+    <Grid Background="White">
+        <!--<Grid HorizontalAlignment="Left" Width="200" Background="LightSteelBlue">
+            <StackPanel>
+                <Grid >
+                    <Button x:Name="ButtonOpenMenu" HorizontalAlignment="Right" VerticalAlignment="Top"  BorderBrush="{x:Null}"  Background="LightSteelBlue" Width="40" Height="40"  >
+                        <Image Source="/Images/icons8-список-64.png"/>
+                        
+                    </Button>
+                    <Button x:Name="ButtonCloseMenu" HorizontalAlignment="Right" VerticalAlignment="Top"  BorderBrush="{x:Null}"  Background="LightSteelBlue" Width="40" Height="40"  >
+                        <Image Source="/Images/icons8-назад-64.png"/>
+                    </Button>
+                   
+                </Grid>
+                
+                        
+
+              
+              
+            </StackPanel>
+        </Grid>-->
+        <HamburgerMenu:HamburgerMenu MaxWidth="150" Background="MediumSeaGreen" MenuIconColor="White" SelectionIndicatorColor="MediumSeaGreen" MenuItemForeground="White" HorizontalAlignment="Left">
+            <HamburgerMenu:HamburgerMenuItem Icon="/Images/icons8-напоминания-50.png" Text="Requests" SelectionCommand="{Binding ElementName=this_}"/>
+            <HamburgerMenu:HamburgerMenuItem Icon="/Images/icons8-настройки-50.png" Text="Settings" SelectionCommand="{Binding ElementName=this_}"/>
+
+
+
+        </HamburgerMenu:HamburgerMenu>
+     
     </Grid>
+    
 </Window>

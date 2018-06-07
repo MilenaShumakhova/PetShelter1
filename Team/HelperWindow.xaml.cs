@@ -11,22 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+
 namespace Team
 {
     /// <summary>
-    /// Логика взаимодействия для MyProfile.xaml
+    /// Логика взаимодействия для HelperWindow.xaml
     /// </summary>
-    public partial class MyProfile : Window
+    public partial class HelperWindow : Window
     {
-        public MyProfile()
+        public HelperWindow()
         {
             InitializeComponent();
-            
-        }
-
-        private void Menu_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
