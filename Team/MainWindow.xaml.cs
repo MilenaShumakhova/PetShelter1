@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PetShelterClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,7 @@ namespace Team
     /// </summary>
     public partial class MainWindow : Window
     {
+        User f =
         public MainWindow()
         {
             InitializeComponent();

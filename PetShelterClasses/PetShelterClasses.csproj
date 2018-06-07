@@ -48,15 +48,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context.cs" />
-    <Compile Include="Migrations\201806041022053_Initial Create.cs" />
-    <Compile Include="Migrations\201806041022053_Initial Create.Designer.cs">
-      <DependentUpon>201806041022053_Initial Create.cs</DependentUpon>
+    <Compile Include="Migrations\201806071553423_InitialCreate.cs" />
+    <Compile Include="Migrations\201806071553423_InitialCreate.Designer.cs">
+      <DependentUpon>201806071553423_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806071559155_GhangingTable.cs" />
+    <Compile Include="Migrations\201806071559155_GhangingTable.Designer.cs">
+      <DependentUpon>201806071559155_GhangingTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Getter.cs" />
+    <Compile Include="Model\Giver.cs" />
     <Compile Include="Model\Pet.cs" />
-    <Compile Include="Model\Status.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="Model\UserPets.cs" />
+    <Compile Include="Model\UsersPets.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -64,8 +69,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806041022053_Initial Create.resx">
-      <DependentUpon>201806041022053_Initial Create.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806071553423_InitialCreate.resx">
+      <DependentUpon>201806071553423_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806071559155_GhangingTable.resx">
+      <DependentUpon>201806071559155_GhangingTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
