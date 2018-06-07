@@ -21,7 +21,6 @@ namespace Team
     /// </summary>
     public partial class MainWindow : Window
     {
-        User f =
         public MainWindow()
         {
             InitializeComponent();
