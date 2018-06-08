@@ -16,12 +16,13 @@ namespace PetShelterClasses
         public string Email { get; set; }
         public string Password { get; set; }
         public string City { get; set; }
-        //public List<UserPets> Pets { get; set; }
-        public List<Pet> Pet { get; set; }
-        public decimal Payment { get; set; }
+        public string Address { get; set; }
+        public Giver Giver { get; set; }
+        public Getter Getter { get; set; }
 
-
-
-
+       
+       
     }
+    
+
 }

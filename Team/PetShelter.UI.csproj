@@ -206,5 +206,11 @@
   <ItemGroup>
     <Resource Include="Images\22056_126489077_20150315_1561485717.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PetShelterClasses\PetShelterClasses.csproj">
+      <Project>{8FE958B0-28A0-4968-BF27-A78BB3EFB0A5}</Project>
+      <Name>PetShelterClasses</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

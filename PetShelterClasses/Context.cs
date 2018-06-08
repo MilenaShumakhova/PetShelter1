@@ -8,16 +8,29 @@ using System.Threading.Tasks;
 
 namespace PetShelterClasses
 {
-   public class Context:DbContext
+    public class Context : DbContext
     {
         public DbSet<User> Users { get; set; }
-        public DbSet<Status> Status { get; set; }
+        public DbSet<Giver> Givers { get; set; }
+        public DbSet<Getter> Getters { get; set; }
         public DbSet<Pet> Pets { get; set; }
-        
-        public Context(): base("PetShelter")
+        public DbSet<UsersPets> UsersPets { get; set; }
+
+        public Context() : base("PetShelterFirst")
         {
 
         }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+
+            modelBuilder.Entity<User>()
+                        .HasRequired(s => s.Giver)
+                        .WithRequiredPrincipal(ad => ad.User);
+            modelBuilder.Entity<User>()
+                .HasRequired(s => s.Getter)
+                .WithRequiredPrincipal(ad => ad.User);
+        }
+
 
     }
 }

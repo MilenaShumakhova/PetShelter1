@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace PetShelterClasses.Model
 {
-   public class Status
+    public class UsersPets
     {
         public int ID { get; set; }
-        public string UserStatus { get; set; }
-        public List<User> Users { get; set; }
-
+        public  Pet Pet { get; set; }
+        public string Description { get; set; }
+        public Giver Giver { get; set; }
+        public Getter Getter { get; set; }
     }
 }

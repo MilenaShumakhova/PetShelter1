@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetShelterClasses.Model
+namespace PetShelterClasses
 {
-    public class Pet
+    class RepositoryDB
     {
-        public int ID { get; set; }
-        public string Type { get; set; }
 
     }
 }
