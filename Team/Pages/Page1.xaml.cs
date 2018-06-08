@@ -22,7 +22,9 @@ namespace Team.Pages
     {
         public Page1()
         {
-            InitializeComponent();
+            this.InitializeComponent();
+            
+            
         }
     }
 }

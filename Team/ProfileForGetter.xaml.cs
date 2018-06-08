@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Team
 {
     /// <summary>
-    /// Логика взаимодействия для HelperWindow.xaml
+    /// Логика взаимодействия для ProfileForGetter.xaml
     /// </summary>
-    public partial class HelperWindow : Window
+    public partial class ProfileForGetter : Window
     {
-        public HelperWindow()
+        public ProfileForGetter()
         {
             InitializeComponent();
         }

@@ -29,7 +29,13 @@ namespace Team
         private void Menu_Click(object sender, RoutedEventArgs e)
         {
            
+        }
 
+        private void Slider1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            int val = Convert.ToInt32(e.NewValue);
+            string msg = String.Format("Current value: {0}", val);
+            this.textBlock1.Text = msg;
         }
     }
 }

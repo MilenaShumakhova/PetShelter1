@@ -64,9 +64,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="HelperWindow.xaml.cs">
-      <DependentUpon>HelperWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MyProfile.xaml.cs">
       <DependentUpon>MyProfile.xaml</DependentUpon>
     </Compile>
@@ -82,13 +79,12 @@
     <Compile Include="Pages\Page4.xaml.cs">
       <DependentUpon>Page4.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProfileForGetter.xaml.cs">
+      <DependentUpon>ProfileForGetter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="HelperWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -118,6 +114,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Page4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProfileForGetter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
