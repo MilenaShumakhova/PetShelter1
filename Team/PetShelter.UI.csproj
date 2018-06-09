@@ -212,5 +212,17 @@
       <Name>PetShelterClasses</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-настройки-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-сообщение-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-давать-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-встреча-50.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
