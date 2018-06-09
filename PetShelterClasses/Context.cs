@@ -11,8 +11,6 @@ namespace PetShelterClasses
     public class Context : DbContext
     {
         public DbSet<User> Users { get; set; }
-        public DbSet<Giver> Givers { get; set; }
-        public DbSet<Getter> Getters { get; set; }
         public DbSet<Pet> Pets { get; set; }
         public DbSet<UsersPets> UsersPets { get; set; }
 
@@ -20,16 +18,16 @@ namespace PetShelterClasses
         {
 
         }
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
 
-            modelBuilder.Entity<User>()
-                        .HasRequired(s => s.Giver)
-                        .WithRequiredPrincipal(ad => ad.User);
-            modelBuilder.Entity<User>()
-                .HasRequired(s => s.Getter)
-                .WithRequiredPrincipal(ad => ad.User);
-        }
+        //    modelBuilder.Entity<User>()
+        //                .HasRequired(s => s.Giver)
+        //                .WithRequiredPrincipal(ad => ad.User);
+        //    modelBuilder.Entity<User>()
+        //        .HasRequired(s => s.Getter)
+        //        .WithRequiredPrincipal(ad => ad.User);
+        //}
 
 
     }

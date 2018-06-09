@@ -11,7 +11,6 @@ namespace PetShelterClasses.Model
         public int ID { get; set; }
         public  Pet Pet { get; set; }
         public string Description { get; set; }
-        public Giver Giver { get; set; }
-        public Getter Getter { get; set; }
+        public User User { get; set; }
     }
 }

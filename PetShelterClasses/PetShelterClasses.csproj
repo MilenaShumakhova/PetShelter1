@@ -55,9 +55,11 @@
     <Compile Include="Migrations\201806072109432_InitialCreate.Designer.cs">
       <DependentUpon>201806072109432_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806090757330_RemoveTables.cs" />
+    <Compile Include="Migrations\201806090757330_RemoveTables.Designer.cs">
+      <DependentUpon>201806090757330_RemoveTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\Getter.cs" />
-    <Compile Include="Model\Giver.cs" />
     <Compile Include="Model\Pet.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\UsersPets.cs" />
@@ -71,6 +73,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201806072109432_InitialCreate.resx">
       <DependentUpon>201806072109432_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806090757330_RemoveTables.resx">
+      <DependentUpon>201806090757330_RemoveTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
