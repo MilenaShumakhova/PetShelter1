@@ -67,20 +67,14 @@
     <Compile Include="MyProfile.xaml.cs">
       <DependentUpon>MyProfile.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Page1.xaml.cs">
+    <Compile Include="Page1.xaml.cs">
       <DependentUpon>Page1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Page2.xaml.cs">
+    <Compile Include="Page2.xaml.cs">
       <DependentUpon>Page2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Page3.xaml.cs">
+    <Compile Include="Page3.xaml.cs">
       <DependentUpon>Page3.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Page4.xaml.cs">
-      <DependentUpon>Page4.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ProfileForGetter.xaml.cs">
-      <DependentUpon>ProfileForGetter.xaml</DependentUpon>
     </Compile>
     <Compile Include="RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
@@ -101,23 +95,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Page1.xaml">
+    <Page Include="Page1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Page2.xaml">
+    <Page Include="Page2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Page3.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Page4.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ProfileForGetter.xaml">
+    <Page Include="Page3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -223,6 +209,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\icons8-встреча-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\avatars-000217852885-q3ge9g-t500x500.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

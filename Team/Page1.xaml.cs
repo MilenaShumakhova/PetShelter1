@@ -13,16 +13,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Team.Pages
+namespace Team
 {
     /// <summary>
-    /// Логика взаимодействия для Page2.xaml
+    /// Логика взаимодействия для Page1.xaml
     /// </summary>
-    public partial class Page2 : Page
+    public partial class Page1 : Page
     {
-        public Page2()
+        public Page1()
         {
             InitializeComponent();
+        }
+
+        private void Slider1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            int val = Convert.ToInt32(e.NewValue);
+            string msg = String.Format("Current value: {0}", val);
+            this.textBlock1.Text = msg;
         }
     }
 }

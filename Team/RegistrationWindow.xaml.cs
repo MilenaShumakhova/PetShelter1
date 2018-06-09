@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PetShelterClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,12 +20,17 @@ namespace Team
     /// </summary>
     public partial class RegistrationWindow : Window
     {
-      
-        public RegistrationWindow()
+        Context c;
+        User us = new User();
+        public User ThisUser = new User();
+        public RepositoryDB repo { get; set; }
+
+        public RegistrationWindow(RepositoryDB r, Context context)
         {
             InitializeComponent();
-            textBoxName.Focus();
-            
+            textBoxFullName.Focus();
+            repo = r;
+            c = context;
         }
 
         private void Button_ClickBACK(object sender, RoutedEventArgs e)
@@ -37,42 +43,63 @@ namespace Team
 
         private void Button_ClickOK(object sender, RoutedEventArgs e)
         {
-            if ((textBoxName.Text == String.Empty) || (textBoxSurname.Text == String.Empty) || (textBoxEmail.Text == String.Empty) || (PasswordBoxPasswordRegistration.Password == String.Empty) || (PasswordBoxPasswordRegistration2.Password == String.Empty)||(textBoxAddress.Text == String.Empty) || (textBoxPhone.Text == String.Empty))
-            {
-                MessageBox.Show("Please, fill all fields", "Error");
-
-            }
-
-
-
-            else
-            {
-                MainWindow main = new MainWindow();
-                main.Show();
-                this.Close();
-            }
-            string name = textBoxName.Text;
-            string surname = textBoxSurname.Text;
-            string phone = textBoxPhone.Text;
+            string name = textBoxFullName.Text;
+            string email = textBoxEmail.Text;
+            string password = PasswordBoxPasswordRegistration.Password;
+           // password = repo.GetHash(password);
+            //string phone = textBoxPhone.Text;
             string city = textBoxCity.Text;
             string address = textBoxAddress.Text;
-           
+
+            //ThisUser = repo.ToCreateNewPerson(name, password,email, city, address);
+            
+            //if ((textBoxFullName.Text == String.Empty) || (textBoxEmail.Text == String.Empty) || (PasswordBoxPasswordRegistration.Password == String.Empty) || (PasswordBoxPasswordRegistration2.Password == String.Empty) || (textBoxAddress.Text == String.Empty))
+            //{
+            //    MessageBox.Show("Please, fill all fields", "Error");
+                
+            //}
+            
+            // else if (repo.Users == null)
+            // {
+            //        repo.ToRegistrate(ThisUser);
+            //        MainWindow main = new MainWindow();
+            //        this.Close();
+            // }
+            
+            //else
+            //{
+
+            //    if (repo.ToCompare(email) == true)
+            //    {
+            //        repo.ToRegistrate(ThisUser);
+
+            //        this.Close();
+            //    }
+            //    else
+            //        MessageBox.Show("Such login already exists!", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
+            //}
+
+
         }
 
         private void PasswordBoxPasswordRegistration2_KeyDown(object sender, KeyEventArgs e)
         {
-            if ((textBoxName.Text == String.Empty) || (textBoxSurname.Text == String.Empty) || (textBoxEmail.Text == String.Empty) || (PasswordBoxPasswordRegistration.Password == String.Empty) || (PasswordBoxPasswordRegistration2.Password == String.Empty)||(textBoxAddress.Text==String.Empty)||(textBoxPhone.Text==String.Empty))
-            {
-                MessageBox.Show("Please, fill all fields", "Error");
 
-            }
-            else if (e.Key == Key.Enter)
+            if (e.Key == Key.Enter)
             {
+                if ((textBoxFullName.Text == String.Empty) || (textBoxEmail.Text == String.Empty) || (PasswordBoxPasswordRegistration.Password == String.Empty) || (PasswordBoxPasswordRegistration2.Password == String.Empty) || (textBoxAddress.Text == String.Empty))
+                {
+                    MessageBox.Show("Please, fill all fields", "Error");
 
-                MyProfile profile = new MyProfile();
-                profile.Show();
-                this.Close();
+                }
+                else
+                {
+                    MainWindow main = new MainWindow();
+                    main.Show();
+                    this.Close();
+                }
             }
+
         }
 
         private void textBoxName_TextChanged(object sender, TextChangedEventArgs e)

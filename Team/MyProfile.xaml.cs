@@ -13,7 +13,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Team.Pages;
+
 
 namespace Team
 {
@@ -26,6 +26,9 @@ namespace Team
         public MyProfile()
         {
             InitializeComponent();
+            Page1 page1 = new Page1();
+
+           ContentFrame.NavigationService.Navigate(page1);
    
          
         }
@@ -35,12 +38,7 @@ namespace Team
            
         }
 
-        private void Slider1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            int val = Convert.ToInt32(e.NewValue);
-            string msg = String.Format("Current value: {0}", val);
-            this.textBlock1.Text = msg;
-        }
+
 
         private void ButtonMenu_Click(object sender, RoutedEventArgs e)
         {
@@ -65,14 +63,31 @@ namespace Team
 
         private void RadioButton_ClickGiver(object sender, RoutedEventArgs e)
         {
-            //Page1 page = new Page1();
+            //PageTest page = new PageTest();
+            //this.NavigationService.Navigate(page);
+
+
             //ContentFrame.Navigate(page);
             ////NavigationService nav = NavigationService.GetNavigationService(this);
             ////nav.Navigate(new Uri("/Page1.xaml", UriKind.Relative));
             //ContentFrame.Navigate(new System.Uri("/Pages/Page1.xaml",
             // UriKind.RelativeOrAbsolute));
-            ContentFrame.Navigate( typeof(Page1));
+            //ContentFrame.Navigate( typeof(Page1));
+            Page1 page1 = new Page1();
+            ContentFrame.NavigationService.Navigate(page1);
            
+        }
+
+        private void RadioButton_ClickGetter(object sender, RoutedEventArgs e)
+        {
+            Page2 page2 = new Page2();
+            ContentFrame.NavigationService.Navigate(page2);
+        }
+
+        private void RadioButton_ClickSettings(object sender, RoutedEventArgs e)
+        {
+            Page3 page3 = new Page3();
+            ContentFrame.NavigationService.Navigate(page3);
         }
     }
 }

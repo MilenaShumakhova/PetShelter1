@@ -34,11 +34,11 @@
         <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Foreground="Black"  VerticalAlignment="Center"  HorizontalAlignment="Center"    FontSize="50" Margin="0 0 30 0">Sign up</TextBlock>
   
         <StackPanel Orientation="Vertical" Grid.Row="2"  Grid.Column="0" HorizontalAlignment="Left"  Grid.RowSpan="7"  >
-            <TextBlock FontSize="15" Margin="55 0 0 20" FontWeight="Bold" >Name*</TextBlock>
-            <TextBlock FontSize="15" Margin="55 0 0 15" FontWeight="Bold" >Surname*</TextBlock>
+            <TextBlock FontSize="15" Margin="55 0 0 20" FontWeight="Bold" > FullName*</TextBlock>
+         
             <TextBlock FontSize="15" Margin="55 0 0 18" FontWeight="Bold" >Email*</TextBlock>
             <TextBlock FontSize="15" Margin="55 0 0 17" FontWeight="Bold" >City*</TextBlock>
-            <TextBlock FontSize="15" Margin="55 0 0 17" FontWeight="Bold" >Phone*</TextBlock>
+            <!--<TextBlock FontSize="15" Margin="55 0 0 17" FontWeight="Bold" >Phone*</TextBlock>-->
             <TextBlock FontSize="15" Margin="55 0 0 17" FontWeight="Bold" >Address*</TextBlock>
 
             <TextBlock FontSize="15" Margin="55 0 0 12" FontWeight="Bold"  >Password*</TextBlock>
@@ -49,11 +49,11 @@
         
         <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="0 0 40 0" Grid.Column=" 1" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="7" >
            
-            <TextBox Name="textBoxName" MaxLength="35" Height="27" Width="250"  Margin="0 0 0 10" TextChanged="textBoxName_TextChanged"></TextBox>
-            <TextBox Name="textBoxSurname" Height="27" MaxLength="35"  Width="250" Margin="0 0 0 10"></TextBox>
+            <TextBox Name="textBoxFullName" MaxLength="35" Height="27" Width="250"  Margin="0 0 0 10" TextChanged="textBoxName_TextChanged"></TextBox>
+          
             <TextBox Name="textBoxEmail" Height="27" Width="250" MaxLength="35"  Margin="0 0 0 10"></TextBox>
             <TextBox Name="textBoxCity" Height="27" Width="250" MaxLength="35"  Margin="0 0 0 10"></TextBox>
-            <TextBox Name="textBoxPhone" Height="27" Width="250" MaxLength="35"  Margin="0 0 0 10"></TextBox>
+            <!--<TextBox Name="textBoxPhone" Height="27" Width="250" MaxLength="35"  Margin="0 0 0 10"></TextBox>-->
             <TextBox Name="textBoxAddress" Height="27" Width="250" MaxLength="35"  Margin="0 0 0 10"></TextBox>
             <PasswordBox Name="PasswordBoxPasswordRegistration" MaxLength="35"  PasswordChar="•" Height="27" Width="250" Margin="0 0 0 10" ></PasswordBox>
             <PasswordBox Name="PasswordBoxPasswordRegistration2"  MaxLength="35"  PasswordChar="•" Height="27" Width="250" Margin="0 0 0 10" KeyDown="PasswordBoxPasswordRegistration2_KeyDown"></PasswordBox>

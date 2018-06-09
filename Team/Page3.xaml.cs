@@ -13,18 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Team.Pages
+namespace Team
 {
     /// <summary>
-    /// Логика взаимодействия для Page1.xaml
+    /// Логика взаимодействия для Page3.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class Page3 : Page
     {
-        public Page1()
+        public Page3()
         {
-            this.InitializeComponent();
-            
-            
+            InitializeComponent();
         }
     }
 }

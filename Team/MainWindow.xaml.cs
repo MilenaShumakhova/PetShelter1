@@ -21,6 +21,11 @@ namespace Team
     /// </summary>
     public partial class MainWindow : Window
     {
+        User us = new User();
+        RepositoryDB rep = new RepositoryDB();
+        Context context = new Context();
+        public User ThisUser = new User();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -30,7 +35,7 @@ namespace Team
 
         private void Button_ClickRegister(object sender, RoutedEventArgs e)
         {
-            RegistrationWindow registration = new RegistrationWindow();
+            RegistrationWindow registration = new RegistrationWindow(rep,context);
             registration.Show();
             this.Close();
 
@@ -38,30 +43,48 @@ namespace Team
 
         private void Button_ClickOK(object sender, RoutedEventArgs e)
         {
-            if ((textBoxEmail.Text == String.Empty) || (PasswordBoxPasswordSignin.Password == String.Empty))
-            {
-                MessageBox.Show("Please, fill all fields", "Error");
+            string email = textBoxEmail.Text;
+            string password = PasswordBoxPasswordSignin.Password;
+           // password = rep.GetHash(password);
+            
+            //if ((textBoxEmail.Text == String.Empty) || (PasswordBoxPasswordSignin.Password == String.Empty))
+            //{
+            //    MessageBox.Show("Please, fill all fields", "Error");
 
-            }
-            else
-            {
-                MyProfile profile = new MyProfile();
-                profile.Show();
-                this.Close();
-            }
+            //}
+            //else
+            //{
+            //    if (rep.Users.Exists(us => us.Email == email && us.Password == password))
+            //    {
+            //        ThisUser = rep.Users.First(us => us.Email == email && us.Password == password);
+            //        MyProfile profile = new MyProfile();
+            //        profile.Show();
+            //        this.Close();
 
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Input data are incorrect");
+            //        MainWindow main = new MainWindow();
+            //        main.Show();
+            //        this.Close();
+            //    }
+            //}
+            
+         
+            
 
         }
 
         private void PasswordBoxPasswordSignin_KeyDown(object sender, KeyEventArgs e)
         {
-            
+
             if (e.Key == Key.Enter)
             {
-               
+
                 if ((textBoxEmail.Text == String.Empty) || (PasswordBoxPasswordSignin.Password == String.Empty))
                 {
-                        MessageBox.Show("Please, fill all fields", "Error");
+                    MessageBox.Show("Please, fill all fields", "Error");
 
                 }
                 else
@@ -71,9 +94,9 @@ namespace Team
                     this.Close();
 
                 }
-             
+
             }
         }
-        
+
     }
 }
