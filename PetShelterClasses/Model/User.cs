@@ -18,18 +18,15 @@ namespace PetShelterClasses
         public string Password { get; set; }
         public string City { get; set; }
         public string Address { get; set; }
+        public string Phone { get; set; }
         public List<UsersPets> MyPets { get; set; }
         public List<Pet> ExpectedPets { get; set; }
-        public decimal PaymentGiver { get; set; }
-        [DataType(DataType.Date)]
-        public DateTime StartGiver { get; set; }
-        [DataType(DataType.Date)]
-        public DateTime EndGiver { get; set; }
-        public decimal PaymentGetter { get; set; }
-        [DataType(DataType.Date)]
-        public DateTime StartGetter { get; set; }
-        [DataType(DataType.Date)]
-        public DateTime EndGetter { get; set; }
+        public double PaymentGiver { get; set; }
+        public DateTime? StartGiver { get; set; }
+        public DateTime? EndGiver { get; set; }
+        public double PaymentGetter { get; set; }
+        public DateTime? StartGetter { get; set; }
+        public DateTime? EndGetter { get; set; }
 
         public string GetHash(string password)
         {

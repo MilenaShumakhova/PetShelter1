@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PetShelterClasses;
+using PetShelterClasses.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,16 @@ namespace Team
     /// </summary>
     public partial class Page2 : Page
     {
-        public Page2()
+        User ThisUser;
+        Context context;
+        RepositoryDB rep;
+        public Page2(User us,RepositoryDB repo,Context cont)
         {
+            ThisUser = us;
+            context = cont;
+            rep = repo;
             InitializeComponent();
+            ExpectedPets.ItemsSource = rep.Pets;
         }
 
         private void Slider1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -30,6 +39,23 @@ namespace Team
             int val = Convert.ToInt32(e.NewValue);
             string msg = String.Format("Current value: {0}", val);
             this.textBlock1.Text = msg;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            List<Pet> pets = new List<Pet>();
+            for (int i = 0; i <ExpectedPets.SelectedItems.Count; i++)
+            {
+                Pet pet = ExpectedPets.SelectedItems[i] as Pet;
+                pets.Add(pet);
+            }
+            
+            DateTime? sd = DateFrom.SelectedDate;
+            DateTime? ed = DateEnd.SelectedDate;
+            double p = Slider1.Value;
+            rep.ToCreateExpectedPets(pets, ThisUser, sd, ed, p);
+            MessageBox.Show("Your request has been accepted!", "",MessageBoxButton.OK);
+
         }
     }
 }

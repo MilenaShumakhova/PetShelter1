@@ -13,6 +13,7 @@ namespace PetShelterClasses
         public List<User> Users{ get; set; }
         public List<Pet> Pets { get; set; }
         public List<UsersPets> UsersPets { get; set; }
+        public List<Pet> ExpectedPets { get; set; }
 
         public RepositoryDB()
         {
@@ -34,35 +35,38 @@ namespace PetShelterClasses
             }
 
         }
-        public void RestoPets()
+        public void RestorePets()
         {
             try
             {
                 Pets = (from p in context.Pets
                          select p).ToList();
+                UsersPets = (from usp in context.UsersPets
+                             select usp).ToList();
             }
             catch
             {
                 Pets = new List<Pet>();
-            }
-
-        }
-        public void RestoUsersPets()
-        {
-            try
-            {
-                UsersPets = (from usp in context.UsersPets
-                        select usp).ToList();
-            }
-            catch
-            {
                 UsersPets = new List<UsersPets>();
             }
 
         }
+        public void RestoreExpectedPets(User us)
+        {
+            try
+            {
+                //ExpectedPets = context.Users.First(u => u.ID == us.ID).ExpectedPets;
+                
+            }
+            catch
+            {
+                ExpectedPets = new List<Pet>();
 
+            }
+        }
+ 
 
-        public User ToCreateNewPerson(string name,string pass, string log,string city,string address)
+        public User ToCreateNewPerson(string name,string pass, string log,string city,string address,string phone)
         {
             User u = new User()
             {
@@ -71,10 +75,7 @@ namespace PetShelterClasses
                 Email = log,
                 City=city,
                 Address=address,
-               StartGiver= new DateTime (1970,01,01),
-               EndGiver= new DateTime(1970, 01, 01),
-               StartGetter= new DateTime(1970, 01, 01),
-               EndGetter= new DateTime(1970, 01, 01),
+                Phone=phone,
             };
             return u;
         }
@@ -84,7 +85,7 @@ namespace PetShelterClasses
             context.Users.Add(us);
             context.SaveChanges();
         }
-
+        
         public bool ToCompare(string email)
         {
 
@@ -92,6 +93,53 @@ namespace PetShelterClasses
             return m;
         }
 
+        public void ToCreateUsersPet(Pet pet, string description, User us, DateTime? sd, DateTime? ed, double p)
+        {
+            UsersPets uspet = new UsersPets()
+            {
+                Pet = pet,
+                Description = description,
+                User=us,
+            };
+            if (us.MyPets == null)
+            {
+                us.MyPets = new List<UsersPets>();
+                us.MyPets.Add(uspet);
+                us.StartGiver = sd;
+                us.EndGiver = ed;
+                us.PaymentGiver = p;
+                context.UsersPets.Add(uspet);
+                context.SaveChanges();
+            }
+            else
+            {
+                us.MyPets.Add(uspet);
+                us.StartGiver = sd;
+                us.EndGiver = ed;
+                us.PaymentGiver = p;
+                context.UsersPets.Add(uspet);
+                context.SaveChanges();
+            }
+        }
 
+        public void ToCreateExpectedPets(List<Pet> pets, User us, DateTime? sd, DateTime? ed, double p)
+        {
+            if (us.ExpectedPets == null)
+            {
+                us.ExpectedPets = new List<Pet>();
+                us.ExpectedPets.AddRange(pets);
+                us.StartGetter = sd;
+                us.EndGetter = ed;
+                us.PaymentGetter = p;
+            }
+            else
+            {
+                us.ExpectedPets.AddRange(pets);
+                us.StartGetter = sd;
+                us.EndGetter = ed;
+                us.PaymentGetter = p;
+            }
+            context.SaveChanges();
+        }
     }
 }

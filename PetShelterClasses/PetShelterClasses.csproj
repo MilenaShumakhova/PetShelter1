@@ -59,6 +59,18 @@
     <Compile Include="Migrations\201806090757330_RemoveTables.Designer.cs">
       <DependentUpon>201806090757330_RemoveTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806101901565_NewColumn.cs" />
+    <Compile Include="Migrations\201806101901565_NewColumn.Designer.cs">
+      <DependentUpon>201806101901565_NewColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806102024257_NewTypeOfPayment.cs" />
+    <Compile Include="Migrations\201806102024257_NewTypeOfPayment.Designer.cs">
+      <DependentUpon>201806102024257_NewTypeOfPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806102032041_NewDT.cs" />
+    <Compile Include="Migrations\201806102032041_NewDT.Designer.cs">
+      <DependentUpon>201806102032041_NewDT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Pet.cs" />
     <Compile Include="Model\User.cs" />
@@ -76,6 +88,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806090757330_RemoveTables.resx">
       <DependentUpon>201806090757330_RemoveTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806101901565_NewColumn.resx">
+      <DependentUpon>201806101901565_NewColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806102024257_NewTypeOfPayment.resx">
+      <DependentUpon>201806102024257_NewTypeOfPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806102032041_NewDT.resx">
+      <DependentUpon>201806102032041_NewDT.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -25,10 +25,15 @@ namespace Team
     {
         bool StateClosed = true;
         User ThisUser;
-        public MyProfile(User us)
+        RepositoryDB rep;
+        Context context;
+        public MyProfile(User us, RepositoryDB repo,Context cont)
         {
             InitializeComponent();
             ThisUser = us;
+            rep = repo;
+            context = cont;
+            rep.RestorePets();
             Page4 page4 = new Page4();
 
            ContentFrame.NavigationService.Navigate(page4);
@@ -77,14 +82,14 @@ namespace Team
             //ContentFrame.Navigate(new System.Uri("/Pages/Page1.xaml",
             // UriKind.RelativeOrAbsolute));
             //ContentFrame.Navigate( typeof(Page1));
-            Page1 page1 = new Page1();
+            Page1 page1 = new Page1(ThisUser,rep,context);
             ContentFrame.NavigationService.Navigate(page1);
            
         }
 
         private void RadioButton_ClickGetter(object sender, RoutedEventArgs e)
         {
-            Page2 page2 = new Page2();
+            Page2 page2 = new Page2(ThisUser,rep,context);
             ContentFrame.NavigationService.Navigate(page2);
         }
 

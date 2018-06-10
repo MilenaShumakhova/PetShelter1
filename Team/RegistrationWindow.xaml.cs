@@ -63,7 +63,7 @@ namespace Team
                 }
                 else
                 {
-                    ThisUser = repo.ToCreateNewPerson(name, password, email, city, address);
+                    ThisUser = repo.ToCreateNewPerson(name, password, email, city, address,phone);
 
                     if (repo.Users.Count==0)
                     {

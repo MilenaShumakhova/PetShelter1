@@ -55,7 +55,7 @@ namespace Team
                 if (rep.Users.Exists(us => us.Email == email && us.Password == password))
                {
                     ThisUser = rep.Users.First(us => us.Email == email && us.Password == password);
-                    MyProfile profile = new MyProfile(ThisUser);
+                    MyProfile profile = new MyProfile(ThisUser,rep,context);
                     profile.Show();
                     this.Close();
 
@@ -86,7 +86,7 @@ namespace Team
                     if(u==true)
                     {
                         ThisUser= rep.Users.First(us => us.Email == email && us.Password == password);
-                        MyProfile profile = new MyProfile(ThisUser);
+                        MyProfile profile = new MyProfile(ThisUser,rep,context);
                         profile.Show();
                         this.Close();
                     }
