@@ -28,9 +28,9 @@
 
 
             <TextBlock  HorizontalAlignment="Center"    Margin="0 0 0 0"   FontSize="20" >Email</TextBlock>
-            <TextBox Name="textBoxEmail" Width="250" Background="White"  FontSize="15"  Height="24" Margin="5"></TextBox>
+            <TextBox Name="TextBoxEmail" Width="250" Background="White"  FontSize="15"  Height="24" Margin="5"></TextBox>
             <TextBlock   Foreground="Black" HorizontalAlignment="Center" Margin="0 0 0 0" FontSize="20">Password</TextBlock>
-            <PasswordBox Name="PasswordBoxPasswordSignin"   PasswordChar="•"  FontSize="15"   Margin="5" Width="250" Background="White"  Height="24" KeyDown="PasswordBoxPasswordSignin_KeyDown"></PasswordBox>
+            <PasswordBox Name="PasswordSignin"   PasswordChar="•"  FontSize="15"   Margin="5" Width="250" Background="White"  Height="24" KeyDown="PasswordBoxPasswordSignin_KeyDown"></PasswordBox>
             <Button Width="200" Height="25" FontSize="15"   HorizontalAlignment="Center" Background="MediumSeaGreen"  VerticalAlignment="Bottom" Margin="0 20 0 0" Click="Button_ClickRegister"
              >I don't have an account</Button>
             <Button  Width="55" Height="30" FontSize="15" Background="MediumSeaGreen"  VerticalAlignment="Center" Margin="10" Click="Button_ClickOK">OK</Button>

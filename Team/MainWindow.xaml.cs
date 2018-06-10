@@ -29,7 +29,7 @@ namespace Team
         public MainWindow()
         {
             InitializeComponent();
-            textBoxEmail.Focus();
+            TextBoxEmail.Focus();
 
         }
 
@@ -43,60 +43,63 @@ namespace Team
 
         private void Button_ClickOK(object sender, RoutedEventArgs e)
         {
-            string email = textBoxEmail.Text;
-            string password = PasswordBoxPasswordSignin.Password;
-           // password = rep.GetHash(password);
-            
-            //if ((textBoxEmail.Text == String.Empty) || (PasswordBoxPasswordSignin.Password == String.Empty))
-            //{
-            //    MessageBox.Show("Please, fill all fields", "Error");
+            string email = TextBoxEmail.Text;
+            string password = us.GetHash(PasswordSignin.Password);
+            if ((email==null) || (password==null))
+            {
+                MessageBox.Show("Please, fill all fields", "Error");
 
-            //}
-            //else
-            //{
-            //    if (rep.Users.Exists(us => us.Email == email && us.Password == password))
-            //    {
-            //        ThisUser = rep.Users.First(us => us.Email == email && us.Password == password);
-            //        MyProfile profile = new MyProfile();
-            //        profile.Show();
-            //        this.Close();
+            }
+            else
+            {
+                if (rep.Users.Exists(us => us.Email == email && us.Password == password))
+               {
+                    ThisUser = rep.Users.First(us => us.Email == email && us.Password == password);
+                    MyProfile profile = new MyProfile(ThisUser);
+                    profile.Show();
+                    this.Close();
 
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Input data are incorrect");
-            //        MainWindow main = new MainWindow();
-            //        main.Show();
-            //        this.Close();
-            //    }
-            //}
-            
-         
-            
-
+                }
+                else
+                {
+                    MessageBox.Show("Input data are incorrect");
+                   
+                }
+            }
         }
 
-        private void PasswordBoxPasswordSignin_KeyDown(object sender, KeyEventArgs e)
-        {
-
+         private void PasswordBoxPasswordSignin_KeyDown(object sender, KeyEventArgs e)
+         {
+            string email = TextBoxEmail.Text;
+            string password = us.GetHash(PasswordSignin.Password);
+            bool u = rep.Users.Exists(us => us.Email == email && us.Password == password);
             if (e.Key == Key.Enter)
             {
 
-                if ((textBoxEmail.Text == String.Empty) || (PasswordBoxPasswordSignin.Password == String.Empty))
+                if ((TextBoxEmail.Text == String.Empty) || (PasswordSignin.Password == String.Empty))
                 {
                     MessageBox.Show("Please, fill all fields", "Error");
 
                 }
                 else
                 {
-                    MyProfile profile = new MyProfile();
-                    profile.Show();
-                    this.Close();
+                    if(u==true)
+                    {
+                        ThisUser= rep.Users.First(us => us.Email == email && us.Password == password);
+                        MyProfile profile = new MyProfile(ThisUser);
+                        profile.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Input data are incorrect");
+                    }
+                    
 
                 }
 
             }
-        }
+         }
 
     }
 }

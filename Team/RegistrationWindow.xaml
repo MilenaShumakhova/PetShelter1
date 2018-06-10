@@ -49,14 +49,14 @@
         
         <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="0 0 40 0" Grid.Column=" 1" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="7" >
            
-            <TextBox Name="textBoxFullName" MaxLength="35" Height="27" Width="250"  Margin="0 0 0 10" TextChanged="textBoxName_TextChanged"></TextBox>
+            <TextBox Name="TextBoxFullName" MaxLength="35" Height="27" Width="250"  Margin="0 0 0 10"></TextBox>
           
-            <TextBox Name="textBoxEmail" Height="27" Width="250" MaxLength="35"  Margin="0 0 0 10"></TextBox>
-            <TextBox Name="textBoxCity" Height="27" Width="250" MaxLength="35"  Margin="0 0 0 10"></TextBox>
+            <TextBox Name="TextBoxEmail" Height="27" Width="250" MaxLength="35"  Margin="0 0 0 10"></TextBox>
+            <TextBox Name="TextBoxCity" Height="27" Width="250" MaxLength="35"  Margin="0 0 0 10"></TextBox>
             <!--<TextBox Name="textBoxPhone" Height="27" Width="250" MaxLength="35"  Margin="0 0 0 10"></TextBox>-->
-            <TextBox Name="textBoxAddress" Height="27" Width="250" MaxLength="35"  Margin="0 0 0 10"></TextBox>
-            <PasswordBox Name="PasswordBoxPasswordRegistration" MaxLength="35"  PasswordChar="•" Height="27" Width="250" Margin="0 0 0 10" ></PasswordBox>
-            <PasswordBox Name="PasswordBoxPasswordRegistration2"  MaxLength="35"  PasswordChar="•" Height="27" Width="250" Margin="0 0 0 10" KeyDown="PasswordBoxPasswordRegistration2_KeyDown"></PasswordBox>
+            <TextBox Name="TextBoxAddress" Height="27" Width="250" MaxLength="35"  Margin="0 0 0 10"></TextBox>
+            <PasswordBox Name="PasswordRegistration" MaxLength="35"  PasswordChar="•" Height="27" Width="250" Margin="0 0 0 10" ></PasswordBox>
+            <PasswordBox Name="PasswordRegistration2"  MaxLength="35"  PasswordChar="•" Height="27" Width="250" Margin="0 0 0 10"></PasswordBox>
             <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" >
                 <Button Width="35" Height="30" FontSize="20" Background="MediumSeaGreen"   Margin="0 0 0 0"  Click="Button_ClickOK">OK</Button>
                 <Button Width="60" Height="30" FontSize="20"  Grid.Row="7" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="MediumSeaGreen" Margin="14 0 0 0"  Click="Button_ClickBACK">BACK</Button>

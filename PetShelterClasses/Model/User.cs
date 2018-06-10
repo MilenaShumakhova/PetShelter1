@@ -1,8 +1,10 @@
 ﻿using PetShelterClasses.Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,14 +21,26 @@ namespace PetShelterClasses
         public List<UsersPets> MyPets { get; set; }
         public List<Pet> ExpectedPets { get; set; }
         public decimal PaymentGiver { get; set; }
+        [DataType(DataType.Date)]
         public DateTime StartGiver { get; set; }
+        [DataType(DataType.Date)]
         public DateTime EndGiver { get; set; }
         public decimal PaymentGetter { get; set; }
+        [DataType(DataType.Date)]
         public DateTime StartGetter { get; set; }
+        [DataType(DataType.Date)]
         public DateTime EndGetter { get; set; }
+
+        public string GetHash(string password)
+        {
+            var md5 = MD5.Create();
+            var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(
+            password));
+            return Convert.ToBase64String(hash);
+        }
 
 
     }
-    
+
 
 }

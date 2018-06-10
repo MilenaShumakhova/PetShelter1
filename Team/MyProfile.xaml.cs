@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PetShelterClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,9 +24,11 @@ namespace Team
     public partial class MyProfile : Window
     {
         bool StateClosed = true;
-        public MyProfile()
+        User ThisUser;
+        public MyProfile(User us)
         {
             InitializeComponent();
+            ThisUser = us;
             Page1 page1 = new Page1();
 
            ContentFrame.NavigationService.Navigate(page1);

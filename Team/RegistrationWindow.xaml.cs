@@ -23,12 +23,12 @@ namespace Team
         Context c;
         User us = new User();
         public User ThisUser = new User();
-        public RepositoryDB repo { get; set; }
+        RepositoryDB repo;
 
         public RegistrationWindow(RepositoryDB r, Context context)
         {
             InitializeComponent();
-            textBoxFullName.Focus();
+            TextBoxFullName.Focus();
             repo = r;
             c = context;
         }
@@ -43,68 +43,69 @@ namespace Team
 
         private void Button_ClickOK(object sender, RoutedEventArgs e)
         {
-            string name = textBoxFullName.Text;
-            string email = textBoxEmail.Text;
-            string password = PasswordBoxPasswordRegistration.Password;
-           // password = repo.GetHash(password);
-            //string phone = textBoxPhone.Text;
-            string city = textBoxCity.Text;
-            string address = textBoxAddress.Text;
-
-            //ThisUser = repo.ToCreateNewPerson(name, password,email, city, address);
-            
-            //if ((textBoxFullName.Text == String.Empty) || (textBoxEmail.Text == String.Empty) || (PasswordBoxPasswordRegistration.Password == String.Empty) || (PasswordBoxPasswordRegistration2.Password == String.Empty) || (textBoxAddress.Text == String.Empty))
-            //{
-            //    MessageBox.Show("Please, fill all fields", "Error");
-                
-            //}
-            
-            // else if (repo.Users == null)
-            // {
-            //        repo.ToRegistrate(ThisUser);
-            //        MainWindow main = new MainWindow();
-            //        this.Close();
-            // }
-            
-            //else
-            //{
-
-            //    if (repo.ToCompare(email) == true)
-            //    {
-            //        repo.ToRegistrate(ThisUser);
-
-            //        this.Close();
-            //    }
-            //    else
-            //        MessageBox.Show("Such login already exists!", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
-            //}
-
-
-        }
-
-        private void PasswordBoxPasswordRegistration2_KeyDown(object sender, KeyEventArgs e)
-        {
-
-            if (e.Key == Key.Enter)
+            if ((TextBoxFullName.Text == String.Empty) || (TextBoxEmail.Text == String.Empty) || (PasswordRegistration.Password == String.Empty) || (PasswordRegistration2.Password == String.Empty) || (TextBoxAddress.Text == String.Empty))
             {
-                if ((textBoxFullName.Text == String.Empty) || (textBoxEmail.Text == String.Empty) || (PasswordBoxPasswordRegistration.Password == String.Empty) || (PasswordBoxPasswordRegistration2.Password == String.Empty) || (textBoxAddress.Text == String.Empty))
-                {
-                    MessageBox.Show("Please, fill all fields", "Error");
+                MessageBox.Show("Please, fill all fields", "Error");
 
+            }
+            else 
+            {
+                string name = TextBoxFullName.Text;
+                string email = TextBoxEmail.Text;
+                string password = us.GetHash(PasswordRegistration.Password);
+                string password2 = us.GetHash(PasswordRegistration2.Password);
+                string city = TextBoxCity.Text;
+                string address = TextBoxAddress.Text;
+                if (password != password2)
+                {
+                    MessageBox.Show("Passwords do not match");
                 }
                 else
                 {
-                    MainWindow main = new MainWindow();
-                    main.Show();
-                    this.Close();
+                    ThisUser = repo.ToCreateNewPerson(name, password, email, city, address);
+
+                    if (repo.Users.Count==0)
+                    {
+                        repo.ToRegistrate(ThisUser);
+                        MainWindow main = new MainWindow();
+                        main.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        if (repo.ToCompare(email) == true)
+                        {
+                            repo.ToRegistrate(ThisUser);
+                            MainWindow main = new MainWindow();
+                            main.Show();
+                            this.Close();
+                        }
+                        else
+                            MessageBox.Show("Such login already exists!", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
             }
-
         }
 
-        private void textBoxName_TextChanged(object sender, TextChangedEventArgs e)
-        {
+        //private void PasswordRegistration2_KeyDown(object sender, KeyEventArgs e)
+        //{
 
-        }
+        //    if (e.Key == Key.Enter)
+        //    {
+        //        if ((TextBoxFullName.Text == String.Empty) || (TextBoxEmail.Text == String.Empty) || (PasswordRegistration.Password == String.Empty) || (PasswordRegistration2.Password == String.Empty) || (TextBoxAddress.Text == String.Empty))
+        //        {
+        //            MessageBox.Show("Please, fill all fields", "Error");
+
+        //        }
+        //        else
+        //        {
+        //            MainWindow main = new MainWindow();
+        //            main.Show();
+        //            this.Close();
+        //        }
+        //    }
+
+        //}
+       
     }
 }
