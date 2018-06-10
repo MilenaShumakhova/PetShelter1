@@ -16,21 +16,13 @@ using System.Windows.Shapes;
 namespace Team
 {
     /// <summary>
-    /// Логика взаимодействия для Page1.xaml
+    /// Логика взаимодействия для Page4.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class Page4 : Page
     {
-        public Page1()
+        public Page4()
         {
             InitializeComponent();
-            
-        }
-
-        private void Slider1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            int val = Convert.ToInt32(e.NewValue);
-            string msg = String.Format("Current value: {0}", val);
-            this.textBlock1.Text = msg;
         }
     }
 }

@@ -29,9 +29,9 @@ namespace Team
         {
             InitializeComponent();
             ThisUser = us;
-            Page1 page1 = new Page1();
+            Page4 page4 = new Page4();
 
-           ContentFrame.NavigationService.Navigate(page1);
+           ContentFrame.NavigationService.Navigate(page4);
    
          
         }
@@ -61,7 +61,8 @@ namespace Team
 
         private void RadioButton_ClickRequests(object sender, RoutedEventArgs e)
         {
-
+            Page4 page4 = new Page4();
+            ContentFrame.NavigationService.Navigate(page4);
         }
 
         private void RadioButton_ClickGiver(object sender, RoutedEventArgs e)

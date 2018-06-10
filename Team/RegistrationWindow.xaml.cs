@@ -43,7 +43,7 @@ namespace Team
 
         private void Button_ClickOK(object sender, RoutedEventArgs e)
         {
-            if ((TextBoxFullName.Text == String.Empty) || (TextBoxEmail.Text == String.Empty) || (PasswordRegistration.Password == String.Empty) || (PasswordRegistration2.Password == String.Empty) || (TextBoxAddress.Text == String.Empty))
+            if ((TextBoxFullName.Text == String.Empty) || (TextBoxEmail.Text == String.Empty) || (PasswordRegistration.Password == String.Empty) || (PasswordRegistration2.Password == String.Empty) || (TextBoxAddress.Text == String.Empty)||(TextBoxPhone.Text==String.Empty))
             {
                 MessageBox.Show("Please, fill all fields", "Error");
 
@@ -52,6 +52,7 @@ namespace Team
             {
                 string name = TextBoxFullName.Text;
                 string email = TextBoxEmail.Text;
+                string phone = TextBoxPhone.Text;
                 string password = us.GetHash(PasswordRegistration.Password);
                 string password2 = us.GetHash(PasswordRegistration2.Password);
                 string city = TextBoxCity.Text;

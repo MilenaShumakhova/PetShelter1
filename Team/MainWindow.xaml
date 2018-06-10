@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Team"
         mc:Ignorable="d"
         
-        Title="Sign in" Height="480" Width="640" MinHeight="450" MinWidth="250" WindowStartupLocation="CenterScreen"
+        Title="Sign in" Height="480" Width="640" MinHeight="450" MinWidth="280" WindowStartupLocation="CenterScreen"
         Icon="/Images/footprint.png">
         
     <!--<Window.Background >
@@ -21,15 +21,15 @@
             <RowDefinition/>
 
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0"   VerticalAlignment="Center"  HorizontalAlignment="Center" FontSize="50" Foreground="MediumSeaGreen" FontWeight="Medium" >PetShelter</TextBlock>
-        <TextBlock Grid.Row="0"  Foreground="Black" Grid.RowSpan="2"  VerticalAlignment="Bottom"  HorizontalAlignment="Center"    FontSize="40" Margin="0 0 10 5" >Sign in</TextBlock>
+     
 
-        <StackPanel Orientation="Vertical"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.RowSpan="3"  Margin="0 5 10 5">
+        <StackPanel Orientation="Vertical"  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.RowSpan="5"  >
 
-
-            <TextBlock  HorizontalAlignment="Center"    Margin="0 0 0 0"   FontSize="20" >Email</TextBlock>
+            <TextBlock Grid.Row="0"   VerticalAlignment="Center"  HorizontalAlignment="Center" FontSize="50" Foreground="MediumSeaGreen" FontWeight="Medium" >PetShelter</TextBlock>
+            <TextBlock Grid.Row="0"  Foreground="Black" Grid.RowSpan="2"  VerticalAlignment="Bottom"  HorizontalAlignment="Center"    FontSize="40"  >Sign in</TextBlock>
+            <TextBlock  HorizontalAlignment="Center"      FontSize="20" >Email</TextBlock>
             <TextBox Name="TextBoxEmail" Width="250" Background="White"  FontSize="15"  Height="24" Margin="5"></TextBox>
-            <TextBlock   Foreground="Black" HorizontalAlignment="Center" Margin="0 0 0 0" FontSize="20">Password</TextBlock>
+            <TextBlock   Foreground="Black" HorizontalAlignment="Center" FontSize="20">Password</TextBlock>
             <PasswordBox Name="PasswordSignin"   PasswordChar="•"  FontSize="15"   Margin="5" Width="250" Background="White"  Height="24" KeyDown="PasswordBoxPasswordSignin_KeyDown"></PasswordBox>
             <Button Width="200" Height="25" FontSize="15"   HorizontalAlignment="Center" Background="MediumSeaGreen"  VerticalAlignment="Bottom" Margin="0 20 0 0" Click="Button_ClickRegister"
              >I don't have an account</Button>

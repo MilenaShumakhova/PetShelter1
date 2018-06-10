@@ -56,7 +56,7 @@
         </Grid.ColumnDefinitions>-->
 
 
-        <Frame x:Name="ContentFrame"></Frame >
+        <Frame x:Name="ContentFrame" NavigationUIVisibility="Hidden"></Frame >
 
 
         <!--<StackPanel Orientation="Vertical" Width="180"  Grid.Column="1" VerticalAlignment="Top" Margin="0 30 0 0">
