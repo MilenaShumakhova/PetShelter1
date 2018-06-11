@@ -48,8 +48,9 @@ namespace Team
             UsersPets NeedablePet = ThisUser.MyPets.FirstOrDefault(up => up.Pet == pet && up.Description == description);
             List<User> Us = new List<User>();
             List<User> NeedableUs = new List<User>();
-            NeedableUs.Clear();
-            Us.AddRange(context.Users.Where(us => us.ID != ThisUser.ID && us.City == ThisUser.City&&us.StartGetter<=NeedablePet.Start&&us.EndGetter>=NeedablePet.End&&us.PaymentGetter<=NeedablePet.Payment)); 
+            DateTime s = (DateTime)NeedablePet.Start;
+            DateTime end = (DateTime)NeedablePet.End;
+            Us.AddRange(context.Users.Where(us => us.ID != ThisUser.ID && us.City == ThisUser.City && s.CompareTo((DateTime)us.StartGetter) >= 0 && end.CompareTo((DateTime)us.EndGetter) <= 0 && us.PaymentGetter <= NeedablePet.Payment));
             foreach (var us in Us)
             {
 
@@ -58,7 +59,7 @@ namespace Team
                 foreach (var usp in us.ExpectedPets)
                 {
                    
-                        if (ThisUser.MyPets.Last().Pet == usp)
+                        if (NeedablePet.Pet == usp)
                         {
 
                             NeedableUs.Add(us);
