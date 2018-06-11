@@ -72,16 +72,6 @@ namespace Team
 
         private void RadioButton_ClickGiver(object sender, RoutedEventArgs e)
         {
-            //PageTest page = new PageTest();
-            //this.NavigationService.Navigate(page);
-
-
-            //ContentFrame.Navigate(page);
-            ////NavigationService nav = NavigationService.GetNavigationService(this);
-            ////nav.Navigate(new Uri("/Page1.xaml", UriKind.Relative));
-            //ContentFrame.Navigate(new System.Uri("/Pages/Page1.xaml",
-            // UriKind.RelativeOrAbsolute));
-            //ContentFrame.Navigate( typeof(Page1));
             Page1 page1 = new Page1(ThisUser,rep,context);
             ContentFrame.NavigationService.Navigate(page1);
            
@@ -95,7 +85,7 @@ namespace Team
 
         private void RadioButton_ClickSettings(object sender, RoutedEventArgs e)
         {
-            Page3 page3 = new Page3();
+            Page3 page3 = new Page3(ThisUser,rep,context);
             ContentFrame.NavigationService.Navigate(page3);
         }
     }

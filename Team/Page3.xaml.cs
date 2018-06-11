@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PetShelterClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,21 @@ namespace Team
     /// </summary>
     public partial class Page3 : Page
     {
-        public Page3()
+        User ThisUser;
+        RepositoryDB rep;
+        Context context;
+        public Page3(User us, RepositoryDB repo, Context cont)
         {
+            ThisUser = us;
+            context = cont;
+            rep = repo;
             InitializeComponent();
+            textBoxFullName.Text = us.NameSurname;
+            textBoxEmail.Text = us.Email;
+            textBoxCity.Text = us.City;
+            textBoxPhone.Text = us.Phone;
+            textBoxAddress.Text = us.Address;
+            PasswordBoxPasswordRegistration.Password = us.Password;
         }
     }
 }
