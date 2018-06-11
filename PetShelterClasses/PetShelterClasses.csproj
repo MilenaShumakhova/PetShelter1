@@ -71,6 +71,18 @@
     <Compile Include="Migrations\201806102032041_NewDT.Designer.cs">
       <DependentUpon>201806102032041_NewDT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806102349176_NewTable.cs" />
+    <Compile Include="Migrations\201806102349176_NewTable.Designer.cs">
+      <DependentUpon>201806102349176_NewTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806110858176_PaymentGiver.cs" />
+    <Compile Include="Migrations\201806110858176_PaymentGiver.Designer.cs">
+      <DependentUpon>201806110858176_PaymentGiver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806111009475_RemoveDateTimeFromUsers.cs" />
+    <Compile Include="Migrations\201806111009475_RemoveDateTimeFromUsers.Designer.cs">
+      <DependentUpon>201806111009475_RemoveDateTimeFromUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Pet.cs" />
     <Compile Include="Model\User.cs" />
@@ -97,6 +109,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806102032041_NewDT.resx">
       <DependentUpon>201806102032041_NewDT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806102349176_NewTable.resx">
+      <DependentUpon>201806102349176_NewTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806110858176_PaymentGiver.resx">
+      <DependentUpon>201806110858176_PaymentGiver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806111009475_RemoveDateTimeFromUsers.resx">
+      <DependentUpon>201806111009475_RemoveDateTimeFromUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

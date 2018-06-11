@@ -11,6 +11,9 @@ namespace PetShelterClasses.Model
         public int ID { get; set; }
         public  Pet Pet { get; set; }
         public string Description { get; set; }
+        public double Payment { get; set; }
+        public DateTime? Start { get; set; }
+        public DateTime? End { get; set; }
         public User User { get; set; }
     }
 }

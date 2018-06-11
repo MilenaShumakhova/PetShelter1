@@ -15,7 +15,7 @@
 
 
         </Grid.ColumnDefinitions>
-        <TextBlock FontSize="20" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Margin="0 30 0 0" HorizontalAlignment="Center" >My requests
+        <TextBlock FontSize="20" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Margin="0 30 0 0" HorizontalAlignment="Center" > My requests
             
         </TextBlock>
         <ListBox HorizontalAlignment="Center" Width="300" Height="300" Grid.Column="1" Grid.ColumnSpan="2"  Background="MediumSeaGreen">

@@ -21,9 +21,7 @@ namespace PetShelterClasses
         public string Phone { get; set; }
         public List<UsersPets> MyPets { get; set; }
         public List<Pet> ExpectedPets { get; set; }
-        public double PaymentGiver { get; set; }
-        public DateTime? StartGiver { get; set; }
-        public DateTime? EndGiver { get; set; }
+        // public double PaymentGiver { get; set; }
         public double PaymentGetter { get; set; }
         public DateTime? StartGetter { get; set; }
         public DateTime? EndGetter { get; set; }

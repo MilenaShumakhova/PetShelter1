@@ -18,16 +18,23 @@ namespace PetShelterClasses
         {
 
         }
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
 
-        //    modelBuilder.Entity<User>()
-        //                .HasRequired(s => s.Giver)
-        //                .WithRequiredPrincipal(ad => ad.User);
-        //    modelBuilder.Entity<User>()
-        //        .HasRequired(s => s.Getter)
-        //        .WithRequiredPrincipal(ad => ad.User);
-        //}
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>()
+                .HasMany(c => c.ExpectedPets)
+                .WithMany(p => p.Users)
+                .Map(m =>
+                {
+            // Ссылка на промежуточную таблицу
+            m.ToTable("ExpectedPets");
+
+            // Настройка внешних ключей промежуточной таблицы
+            m.MapLeftKey("UserId");
+                    m.MapRightKey("PetId");
+                });
+        }
+
 
 
     }

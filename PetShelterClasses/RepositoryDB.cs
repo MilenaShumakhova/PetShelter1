@@ -1,16 +1,19 @@
 ﻿using PetShelterClasses.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace PetShelterClasses
 {
-   public  class RepositoryDB
+    public class RepositoryDB
     {
-        public List<User> Users{ get; set; }
+        public List<User> Users { get; set; }
         public List<Pet> Pets { get; set; }
         public List<UsersPets> UsersPets { get; set; }
         public List<Pet> ExpectedPets { get; set; }
@@ -40,7 +43,7 @@ namespace PetShelterClasses
             try
             {
                 Pets = (from p in context.Pets
-                         select p).ToList();
+                        select p).ToList();
                 UsersPets = (from usp in context.UsersPets
                              select usp).ToList();
             }
@@ -51,31 +54,48 @@ namespace PetShelterClasses
             }
 
         }
-        public void RestoreExpectedPets(User us)
+        public void RestoreExpectedPets(User Us)
         {
-            try
+            List<Pet> FirstPets;
+            List<Pet> SecondPents = new List<Pet>();
+            Us.ExpectedPets = new List<Pet>();
+            FirstPets= context.Pets.Include(p => p.Users).ToList();
+            for (int i = 0; i < FirstPets.Count; i++)
             {
-                //ExpectedPets = context.Users.First(u => u.ID == us.ID).ExpectedPets;
-                
+                if (FirstPets[i].Users.Count != 0)
+                    SecondPents.Add(FirstPets[i]);
             }
-            catch
+            foreach(var pp in SecondPents)
             {
-                ExpectedPets = new List<Pet>();
+                foreach(var usp in pp.Users)
+                {
+                    if(usp.ID==Us.ID)
+                    {
+                       Us.ExpectedPets.Add(pp);
+                    }
+                }
+            }
 
-            }
+
+            //}
+            //catch
+            //{
+            //    ExpectedPets = new List<Pet>();
+
+            //}
         }
- 
 
-        public User ToCreateNewPerson(string name,string pass, string log,string city,string address,string phone)
+
+        public User ToCreateNewPerson(string name, string pass, string log, string city, string address, string phone)
         {
             User u = new User()
             {
                 NameSurname = name,
                 Password = pass,
                 Email = log,
-                City=city,
-                Address=address,
-                Phone=phone,
+                City = city,
+                Address = address,
+                Phone = phone,
             };
             return u;
         }
@@ -85,11 +105,11 @@ namespace PetShelterClasses
             context.Users.Add(us);
             context.SaveChanges();
         }
-        
+
         public bool ToCompare(string email)
         {
 
-            bool m = Users.All(us => us.Email!= email);
+            bool m = Users.All(us => us.Email != email);
             return m;
         }
 
@@ -99,24 +119,21 @@ namespace PetShelterClasses
             {
                 Pet = pet,
                 Description = description,
-                User=us,
+                User = us,
+                Payment=p,
+                Start=sd,
+                End=ed,
             };
             if (us.MyPets == null)
             {
                 us.MyPets = new List<UsersPets>();
                 us.MyPets.Add(uspet);
-                us.StartGiver = sd;
-                us.EndGiver = ed;
-                us.PaymentGiver = p;
                 context.UsersPets.Add(uspet);
                 context.SaveChanges();
             }
             else
             {
                 us.MyPets.Add(uspet);
-                us.StartGiver = sd;
-                us.EndGiver = ed;
-                us.PaymentGiver = p;
                 context.UsersPets.Add(uspet);
                 context.SaveChanges();
             }
@@ -141,5 +158,5 @@ namespace PetShelterClasses
             }
             context.SaveChanges();
         }
-    }
+    }    
 }

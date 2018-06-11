@@ -45,30 +45,28 @@ namespace Team
             DateTime? ed = DateEnd.SelectedDate;
             double p =Slider1.Value;
             rep.ToCreateUsersPet(pet, description, ThisUser,sd,ed,p);
+            UsersPets NeedablePet = ThisUser.MyPets.FirstOrDefault(up => up.Pet == pet && up.Description == description);
             List<User> Us = new List<User>();
             List<User> NeedableUs = new List<User>();
-            Us.AddRange(context.Users.Where(us => us.ID!=ThisUser.ID&&us.City == ThisUser.City && us.StartGetter <= ThisUser.StartGiver && us.EndGetter >= ThisUser.EndGiver && us.PaymentGetter <= ThisUser.PaymentGiver));
+            NeedableUs.Clear();
+            Us.AddRange(context.Users.Where(us => us.ID != ThisUser.ID && us.City == ThisUser.City&&us.StartGetter<=NeedablePet.Start&&us.EndGetter>=NeedablePet.End&&us.PaymentGetter<=NeedablePet.Payment)); 
             foreach (var us in Us)
             {
+
                 rep.RestoreExpectedPets(us);
+               
                 foreach (var usp in us.ExpectedPets)
                 {
-                    foreach (var tp in ThisUser.MyPets)
-                    {
-                        if (tp.Pet == usp)
+                   
+                        if (ThisUser.MyPets.Last().Pet == usp)
                         {
+
                             NeedableUs.Add(us);
                         }
-                    }
                 }
             }
-            //var Users = (from us in Us
-            //   from usp in us.ExpectedPets
-            //   from up in ThisUser.MyPets
-            //   where usp == up.Pet
-            //   select us).ToList();
-            //NeedableUs.AddRange(Users);
             NeedableUsers.ItemsSource = NeedableUs;
+            
         }
 
 

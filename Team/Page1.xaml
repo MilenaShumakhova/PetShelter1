@@ -53,7 +53,7 @@
 
         </StackPanel>
         <StackPanel  Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" >
-            <ListBox Name="NeedableUsers" Height="300" Width="300" Margin="10"   Background="MediumSeaGreen" >
+            <ListBox Name="NeedableUsers" Height="300" Width="300" Margin="10"   Background="MediumSeaGreen" DisplayMemberPath="NameSurname" >
 
             </ListBox>
         </StackPanel>
