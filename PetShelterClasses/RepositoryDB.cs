@@ -58,20 +58,20 @@ namespace PetShelterClasses
         {
             List<Pet> FirstPets;
             List<Pet> SecondPents = new List<Pet>();
-            Us.ExpectedPets = new List<Pet>();
             FirstPets= context.Pets.Include(p => p.Users).ToList();
             for (int i = 0; i < FirstPets.Count; i++)
             {
                 if (FirstPets[i].Users.Count != 0)
                     SecondPents.Add(FirstPets[i]);
             }
-            foreach(var pp in SecondPents)
+            Us.ExpectedPets = new List<Pet>();
+            foreach (var pp in SecondPents)
             {
-                foreach(var usp in pp.Users)
+                foreach (var usp in pp.Users)
                 {
-                    if(usp.ID==Us.ID)
+                    if (usp.ID == Us.ID)
                     {
-                       Us.ExpectedPets.Add(pp);
+                        Us.ExpectedPets.Add(pp);
                     }
                 }
             }
@@ -157,6 +157,33 @@ namespace PetShelterClasses
                 us.PaymentGetter = p;
             }
             context.SaveChanges();
+        }
+
+        public List<User> ToCreateUsersList(User user,Pet pet, string description)
+        {
+            UsersPets NeedablePet = user.MyPets.FirstOrDefault(up => up.Pet == pet && up.Description == description);
+            List<User> Us = new List<User>();
+            List<User> NeedableUs = new List<User>();
+            DateTime s = (DateTime)NeedablePet.Start;
+            DateTime end = (DateTime)NeedablePet.End;
+            Us.AddRange(context.Users.Where(us => us.ID != user.ID && us.City == user.City && s.CompareTo((DateTime)us.StartGetter) >= 0 && end.CompareTo((DateTime)us.EndGetter) <= 0 && us.PaymentGetter <= NeedablePet.Payment));
+            foreach (var us in Us)
+            {
+
+                RestoreExpectedPets(us);
+
+                foreach (var usp in us.ExpectedPets)
+                {
+
+                    if (NeedablePet.Pet == usp)
+                    {
+
+                        NeedableUs.Add(us);
+                    }
+                }
+            }
+
+            return NeedableUs;
         }
     }    
 }

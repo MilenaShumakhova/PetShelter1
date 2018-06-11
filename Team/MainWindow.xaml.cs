@@ -45,9 +45,9 @@ namespace Team
         {
             string email = TextBoxEmail.Text;
             string password = us.GetHash(PasswordSignin.Password);
-            if ((email==null) || (password==null))
+            if ((email=="") || (password==""))
             {
-                MessageBox.Show("Please, fill all fields", "Error");
+                MessageBox.Show("Please, fill all fields!", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
 
             }
             else
@@ -62,7 +62,7 @@ namespace Team
                 }
                 else
                 {
-                    MessageBox.Show("Input data are incorrect");
+                    MessageBox.Show("Input data are incorrect!", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
                    
                 }
             }
@@ -78,7 +78,7 @@ namespace Team
 
                 if ((TextBoxEmail.Text == String.Empty) || (PasswordSignin.Password == String.Empty))
                 {
-                    MessageBox.Show("Please, fill all fields", "Error");
+                    MessageBox.Show("Please, fill all fields", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
 
                 }
                 else
@@ -92,7 +92,7 @@ namespace Team
                     }
                     else
                     {
-                        MessageBox.Show("Input data are incorrect");
+                        MessageBox.Show("Input data are incorrect!", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                     
 

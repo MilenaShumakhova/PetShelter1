@@ -43,13 +43,7 @@ namespace Team
 
         private void Button_ClickOK(object sender, RoutedEventArgs e)
         {
-            if ((TextBoxFullName.Text == String.Empty) || (TextBoxEmail.Text == String.Empty) || (PasswordRegistration.Password == String.Empty) || (PasswordRegistration2.Password == String.Empty) || (TextBoxAddress.Text == String.Empty)||(TextBoxPhone.Text==String.Empty))
-            {
-                MessageBox.Show("Please, fill all fields", "Error");
-
-            }
-            else 
-            {
+            
                 string name = TextBoxFullName.Text;
                 string email = TextBoxEmail.Text;
                 string phone = TextBoxPhone.Text;
@@ -57,9 +51,17 @@ namespace Team
                 string password2 = us.GetHash(PasswordRegistration2.Password);
                 string city = TextBoxCity.Text;
                 string address = TextBoxAddress.Text;
+            if ( (name=="")||(email=="") || (password == "") || (password2 == "") ||(city=="")|| (address == "") || (phone == ""))
+            {
+                MessageBox.Show("Please, fill all fields", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
+            else
+            {
                 if (password != password2)
                 {
-                    MessageBox.Show("Passwords do not match");
+                    MessageBox.Show("Passwords do not match" ,"Oops", MessageBoxButton.OK, MessageBoxImage.Error);
+                    PasswordRegistration2.Clear();
                 }
                 else
                 {

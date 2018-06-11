@@ -41,33 +41,22 @@ namespace Team
             
             Pet pet = ChoosePet.SelectedItem as Pet;
             string description = Description.Text;
+            double p = Slider1.Value;
             DateTime? sd = DateFrom.SelectedDate;
             DateTime? ed = DateEnd.SelectedDate;
-            double p =Slider1.Value;
-            rep.ToCreateUsersPet(pet, description, ThisUser,sd,ed,p);
-            UsersPets NeedablePet = ThisUser.MyPets.FirstOrDefault(up => up.Pet == pet && up.Description == description);
-            List<User> Us = new List<User>();
-            List<User> NeedableUs = new List<User>();
-            DateTime s = (DateTime)NeedablePet.Start;
-            DateTime end = (DateTime)NeedablePet.End;
-            Us.AddRange(context.Users.Where(us => us.ID != ThisUser.ID && us.City == ThisUser.City && s.CompareTo((DateTime)us.StartGetter) >= 0 && end.CompareTo((DateTime)us.EndGetter) <= 0 && us.PaymentGetter <= NeedablePet.Payment));
-            foreach (var us in Us)
+            DateTime sd2 = (DateTime)sd;
+            DateTime ed2 = (DateTime)ed;
+            if(sd2.CompareTo(ed2)==1)
             {
-
-                rep.RestoreExpectedPets(us);
-               
-                foreach (var usp in us.ExpectedPets)
-                {
-                   
-                        if (NeedablePet.Pet == usp)
-                        {
-
-                            NeedableUs.Add(us);
-                        }
-                }
+                MessageBox.Show("You have entered an incorrect date!", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            NeedableUsers.ItemsSource = NeedableUs;
-            
+            else
+            {
+                rep.ToCreateUsersPet(pet, description, ThisUser, sd, ed, p);
+                var NeedableUs = rep.ToCreateUsersList(ThisUser, pet, description);
+                NeedableUsers.ItemsSource = NeedableUs;
+            }
+
         }
 
 

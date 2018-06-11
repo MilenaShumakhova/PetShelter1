@@ -52,9 +52,19 @@ namespace Team
             
             DateTime? sd = DateFrom.SelectedDate;
             DateTime? ed = DateEnd.SelectedDate;
-            double p = Slider1.Value;
-            rep.ToCreateExpectedPets(pets, ThisUser, sd, ed, p);
-            MessageBox.Show("Your request has been accepted!", "",MessageBoxButton.OK);
+            DateTime sd2 = (DateTime)sd;
+            DateTime ed2 = (DateTime)ed;
+            if (sd2.CompareTo(ed2) == 1)
+            {
+                MessageBox.Show("You have entered an incorrect date!", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                double p = Slider1.Value;
+                rep.ToCreateExpectedPets(pets, ThisUser, sd, ed, p);
+                MessageBox.Show("Your request has been accepted!", "", MessageBoxButton.OK);
+            }
+            
 
         }
     }
