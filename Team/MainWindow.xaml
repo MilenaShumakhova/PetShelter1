@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Team"
         mc:Ignorable="d"
         
-        Title="Sign in" Height="480" Width="640" MinHeight="450" MinWidth="280" WindowStartupLocation="CenterScreen"
+        Title="Sign in" Height="480" Width="640" MinHeight="450" MinWidth="400" WindowStartupLocation="CenterScreen" Background="White"
         Icon="/Images/footprint.png">
         
     <!--<Window.Background >

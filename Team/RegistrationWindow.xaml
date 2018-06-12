@@ -38,8 +38,9 @@
          
             <TextBlock FontSize="15" Margin="55 0 0 18" FontWeight="Bold" >Email*</TextBlock>
             <TextBlock FontSize="15" Margin="55 0 0 17" FontWeight="Bold" >City*</TextBlock>
-            <TextBlock FontSize="15" Margin="55 0 0 17" FontWeight="Bold" >Phone*</TextBlock>
             <TextBlock FontSize="15" Margin="55 0 0 17" FontWeight="Bold" >Address*</TextBlock>
+            <TextBlock FontSize="15" Margin="55 0 0 17" FontWeight="Bold" >Phone*</TextBlock>
+           
 
             <TextBlock FontSize="15" Margin="55 0 0 12" FontWeight="Bold"  >Password*</TextBlock>
             <TextBlock FontSize="15" Margin="55 5 0 10" FontWeight="Bold"  > Confirm Password*</TextBlock>
@@ -53,8 +54,9 @@
 
             <TextBox Name="TextBoxEmail" Height="27" Width="250" MaxLength="35" FontSize="17"  Margin="0 0 0 10"></TextBox>
             <TextBox Name="TextBoxCity" Height="27" Width="250" MaxLength="35" FontSize="17" Margin="0 0 0 10"></TextBox>
-            <TextBox Name="TextBoxPhone" Height="27" Width="250" MaxLength="35" FontSize="17" Margin="0 0 0 10"></TextBox>
             <TextBox Name="TextBoxAddress" Height="27" Width="250" MaxLength="35" FontSize="17" Margin="0 0 0 10"></TextBox>
+            <TextBox Name="TextBoxPhone" Height="27" Width="250" MaxLength="35" FontSize="17" Margin="0 0 0 10"></TextBox>
+            
             <PasswordBox Name="PasswordRegistration" MaxLength="35"  PasswordChar="•" FontSize="17"  Height="27" Width="250" Margin="0 0 0 10" ></PasswordBox>
             <PasswordBox Name="PasswordRegistration2"  MaxLength="35"  PasswordChar="•" FontSize="17" Height="27" Width="250" Margin="0 0 0 10"></PasswordBox>
             <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" >
