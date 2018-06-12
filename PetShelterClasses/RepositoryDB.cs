@@ -141,6 +141,7 @@ namespace PetShelterClasses
 
         public void ToCreateExpectedPets(List<Pet> pets, User us, DateTime? sd, DateTime? ed, double p)
         {
+            RestoreExpectedPets(us);
             if (us.ExpectedPets == null)
             {
                 us.ExpectedPets = new List<Pet>();
@@ -151,6 +152,7 @@ namespace PetShelterClasses
             }
             else
             {
+                us.ExpectedPets.Clear();
                 us.ExpectedPets.AddRange(pets);
                 us.StartGetter = sd;
                 us.EndGetter = ed;
