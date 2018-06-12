@@ -23,10 +23,10 @@
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center">
             <StackPanel>
-                <ComboBox Name="ChoosePet" IsEditable="True" Height="35" IsReadOnly="True" DisplayMemberPath="Type" Text="               Choose a pet" >
+                <ComboBox Name="ChoosePet" IsEditable="True" Height="35" IsReadOnly="True" HorizontalContentAlignment="Center" DisplayMemberPath="Type" Text="Choose a pet" >
 
                 </ComboBox>
-                <TextBlock  VerticalAlignment="Center" Margin="30 0 0 0">  Description of the pet
+                <TextBlock  VerticalAlignment="Center" Margin="50 0 0 0">  Description of the pet
 
                 </TextBlock>
                 <TextBox Name="Description" Height="150" >
@@ -77,27 +77,25 @@
                 <!--<ListBox Name="NeedableUsers" Height="250" Width="200" Margin="10"   Background="MediumSeaGreen" DisplayMemberPath="NameSurname"  >
 
                 </ListBox>-->
-                <StackPanel>
-                
-                </StackPanel> 
-                <ListBox Name="NeedableUsers" Width="200" Grid.Column="1" Height="300" Margin="30 30 0 0" HorizontalAlignment="Stretch" Background="LightSteelBlue"
+                <StackPanel Orientation="Vertical">
+                    <ListBox Name="NeedableUsers" Width="200" Grid.Column="1" Height="300" Margin="30 65 0 0" HorizontalAlignment="Stretch" Background="LightSteelBlue"
                          ItemsSource="{Binding Source={StaticResource PetGetters}}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
 
-                            <Border Name="border" BorderBrush="Black" Width="150" BorderThickness="1" Padding="5" Margin="5" >
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition/>
-                                        <RowDefinition/>
-                                        <RowDefinition/>
-                                        <RowDefinition/>
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition />
-                                        <ColumnDefinition />
-                                    </Grid.ColumnDefinitions>
-                               
+                                <Border Name="border" BorderBrush="Black" Width="150" BorderThickness="1" Padding="5" Margin="5" >
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition />
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+
                                         <TextBlock Grid.Row="0" Grid.Column="0" Text="Name:"/>
                                         <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=NameSurname}"/>
                                         <TextBlock Grid.Row="1" Grid.Column="0" Text="Email:"/>
@@ -108,14 +106,17 @@
                                         <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Path=Phone}"/>
 
 
-                                
-                                </Grid>
-                            </Border>
-                           
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
 
-                </ListBox>
+                                    </Grid>
+                                </Border>
+
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+
+                    </ListBox>
+                    <Button Height="20"  Background="MediumSeaGreen" Width="50" Margin="20 20 0 0 " Click="Button_Click_Choose">Choose</Button>
+                </StackPanel>
+                
             </StackPanel>
         </StackPanel>
        
