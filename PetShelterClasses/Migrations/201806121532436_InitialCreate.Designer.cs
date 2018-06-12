@@ -13,7 +13,7 @@ namespace PetShelterClasses.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201806121326459_InitialCreate"; }
+            get { return "201806121532436_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

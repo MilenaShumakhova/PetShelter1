@@ -24,7 +24,8 @@ namespace PetShelterClasses
         public double PaymentGetter { get; set; }
         public DateTime? StartGetter { get; set; }
         public DateTime? EndGetter { get; set; }
-        
+        public List<GetterRequests> GetterRequests { get; set; }
+
 
         public string GetHash(string password)
         {

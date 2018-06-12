@@ -63,7 +63,7 @@ namespace Team
                 else
                 {
                     
-                    if (ThisUser.MyPets.Exists(f => f.Pet.ID == pet.ID && f.Description == description && f.Start == sd && f.End == ed) == true)
+                    if (ThisUser.MyPets!=null&&ThisUser.MyPets.Exists(f => f.Pet.ID == pet.ID && f.Description == description && f.Start == sd && f.End == ed) == true)
                     {
                         var NeedableUs = rep.ToCreateUsersList(ThisUser, pet, description,p);
                         NeedableUsers.ItemsSource = NeedableUs;
@@ -99,9 +99,8 @@ namespace Team
                 Pet pet = ChoosePet.SelectedItem as Pet;
                 string description = Description.Text;
                 User user =NeedableUsers.SelectedItem as User;
-                UsersPets needpet = context.UsersPets.FirstOrDefault(p => p.User.ID == ThisUser.ID && p.Description == description && p.Pet.ID == pet.ID);
-                needpet.Getter = user;
-                context.SaveChanges();
+                rep.ToAddRequest(user, ThisUser, pet, description);
+                
                 MessageBox.Show("Your request was sent");
 
             }

@@ -17,6 +17,7 @@ namespace PetShelterClasses
         public List<Pet> Pets { get; set; }
         public List<UsersPets> UsersPets { get; set; }
         public List<Pet> ExpectedPets { get; set; }
+        public List<GetterRequests> GetterRequests { get; set; }
 
         public RepositoryDB()
         {
@@ -46,11 +47,14 @@ namespace PetShelterClasses
                         select p).ToList();
                 UsersPets = (from usp in context.UsersPets
                              select usp).ToList();
+                GetterRequests = (from g in context.GetterRequests
+                                  select g).ToList();
             }
             catch
             {
                 Pets = new List<Pet>();
                 UsersPets = new List<UsersPets>();
+                GetterRequests = new List<GetterRequests>();
             }
 
         }
@@ -201,6 +205,27 @@ namespace PetShelterClasses
             context.SaveChanges();
         }
 
-        //public void 
+        public void ToAddRequest(User user,User ThisUser,Pet pet, string description)
+        {
+            UsersPets needpet = context.UsersPets.FirstOrDefault(p => p.User.ID == ThisUser.ID && p.Description == description && p.Pet.ID == pet.ID);
+            GetterRequests g = new GetterRequests()
+            {
+                Request = needpet,
+                User = user,
+            };
+            if (user.GetterRequests == null)
+            {
+                user.GetterRequests = new List<GetterRequests>();
+                user.GetterRequests.Add(g);
+                context.GetterRequests.Add(g);
+                context.SaveChanges();
+            }
+            else
+            {
+                user.GetterRequests.Add(g);
+                context.GetterRequests.Add(g);
+                context.SaveChanges();
+            }
+        }
     }    
 }

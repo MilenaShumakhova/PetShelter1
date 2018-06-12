@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace PetShelterClasses.Model
 {
-    public class UsersPets
+    public class GetterRequests
     {
         public int ID { get; set; }
-        public Pet Pet { get; set; }
-        public string Description { get; set; }
-        public double Payment { get; set; }
-        public DateTime? Start { get; set; }
-        public DateTime? End { get; set; }
+        public UsersPets Request { get; set; }
         public User User { get; set; }
 
     }
