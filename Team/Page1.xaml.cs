@@ -78,6 +78,19 @@ namespace Team
             this.textBlock1.Text = msg;
         }
 
-        
+        private void Button_Click_Choose(object sender, RoutedEventArgs e)
+        {
+            if(NeedableUsers.SelectedItem==null)
+            {
+                MessageBox.Show("Please, choose a getter");
+            }
+            else
+            {
+                MessageBox.Show("Your request was sent");
+              
+
+            }
+            
+        }
     }
 }
