@@ -5,11 +5,14 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
        xmlns:sys="clr-namespace:System;assembly=mscorlib"
       xmlns:local="clr-namespace:Team"
+      xmlns:cl="clr-namespace:PetShelterClasses;assembly=PetShelterClasses"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
      
       Title="Page1" Background="White" >
-
+    <Page.Resources >
+        <cl:User x:Key="PetGetters"/>
+    </Page.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
@@ -71,7 +74,46 @@
                     </ContentControl.ContentTemplate>
                     
                 </ContentControl>-->
-                <ListBox Name="NeedableUsers" Height="250" Width="200" Margin="10"   Background="MediumSeaGreen" DisplayMemberPath="NameSurname"  >
+                <!--<ListBox Name="NeedableUsers" Height="250" Width="200" Margin="10"   Background="MediumSeaGreen" DisplayMemberPath="NameSurname"  >
+
+                </ListBox>-->
+                <StackPanel>
+                
+                </StackPanel> 
+                <ListBox Name="NeedableUsers" Width="200" Grid.Column="1" Height="300" Margin="30 30 0 0" HorizontalAlignment="Stretch" Background="LightSteelBlue"
+                         ItemsSource="{Binding Source={StaticResource PetGetters}}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+
+                            <Border Name="border" BorderBrush="Black" Width="150" BorderThickness="1" Padding="5" Margin="5" >
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                               
+                                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Name:"/>
+                                        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=NameSurname}"/>
+                                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Email:"/>
+                                        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Email}"/>
+                                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Address:"/>
+                                        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Address}"/>
+                                        <TextBlock Grid.Row="3" Grid.Column="0" Text="Phone:"/>
+                                        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Path=Phone}"/>
+
+
+                                
+                                </Grid>
+                            </Border>
+                           
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
 
                 </ListBox>
             </StackPanel>
