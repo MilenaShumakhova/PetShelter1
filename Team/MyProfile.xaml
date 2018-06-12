@@ -6,6 +6,7 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:Team"
         mc:Ignorable="d"
+        Icon="/Images/footprint.png"
         Title="MyProfile" Height="500" Width="640" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Storyboard x:Key="OpenMenu">

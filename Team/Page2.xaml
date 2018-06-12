@@ -24,14 +24,14 @@
                 <TextBlock HorizontalAlignment="Center" Margin="0 10 0 0">From:
 
                 </TextBlock>
-                <DatePicker Name="DateFrom" Margin="0 10 0 10" DisplayDateStart="{x:Static sys:DateTime.Today}" >
+                <DatePicker Name="DateFrom" Margin="0 10 0 10" DisplayDateStart="{x:Static sys:DateTime.Today}" Focusable="False" >
 
 
                 </DatePicker>
                 <TextBlock HorizontalAlignment="Center" >To:
 
                 </TextBlock>
-                <DatePicker Name ="DateEnd" Margin="0 10 0 10" DisplayDateStart="{x:Static sys:DateTime.Today}">
+            <DatePicker Name ="DateEnd" Margin="0 10 0 10" DisplayDateStart="{x:Static sys:DateTime.Today}" Focusable="False">
 
                 </DatePicker>
                 <TextBlock>How much are you ready to get per day?

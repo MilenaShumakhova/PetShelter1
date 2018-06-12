@@ -39,6 +39,7 @@ namespace Team
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             
+            
             Pet pet = ChoosePet.SelectedItem as Pet;
             string description = Description.Text;
             double p = Slider1.Value;

@@ -19,13 +19,14 @@
    
 
         <Image Grid.Column="0" Grid.ColumnSpan="2"  Margin="90 10 0 300" HorizontalAlignment="Center" Source="/Images/avatars-000217852885-q3ge9g-t500x500.jpg" Width="150" Height="150"></Image>
-        <StackPanel Orientation="Vertical" Grid.Row="2"  Grid.Column="1" Margin="90 0 0 45" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" >
+        <StackPanel Orientation="Vertical"  Grid.Row="2"  Grid.Column="1" Margin="90 0 0 45" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" >
             <TextBlock FontSize="15"   FontWeight="Bold" Margin="7"  > FullName*</TextBlock>
 
             <TextBlock FontSize="15"   FontWeight="Bold" Margin="10"  >Email*</TextBlock>
             <TextBlock FontSize="15" FontWeight="Bold" Margin="10" >City*</TextBlock>
-            <TextBlock FontSize="15" FontWeight="Bold" Margin="10" >Phone*</TextBlock>
             <TextBlock FontSize="15" FontWeight="Bold" Margin="10" >Address*</TextBlock>
+            <TextBlock FontSize="15" FontWeight="Bold" Margin="10" >Phone*</TextBlock>
+            
 
             <TextBlock FontSize="15"  FontWeight="Bold"  Margin=" 10">Password*</TextBlock>
           
