@@ -38,29 +38,39 @@ namespace Team
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+
             Pet pet = ChoosePet.SelectedItem as Pet;
+            if(pet==null)
+            {
+                MessageBox.Show("You should choose a pet!", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
             string description = Description.Text;
             double p = Slider1.Value;
             DateTime? sd = DateFrom.SelectedDate;
             DateTime? ed = DateEnd.SelectedDate;
-            DateTime sd2 = (DateTime)sd;
-            DateTime ed2 = (DateTime)ed;
-            if(sd2.CompareTo(ed2)==1)
+            if (sd == null || ed == null)
             {
                 MessageBox.Show("You have entered an incorrect date!", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
-                rep.ToCreateUsersPet(pet, description, ThisUser, sd, ed, p);
-                var NeedableUs = rep.ToCreateUsersList(ThisUser, pet, description);
-                NeedableUsers.ItemsSource = NeedableUs;
+                DateTime sd2 = (DateTime)sd;
+                DateTime ed2 = (DateTime)ed;
+                if (sd2.CompareTo(ed2) == 1)
+                {
+                    MessageBox.Show("You have entered an incorrect date!", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else
+                {
+                    rep.ToCreateUsersPet(pet, description, ThisUser, sd, ed, p);
+                    var NeedableUs = rep.ToCreateUsersList(ThisUser, pet, description);
+                    NeedableUsers.ItemsSource = NeedableUs;
+                }
+
             }
 
+
         }
-
-
-
         private void Slider1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             int val = Convert.ToInt32(e.NewValue);
