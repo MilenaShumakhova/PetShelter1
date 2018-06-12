@@ -54,7 +54,7 @@ namespace PetShelterClasses
             }
 
         }
-        public void RestoreExpectedPets(User Us)
+        public void RestoreExpectedPets(User Us) ///1
         {
             List<Pet> FirstPets;
             List<Pet> SecondPents = new List<Pet>();
@@ -100,7 +100,7 @@ namespace PetShelterClasses
             return u;
         }
 
-        public void ToRegistrate(User us)
+        public void ToRegistrate(User us)  ///1
         {
             context.Users.Add(us);
             context.SaveChanges();

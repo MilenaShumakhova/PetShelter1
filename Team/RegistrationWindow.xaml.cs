@@ -18,8 +18,10 @@ namespace Team
     /// <summary>
     /// Логика взаимодействия для RegistrationWindow.xaml
     /// </summary>
+    
     public partial class RegistrationWindow : Window
     {
+        delegate void NewUsersInfo(User us); 
         Context c;
         User us = new User();
         public User ThisUser = new User();
@@ -69,7 +71,8 @@ namespace Team
 
                     if (repo.Users.Count==0)
                     {
-                        repo.ToRegistrate(ThisUser);
+                        NewUsersInfo d = repo.ToRegistrate;
+                        d(ThisUser);
                         MainWindow main = new MainWindow();
                         main.Show();
                         this.Close();
@@ -78,7 +81,8 @@ namespace Team
                     {
                         if (repo.ToCompare(email) == true)
                         {
-                            repo.ToRegistrate(ThisUser);
+                            NewUsersInfo d = repo.ToRegistrate;
+                            d(ThisUser);
                             MainWindow main = new MainWindow();
                             main.Show();
                             this.Close();
@@ -89,26 +93,6 @@ namespace Team
                 }
             }
         }
-
-        //private void PasswordRegistration2_KeyDown(object sender, KeyEventArgs e)
-        //{
-
-        //    if (e.Key == Key.Enter)
-        //    {
-        //        if ((TextBoxFullName.Text == String.Empty) || (TextBoxEmail.Text == String.Empty) || (PasswordRegistration.Password == String.Empty) || (PasswordRegistration2.Password == String.Empty) || (TextBoxAddress.Text == String.Empty))
-        //        {
-        //            MessageBox.Show("Please, fill all fields", "Error");
-
-        //        }
-        //        else
-        //        {
-        //            MainWindow main = new MainWindow();
-        //            main.Show();
-        //            this.Close();
-        //        }
-        //    }
-
-        //}
        
     }
 }
