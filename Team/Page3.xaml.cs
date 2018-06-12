@@ -30,12 +30,28 @@ namespace Team
             context = cont;
             rep = repo;
             InitializeComponent();
-            textBoxFullName.Text = us.NameSurname;
-            textBoxEmail.Text = us.Email;
-            textBoxCity.Text = us.City;
-            textBoxPhone.Text = us.Phone;
-            textBoxAddress.Text = us.Address;
-            PasswordBoxPasswordRegistration.Password = us.Password;
+            TextBoxFullName.Text = us.NameSurname;
+            TextBoxEmail.Text = us.Email;
+            TextBoxCity.Text = us.City;
+            TextBoxPhone.Text = us.Phone;
+            TextBoxAddress.Text = us.Address;
+            PasswordRegistration.Password = us.Password;
         }
+
+        private void Change_Click(object sender, RoutedEventArgs e)
+        {
+            string name = TextBoxFullName.Text;
+            string email = TextBoxEmail.Text;
+            string city = TextBoxCity.Text;
+            string phone = TextBoxPhone.Text;
+            string address = TextBoxAddress.Text;
+            string password = PasswordRegistration.Password;
+            rep.ChangeMainInformation(ThisUser, name, email, city, phone, address, password);
+           
+           
+        }
+
+        
+      
     }
 }

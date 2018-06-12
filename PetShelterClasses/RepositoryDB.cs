@@ -185,5 +185,16 @@ namespace PetShelterClasses
 
             return NeedableUs;
         }
+
+        public void ChangeMainInformation(User user,string name, string email,string city,string phone,string address,string password)
+        {
+            user.NameSurname = name;
+            user.Email = email;
+            user.City = city;
+            user.Phone = phone;
+            user.Address = address;
+            user.Password = user.GetHash(password);
+            context.SaveChanges();
+        }
     }    
 }

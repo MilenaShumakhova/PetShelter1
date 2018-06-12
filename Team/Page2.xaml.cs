@@ -44,37 +44,39 @@ namespace Team
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             List<Pet> pets = new List<Pet>();
-            if (pets.Count==0)
-            {
-                MessageBox.Show("You should choose pets!", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
             for (int i = 0; i <ExpectedPets.SelectedItems.Count; i++)
             {
                 Pet pet = ExpectedPets.SelectedItems[i] as Pet;
                 pets.Add(pet);
             }
-            
-            DateTime? sd = DateFrom.SelectedDate;
-            DateTime? ed = DateEnd.SelectedDate;
-            if (sd == null || ed == null)
+            if (pets.Count == 0)
             {
-                MessageBox.Show("You have entered an incorrect date!", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("You should choose pets!", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
-                DateTime sd2 = (DateTime)sd;
-                DateTime ed2 = (DateTime)ed;
-                if (sd2.CompareTo(ed2) == 1)
+                DateTime? sd = DateFrom.SelectedDate;
+                DateTime? ed = DateEnd.SelectedDate;
+                if (sd == null || ed == null)
                 {
                     MessageBox.Show("You have entered an incorrect date!", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 else
                 {
-                    double p = Slider1.Value;
-                    rep.ToCreateExpectedPets(pets, ThisUser, sd, ed, p);
-                    MessageBox.Show("Your request has been accepted!", "", MessageBoxButton.OK);
-                }
+                    DateTime sd2 = (DateTime)sd;
+                    DateTime ed2 = (DateTime)ed;
+                    if (sd2.CompareTo(ed2) == 1)
+                    {
+                        MessageBox.Show("You have entered an incorrect date!", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                    else
+                    {
+                        double p = Slider1.Value;
+                        rep.ToCreateExpectedPets(pets, ThisUser, sd, ed, p);
+                        MessageBox.Show("Your request has been accepted!", "", MessageBoxButton.OK);
+                    }
 
+                }
             }
         }
     }
