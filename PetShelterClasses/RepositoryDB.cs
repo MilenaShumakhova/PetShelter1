@@ -115,6 +115,7 @@ namespace PetShelterClasses
 
         public void ToCreateUsersPet(Pet pet, string description, User us, DateTime? sd, DateTime? ed, double p)
         {
+            
             UsersPets uspet = new UsersPets()
             {
                 Pet = pet,
@@ -161,9 +162,10 @@ namespace PetShelterClasses
             context.SaveChanges();
         }
 
-        public List<User> ToCreateUsersList(User user,Pet pet, string description)
+        public List<User> ToCreateUsersList(User user,Pet pet, string description,double p)
         {
             UsersPets NeedablePet = user.MyPets.FirstOrDefault(up => up.Pet == pet && up.Description == description);
+            NeedablePet.Payment = p;
             List<User> Us = new List<User>();
             List<User> NeedableUs = new List<User>();
             DateTime s = (DateTime)NeedablePet.Start;
@@ -198,5 +200,7 @@ namespace PetShelterClasses
             user.Password = user.GetHash(password);
             context.SaveChanges();
         }
+
+        //public void 
     }    
 }

@@ -83,6 +83,10 @@
     <Compile Include="Migrations\201806111009475_RemoveDateTimeFromUsers.Designer.cs">
       <DependentUpon>201806111009475_RemoveDateTimeFromUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806121149126_Requests.cs" />
+    <Compile Include="Migrations\201806121149126_Requests.Designer.cs">
+      <DependentUpon>201806121149126_Requests.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Pet.cs" />
     <Compile Include="Model\User.cs" />
@@ -118,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806111009475_RemoveDateTimeFromUsers.resx">
       <DependentUpon>201806111009475_RemoveDateTimeFromUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806121149126_Requests.resx">
+      <DependentUpon>201806121149126_Requests.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
