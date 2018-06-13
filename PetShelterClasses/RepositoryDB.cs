@@ -223,7 +223,7 @@ namespace PetShelterClasses
             {
                 Request = needpet,
                 User = user,
-                Status= "Your request has been sent. Expect an answer!",
+                StatusGiver= "Your request has been sent. Expect an answer!",
 
             };
             if (user.GetterRequests == null)
@@ -275,7 +275,7 @@ namespace PetShelterClasses
         {
             if (user.GetterRequests != null)
             {
-              return   user.GetterRequests.FindAll(g => g.User.ID == user.ID&&(g.Status== "Your request has been accepted!"||g.Status== "Your request has been sent. Expect an answer!"));
+              return   user.GetterRequests.FindAll(g => g.User.ID == user.ID&&(g.StatusGiver== "Your request has been accepted!"||g.StatusGiver== "Your request has been sent. Expect an answer!"));
             }
             else
             {
@@ -287,13 +287,14 @@ namespace PetShelterClasses
         public void ChangeStatusToAccept(GetterRequests g)
         {
             GetterRequests gr = context.GetterRequests.FirstOrDefault(gg => gg.ID == g.ID);
-            gr.Status = "Your request has been accepted!";
+            gr.StatusGiver = "Your request has been accepted!";
+            gr.StatusGiver = "You made a request. The customer will contact you soon";
             context.SaveChanges();
         }
         public void ChangeStatusToDecline(GetterRequests g)
         {
             GetterRequests gr = context.GetterRequests.FirstOrDefault(gg => gg.ID == g.ID);
-            g.Status = "Your request was rejected";
+            gr.StatusGiver = "Your request was rejected";
             context.SaveChanges();
         }
     }

@@ -71,6 +71,10 @@
     <Compile Include="Migrations\201806131946175_NewColumnInGetterRequests1.Designer.cs">
       <DependentUpon>201806131946175_NewColumnInGetterRequests1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806132059082_SecondNeColumn.cs" />
+    <Compile Include="Migrations\201806132059082_SecondNeColumn.Designer.cs">
+      <DependentUpon>201806132059082_SecondNeColumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\GetterRequests.cs" />
     <Compile Include="Model\Pet.cs" />
@@ -98,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806131946175_NewColumnInGetterRequests1.resx">
       <DependentUpon>201806131946175_NewColumnInGetterRequests1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806132059082_SecondNeColumn.resx">
+      <DependentUpon>201806132059082_SecondNeColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
