@@ -40,7 +40,7 @@ namespace Team
             textBoxPhone.Text = getterRequest.Request.User.Phone;
             textBoxTo.Text = getterRequest.Request.End.ToString();
             textBoxType.Text = getterRequest.Request.Pet.Type;
-
+            textBoxStatus.Text = getterRequest.StatusGetter;
         }
 
 

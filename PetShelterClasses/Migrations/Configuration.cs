@@ -19,9 +19,26 @@ namespace PetShelterClasses.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+            var PetBd = new Pet { Type = "Bird" };
             var PetCt = new Pet { Type = "Cat" };
+            var PetCh = new Pet { Type = "Chicken" };
+            var PetCk = new Pet { Type = "Cockroaches" };
             var PetDg = new Pet { Type = "Dog" };
-            context.Pets.AddOrUpdate(p => p.Type, PetCt, PetDg);
+            var PetFerret = new Pet { Type = "Ferret" };
+            var PetFish = new Pet { Type = "Fish" };
+            var PetPig = new Pet { Type = "Guinea pig" };
+            var PetHm = new Pet { Type = "Hamster" };
+            var PetHd = new Pet { Type = "Hedhehog" };
+            var PetHo = new Pet { Type = "Horse" };
+            var PetIn = new Pet { Type = "Insects" };
+            var PetMs = new Pet { Type = "Mouse" };
+            var PetRabbit = new Pet { Type = "Rabbit" };
+            var PetSn = new Pet { Type = "Snail" };
+            var PetSna = new Pet { Type = "Snake" };
+
+            
+            context.Pets.AddOrUpdate(p => p.Type, PetBd, PetCt, PetCh,PetCk,PetDg,PetFerret,PetFish,PetPig,PetHm,PetHd,PetHo,PetIn,PetMs,PetRabbit,PetSn,PetSna);
+         
             context.SaveChanges();
         }
     }

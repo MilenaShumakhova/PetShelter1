@@ -23,7 +23,7 @@
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center">
             <StackPanel>
-                <ComboBox Name="ChoosePet" IsEditable="True" Height="35" IsReadOnly="True" HorizontalContentAlignment="Center" DisplayMemberPath="Type" Text="Choose a pet" >
+                <ComboBox Name="ChoosePet"  IsEditable="True" Height="35" IsReadOnly="True" HorizontalContentAlignment="Center" DisplayMemberPath="Type" Text="Choose a pet" >
 
                 </ComboBox>
                 <TextBlock  VerticalAlignment="Center" Margin="50 0 0 0">  Description of the pet

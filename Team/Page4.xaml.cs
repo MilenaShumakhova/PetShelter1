@@ -79,6 +79,7 @@ namespace Team
             us.Invoke(g);
             var RequestsToMe = rep.ToGetRequestsToMe(ThisUser);
             ToMe.ItemsSource = RequestsToMe;
+            MessageBox.Show("You declined this request");
 
         }
     }
