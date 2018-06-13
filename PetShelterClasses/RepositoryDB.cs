@@ -45,6 +45,19 @@ namespace PetShelterClasses
             {
                 Pets = (from p in context.Pets
                         select p).ToList();
+                
+            }
+            catch
+            {
+                Pets = new List<Pet>();
+                
+            }
+
+        }
+        public void RestoreRequests()
+        {
+            try
+            {
                 UsersPets = (from usp in context.UsersPets
                              select usp).ToList();
                 GetterRequests = (from g in context.GetterRequests
@@ -52,7 +65,6 @@ namespace PetShelterClasses
             }
             catch
             {
-                Pets = new List<Pet>();
                 UsersPets = new List<UsersPets>();
                 GetterRequests = new List<GetterRequests>();
             }
@@ -226,6 +238,13 @@ namespace PetShelterClasses
                 context.GetterRequests.Add(g);
                 context.SaveChanges();
             }
+        }
+        public List<GetterRequests> ToReturnListWithRequestsFromMe(User ThisUser)
+        {
+            List<GetterRequests> getterRequests = new List<GetterRequests>();
+            getterRequests = GetterRequests.FindAll(g => g.Request.User.ID == ThisUser.ID);
+            context.SaveChanges();
+            return getterRequests;
         }
     }    
 }

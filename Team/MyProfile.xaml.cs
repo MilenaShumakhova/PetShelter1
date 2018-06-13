@@ -34,7 +34,8 @@ namespace Team
             rep = repo;
             context = cont;
             rep.RestorePets();
-            Page4 page4 = new Page4();
+            rep.RestoreRequests();
+            Page4 page4 = new Page4(ThisUser, rep, context);
 
            ContentFrame.NavigationService.Navigate(page4);
    
@@ -66,7 +67,7 @@ namespace Team
 
         private void RadioButton_ClickRequests(object sender, RoutedEventArgs e)
         {
-            Page4 page4 = new Page4();
+            Page4 page4 = new Page4(ThisUser, rep, context);
             ContentFrame.NavigationService.Navigate(page4);
         }
 
