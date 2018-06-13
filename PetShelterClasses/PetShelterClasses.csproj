@@ -67,6 +67,10 @@
     <Compile Include="Migrations\201806131043354_AddColumnInUsersPets.Designer.cs">
       <DependentUpon>201806131043354_AddColumnInUsersPets.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806131946175_NewColumnInGetterRequests1.cs" />
+    <Compile Include="Migrations\201806131946175_NewColumnInGetterRequests1.Designer.cs">
+      <DependentUpon>201806131946175_NewColumnInGetterRequests1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\GetterRequests.cs" />
     <Compile Include="Model\Pet.cs" />
@@ -91,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806131043354_AddColumnInUsersPets.resx">
       <DependentUpon>201806131043354_AddColumnInUsersPets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131946175_NewColumnInGetterRequests1.resx">
+      <DependentUpon>201806131946175_NewColumnInGetterRequests1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

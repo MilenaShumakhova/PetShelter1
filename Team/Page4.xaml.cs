@@ -32,8 +32,10 @@ namespace Team
             context = cont;
             InitializeComponent();
             rep.RestoreRequests();
-            FromMe.ItemsSource=rep.ToReturnListWithRequestsFromMe(ThisUser);
-            ToMe.ItemsSource = rep.ToGetRequestsToMe(ThisUser);
+            var RequestsFromMe= rep.ToReturnListWithRequestsFromMe(ThisUser);
+            FromMe.ItemsSource = RequestsFromMe;
+            var RequestsToMe = rep.ToGetRequestsToMe(ThisUser);
+            ToMe.ItemsSource = RequestsToMe;
         }
 
         private void Button_ClickGive(object sender, RoutedEventArgs e)
@@ -59,11 +61,16 @@ namespace Team
 
         private void Button_ClickAccept(object sender, RoutedEventArgs e)
         {
-
+            GetterRequests g = ToMe.SelectedItem as GetterRequests;
+            rep.ChangeStatusToAccept(g); //делегаты!
         }
 
         private void Button_ClickDecline(object sender, RoutedEventArgs e)
         {
+            GetterRequests g = ToMe.SelectedItem as GetterRequests;
+            rep.ChangeStatusToDecline(g); // делегаты!
+            var RequestsToMe = rep.ToGetRequestsToMe(ThisUser);
+            ToMe.ItemsSource = RequestsToMe;
 
         }
     }
