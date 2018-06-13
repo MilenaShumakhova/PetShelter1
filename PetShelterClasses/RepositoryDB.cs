@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace PetShelterClasses
 {
-    public class RepositoryDB
+    public class RepositoryDB:IRepositoryInterface
     {
         public List<User> Users { get; set; }
         public List<Pet> Pets { get; set; }
@@ -26,7 +26,7 @@ namespace PetShelterClasses
 
         Context context = new Context();
 
-        public void RestoreUsers()
+        private void RestoreUsers()
         {
             try
             {

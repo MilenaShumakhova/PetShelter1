@@ -22,7 +22,7 @@ namespace Team
     /// </summary>
     public partial class Page4 : Page
     {
-        delegate void UsersStatuses(User user);
+        delegate void UsersStatuses(GetterRequests requests);
         UsersStatuses us;
         User ThisUser;
         RepositoryDB rep;
@@ -59,7 +59,7 @@ namespace Team
         private void Button_ClickDelete(object sender, RoutedEventArgs e)
         {
             GetterRequests request = FromMe.SelectedItem as GetterRequests;
-            rep.RemoveGetterRequest(request);
+            rep.ChangeStatusToAccept(request);
             FromMe.ItemsSource = rep.ToReturnListWithRequestsFromMe(ThisUser);
 
 
@@ -68,13 +68,15 @@ namespace Team
         private void Button_ClickAccept(object sender, RoutedEventArgs e)
         {
             GetterRequests g = ToMe.SelectedItem as GetterRequests;
-            rep.ChangeStatusToAccept(g);
+            us=rep.ChangeStatusToAccept;
+            us.Invoke(g);
         }
 
         private void Button_ClickDecline(object sender, RoutedEventArgs e)
         {
             GetterRequests g = ToMe.SelectedItem as GetterRequests;
-            rep.ChangeStatusToDecline(g); 
+            us=rep.ChangeStatusToDecline;
+            us.Invoke(g);
             var RequestsToMe = rep.ToGetRequestsToMe(ThisUser);
             ToMe.ItemsSource = RequestsToMe;
 

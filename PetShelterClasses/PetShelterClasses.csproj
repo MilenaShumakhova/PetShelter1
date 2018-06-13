@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context.cs" />
+    <Compile Include="IRepositoryInterface.cs" />
     <Compile Include="Migrations\201806121532436_InitialCreate.cs" />
     <Compile Include="Migrations\201806121532436_InitialCreate.Designer.cs">
       <DependentUpon>201806121532436_InitialCreate.cs</DependentUpon>
