@@ -50,13 +50,16 @@ namespace Team
         {
             GetterRequests getterRequests = ToMe.SelectedItem as GetterRequests;
             GetterRequestShow getterRequest = new GetterRequestShow(ThisUser, rep, context,getterRequests);
+            getterRequest.Show();
         }
 
         private void Button_ClickDelete(object sender, RoutedEventArgs e)
         {
-            
+            GetterRequests request = FromMe.SelectedItem as GetterRequests;
+            rep.RemoveGetterRequest(request);
+            FromMe.ItemsSource = rep.ToReturnListWithRequestsFromMe(ThisUser);
 
-           
+
         }
 
         private void Button_ClickAccept(object sender, RoutedEventArgs e)
