@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PetShelterClasses;
+using PetShelterClasses.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,25 @@ namespace Team
     /// </summary>
     public partial class Page4 : Page
     {
-        public Page4()
+        User ThisUser;
+        RepositoryDB rep;
+        Context context;
+        public Page4(User us, RepositoryDB repo, Context cont)
         {
+            ThisUser = us;
+            rep = repo;
+            context = cont;
             InitializeComponent();
+            rep.RestoreRequests();
+           FromMe.ItemsSource =rep.ToReturnListWithRequestsFromMe(ThisUser);
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            GiveRequestShow giveRequest = new GiveRequestShow();
+            giveRequest.Show();
+
         }
     }
 }
