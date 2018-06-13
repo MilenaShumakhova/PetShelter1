@@ -54,5 +54,10 @@ namespace Team
             MyProfile m = new MyProfile(ThisUser,rep,context);
             m.Close();
         }
+
+        private void Button_ClickGet(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
