@@ -51,5 +51,10 @@ namespace Team
             GiveRequestShow giveRequest = new GiveRequestShow(ThisUser, rep, context, giveRequests);
             giveRequest.Show();
         }
+
+        private void Button_ClickGet(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
