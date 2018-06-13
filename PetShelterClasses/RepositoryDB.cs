@@ -166,15 +166,14 @@ namespace PetShelterClasses
             context.SaveChanges();
         }
 
-        public List<User> ToCreateUsersList(User user,Pet pet, string description,double p)
+        public List<User> ToCreateUsersList(Pet pet, string description,DateTime? sd, DateTime? ed, double p,User user)//(User user,Pet pet, string description,double p)
         {
-            UsersPets NeedablePet = user.MyPets.FirstOrDefault(up => up.Pet == pet && up.Description == description);
-            NeedablePet.Payment = p;
+            
             List<User> Us = new List<User>();
             List<User> NeedableUs = new List<User>();
-            DateTime s = (DateTime)NeedablePet.Start;
-            DateTime end = (DateTime)NeedablePet.End;
-            Us.AddRange(context.Users.Where(us => us.ID != user.ID && us.City == user.City && s.CompareTo((DateTime)us.StartGetter) >= 0 && end.CompareTo((DateTime)us.EndGetter) <= 0 && us.PaymentGetter <= NeedablePet.Payment));
+            DateTime s = (DateTime)sd;
+            DateTime end = (DateTime)ed;
+            Us.AddRange(context.Users.Where(us => us.ID != user.ID && us.City == user.City && s.CompareTo((DateTime)us.StartGetter) >= 0 && end.CompareTo((DateTime)us.EndGetter) <= 0 && us.PaymentGetter <=p));
             foreach (var us in Us)
             {
 
@@ -183,7 +182,7 @@ namespace PetShelterClasses
                 foreach (var usp in us.ExpectedPets)
                 {
 
-                    if (NeedablePet.Pet == usp)
+                    if (pet == usp)
                     {
 
                         NeedableUs.Add(us);
@@ -212,6 +211,7 @@ namespace PetShelterClasses
             {
                 Request = needpet,
                 User = user,
+                
             };
             if (user.GetterRequests == null)
             {

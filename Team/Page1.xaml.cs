@@ -52,6 +52,7 @@ namespace Team
             {
                 MessageBox.Show("You have entered an incorrect date!", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+
             else
             {
                 DateTime sd2 = (DateTime)sd;
@@ -62,24 +63,10 @@ namespace Team
                 }
                 else
                 {
-                    
-                    if (ThisUser.MyPets!=null&&ThisUser.MyPets.Exists(f => f.Pet.ID == pet.ID && f.Description == description && f.Start == sd && f.End == ed) == true)
-                    {
-                        var NeedableUs = rep.ToCreateUsersList(ThisUser, pet, description,p);
+                        var NeedableUs = rep.ToCreateUsersList(pet, description, sd, ed, p, ThisUser);
                         NeedableUsers.ItemsSource = NeedableUs;
-                    }
-                    else
-                    {
-                        rep.ToCreateUsersPet(pet, description, ThisUser, sd, ed, p);
-                        var NeedableUs = rep.ToCreateUsersList(ThisUser, pet, description,p);
-                        NeedableUsers.ItemsSource = NeedableUs;
-                    }
-                    
                 }
-
             }
-
-
         }
         private void Slider1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
@@ -99,8 +86,11 @@ namespace Team
                 Pet pet = ChoosePet.SelectedItem as Pet;
                 string description = Description.Text;
                 User user =NeedableUsers.SelectedItem as User;
+                double p = Slider1.Value;
+                DateTime? sd = DateFrom.SelectedDate;
+                DateTime? ed = DateEnd.SelectedDate;
+                rep.ToCreateUsersPet(pet, description, ThisUser, sd, ed, p);
                 rep.ToAddRequest(user, ThisUser, pet, description);
-                
                 MessageBox.Show("Your request was sent");
 
             }

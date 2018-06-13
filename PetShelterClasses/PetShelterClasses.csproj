@@ -55,6 +55,18 @@
     <Compile Include="Migrations\201806121532436_InitialCreate.Designer.cs">
       <DependentUpon>201806121532436_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806130923140_NewColumnInGetterRequests.cs" />
+    <Compile Include="Migrations\201806130923140_NewColumnInGetterRequests.Designer.cs">
+      <DependentUpon>201806130923140_NewColumnInGetterRequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806130947153_RemoveColumn.cs" />
+    <Compile Include="Migrations\201806130947153_RemoveColumn.Designer.cs">
+      <DependentUpon>201806130947153_RemoveColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131043354_AddColumnInUsersPets.cs" />
+    <Compile Include="Migrations\201806131043354_AddColumnInUsersPets.Designer.cs">
+      <DependentUpon>201806131043354_AddColumnInUsersPets.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\GetterRequests.cs" />
     <Compile Include="Model\Pet.cs" />
@@ -70,6 +82,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201806121532436_InitialCreate.resx">
       <DependentUpon>201806121532436_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806130923140_NewColumnInGetterRequests.resx">
+      <DependentUpon>201806130923140_NewColumnInGetterRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806130947153_RemoveColumn.resx">
+      <DependentUpon>201806130947153_RemoveColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131043354_AddColumnInUsersPets.resx">
+      <DependentUpon>201806131043354_AddColumnInUsersPets.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
