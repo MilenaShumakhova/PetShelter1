@@ -216,9 +216,9 @@ namespace PetShelterClasses
             context.SaveChanges();
         }
 
-        public void ToAddRequest(User user,User ThisUser,Pet pet, string description)
+        public void ToAddRequest(User user,User ThisUser,Pet pet, string description,DateTime? sd, DateTime? ed)
         {
-            UsersPets needpet = context.UsersPets.FirstOrDefault(p => p.User.ID == ThisUser.ID && p.Description == description && p.Pet.ID == pet.ID);
+            UsersPets needpet = context.UsersPets.FirstOrDefault(p => p.User.ID == ThisUser.ID && p.Description == description && p.Pet.ID == pet.ID&&p.Start==sd&&p.End==ed);
             GetterRequests g = new GetterRequests()
             {
                 Request = needpet,
@@ -241,9 +241,9 @@ namespace PetShelterClasses
         }
         public List<GetterRequests> ToReturnListWithRequestsFromMe(User ThisUser)
         {
+            RestoreRequests();
             List<GetterRequests> getterRequests = new List<GetterRequests>();
             getterRequests = GetterRequests.FindAll(g => g.Request.User.ID == ThisUser.ID);
-            context.SaveChanges();
             return getterRequests;
         }
     }    

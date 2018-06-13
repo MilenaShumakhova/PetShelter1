@@ -79,23 +79,36 @@ namespace Team
         {
             if(NeedableUsers.SelectedItem==null)
             {
-                MessageBox.Show("Please, choose a getter");
+                MessageBox.Show("Please, choose a getter!");
             }
             else
             {
                 Pet pet = ChoosePet.SelectedItem as Pet;
                 string description = Description.Text;
-                User user =NeedableUsers.SelectedItem as User;
                 double p = Slider1.Value;
                 DateTime? sd = DateFrom.SelectedDate;
                 DateTime? ed = DateEnd.SelectedDate;
-                rep.ToCreateUsersPet(pet, description, ThisUser, sd, ed, p);
-                rep.ToAddRequest(user, ThisUser, pet, description);
-                MessageBox.Show("Your request was sent");
-
-              
-
-
+                User user = NeedableUsers.SelectedItem as User;
+                var getterRequests=rep.ToReturnListWithRequestsFromMe(ThisUser);
+                if(getterRequests.Exists(up=>up.Request.Pet.ID==pet.ID&&up.Request.Description==description&&up.Request.Start==sd&&up.Request.End==ed))
+                {
+                    var request=getterRequests.FirstOrDefault(up => up.Request.Pet.ID == pet.ID && up.Request.Description == description && up.Request.Start == sd && up.Request.End == ed);
+                    if (request.User.ID == user.ID)
+                    {
+                        MessageBox.Show("You have already sent this request to this user!", "Oops", MessageBoxButton.OK);
+                    }
+                    else
+                    {
+                        rep.ToAddRequest(user, ThisUser, pet, description, sd, ed);
+                        MessageBox.Show("Your request was sent");
+                    }
+                }
+                else
+                {
+                    rep.ToCreateUsersPet(pet, description, ThisUser, sd, ed, p);
+                    rep.ToAddRequest(user, ThisUser, pet, description, sd, ed);
+                    MessageBox.Show("Your request was sent");
+                }
             }
             
         }
