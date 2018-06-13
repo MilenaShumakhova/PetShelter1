@@ -78,13 +78,14 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+   
         <Button Height="30" Width="50" VerticalAlignment="Bottom" Grid.Column="1" Margin="70,0,0,30" HorizontalAlignment="Left" Background="Pink" Click="Button_ClickGive">Show
 
         </Button>
         <Button Name="ToMeButton" Height="30" Width="50" VerticalAlignment="Bottom" Margin="400 0 0 30" Grid.Column="1"   Background="Pink" Click="Button_ClickGet">Show
 
         </Button>
-        <Button Height="30" Width="50" VerticalAlignment="Bottom" Margin="400 0 0 30" Grid.Column="1"   Background="Pink" Click="Button_ClickDelete">Delete
+        <Button Height="30" Width="50" VerticalAlignment="Bottom" Margin="0 0 250 30" Grid.Column="1"   Background="Pink" Click="Button_ClickDelete">Delete
 
         </Button>
 

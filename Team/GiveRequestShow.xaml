@@ -58,7 +58,7 @@
             <TextBox Name="textBoxPhone" Background="LightSteelBlue" Margin="60 0 0 0" Width="150" ></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Row="5" HorizontalAlignment="Center">
-            <Button Margin="0 0 10 0" Click="Button_ClickDelete">Delete</Button> 
+         
             <Button Click="Button_ClickBack">Back</Button>
         </StackPanel>
 

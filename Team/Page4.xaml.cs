@@ -50,6 +50,11 @@ namespace Team
             GetterRequestShow getterRequest = new GetterRequestShow(ThisUser, rep, context,getterRequests);
         }
 
-      
+        private void Button_ClickDelete(object sender, RoutedEventArgs e)
+        {
+            
+
+           
+        }
     }
 }

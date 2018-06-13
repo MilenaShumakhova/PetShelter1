@@ -45,14 +45,7 @@ namespace Team
 
         }
 
-        private void Button_ClickDelete(object sender, RoutedEventArgs e)
-        {
-
-            rep.RemoveGetterRequest(giverRequests);
-            this.Close();
-            
-
-        }
+     
 
         private void Button_ClickBack(object sender, RoutedEventArgs e)
         {
