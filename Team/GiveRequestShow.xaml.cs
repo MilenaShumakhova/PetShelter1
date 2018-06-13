@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PetShelterClasses;
+using PetShelterClasses.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,39 @@ namespace Team
     /// </summary>
     public partial class GiveRequestShow : Window
     {
-        public GiveRequestShow()
+        User ThisUser;
+        RepositoryDB rep;
+        Context context;
+        GetterRequests giverRequests;
+        public GiveRequestShow(User us, RepositoryDB repo, Context cont,GetterRequests giver )
         {
             InitializeComponent();
+            ThisUser = us;
+            rep = repo;
+            context = cont;
+            giverRequests = giver;
+            textBoxType.Text = giverRequests.Request.Pet.Type;
+            textBoxDescription.Text = giverRequests.Request.Description;
+            textBoxPayment.Text = giverRequests.User.PaymentGetter.ToString();
+            textBoxAddress.Text = giverRequests.User.Address;
+            textBoxPhone.Text = giverRequests.User.Phone;
+            textBoxGetter.Text = giverRequests.User.NameSurname;
+            textBoxEmail.Text = giverRequests.User.Email;
+            textBoxFrom.Text = giverRequests.Request.Start.ToString();
+            textBoxTo.Text = giverRequests.Request.End.ToString();
+            
+
+        }
+
+        private void Button_ClickDelete(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_ClickBack(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            
         }
     }
 }

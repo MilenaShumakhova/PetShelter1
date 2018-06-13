@@ -23,10 +23,10 @@
 
         </TextBlock>
 
-        <ListBox Name="FromMe"  ItemsSource="{Binding Source={StaticResource RequestsFromMe}}"  HorizontalAlignment="Left" Width="200" Height="300" Grid.Column="1" Grid.ColumnSpan="2"  Background="LightSteelBlue">
-            <ListBox.ItemTemplate>
+        <ListBox Name="FromMe"   ItemsSource="{Binding Source={StaticResource RequestsFromMe}}"  HorizontalAlignment="Left" Width="200" Height="300" Grid.Column="1" Grid.ColumnSpan="2"  Background="LightSteelBlue">
+            <ListBox.ItemTemplate >
                 <DataTemplate>
-                    <Border Name="border"  BorderBrush="Black" Width="150" BorderThickness="1" Padding="5" Margin="5" >
+              
                         <Grid>
                          
                                 <Grid.RowDefinitions>
@@ -39,20 +39,24 @@
                                     <ColumnDefinition />
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
-                          
-                            <TextBlock Grid.Row="0" Text="{Binding Path=Request.Pet.Type}"/>
-                            <Button Background="Pink" Grid.Column="2"  Width="70" Height="20" Click="Button_Click" >Show</Button>
+
+                            
+                            <TextBlock Grid.Row="0"  Text="{Binding Path=Request.Pet.Type}"/>
+                            <!--<Button Name="ShowMeRequest"  Background="Pink" Grid.Column="2"  Width="70" Height="20" Click="Button_Click"  >Show</Button>-->
                         </Grid>
                        
-                    </Border>
+              
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <TextBlock FontSize="20" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Margin="0 30 30 0" HorizontalAlignment="Right" > Getter's requests
+        <TextBlock FontSize="20" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Margin="0 30 30 0" HorizontalAlignment="Right"  > Getter's requests
         </TextBlock>
 
         <ListBox HorizontalAlignment="Right" Width="200" Height="300" Margin="10"  Grid.Column="1" Grid.ColumnSpan="2"  Background="LightSteelBlue">
 
         </ListBox>
+        <Button Height="30" Width="50" VerticalAlignment="Bottom" Grid.Column="1" Margin="80 0 0 30" HorizontalAlignment="Left" Background="Pink" Click="Button_ClickGive">Show
+
+        </Button>
     </Grid>
 </Page>

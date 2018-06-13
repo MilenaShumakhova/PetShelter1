@@ -32,15 +32,24 @@ namespace Team
             context = cont;
             InitializeComponent();
             rep.RestoreRequests();
-           FromMe.ItemsSource =rep.ToReturnListWithRequestsFromMe(ThisUser);
+            FromMe.ItemsSource =rep.ToReturnListWithRequestsFromMe(ThisUser);
+           
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            GiveRequestShow giveRequest = new GiveRequestShow();
-            giveRequest.Show();
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    GiveRequestShow giveRequest = new GiveRequestShow(ThisUser,rep,context);
+        //    giveRequest.Show();
+            
+           
+        //}
 
+        private void Button_ClickGive(object sender, RoutedEventArgs e)
+        {
+            GetterRequests giveRequests = FromMe.SelectedItem as GetterRequests;
+            GiveRequestShow giveRequest = new GiveRequestShow(ThisUser, rep, context, giveRequests);
+            giveRequest.Show();
         }
     }
 }
