@@ -45,12 +45,12 @@ namespace PetShelterClasses
             {
                 Pets = (from p in context.Pets
                         select p).ToList();
-                
+
             }
             catch
             {
                 Pets = new List<Pet>();
-                
+
             }
 
         }
@@ -74,7 +74,7 @@ namespace PetShelterClasses
         {
             List<Pet> FirstPets;
             List<Pet> SecondPents = new List<Pet>();
-            FirstPets= context.Pets.Include(p => p.Users).ToList();
+            FirstPets = context.Pets.Include(p => p.Users).ToList();
             for (int i = 0; i < FirstPets.Count; i++)
             {
                 if (FirstPets[i].Users.Count != 0)
@@ -131,15 +131,15 @@ namespace PetShelterClasses
 
         public void ToCreateUsersPet(Pet pet, string description, User us, DateTime? sd, DateTime? ed, double p)
         {
-            
+
             UsersPets uspet = new UsersPets()
             {
                 Pet = pet,
                 Description = description,
                 User = us,
-                Payment=p,
-                Start=sd,
-                End=ed,
+                Payment = p,
+                Start = sd,
+                End = ed,
             };
             if (us.MyPets == null)
             {
@@ -178,14 +178,14 @@ namespace PetShelterClasses
             context.SaveChanges();
         }
 
-        public List<User> ToCreateUsersList(Pet pet, string description,DateTime? sd, DateTime? ed, double p,User user)//(User user,Pet pet, string description,double p)
+        public List<User> ToCreateUsersList(Pet pet, string description, DateTime? sd, DateTime? ed, double p, User user)//(User user,Pet pet, string description,double p)
         {
-            
+
             List<User> Us = new List<User>();
             List<User> NeedableUs = new List<User>();
             DateTime s = (DateTime)sd;
             DateTime end = (DateTime)ed;
-            Us.AddRange(context.Users.Where(us => us.ID != user.ID && us.City == user.City && s.CompareTo((DateTime)us.StartGetter) >= 0 && end.CompareTo((DateTime)us.EndGetter) <= 0 && us.PaymentGetter <=p));
+            Us.AddRange(context.Users.Where(us => us.ID != user.ID && us.City == user.City && s.CompareTo((DateTime)us.StartGetter) >= 0 && end.CompareTo((DateTime)us.EndGetter) <= 0 && us.PaymentGetter <= p));
             foreach (var us in Us)
             {
 
@@ -205,7 +205,7 @@ namespace PetShelterClasses
             return NeedableUs;
         }
 
-        public void ChangeMainInformation(User user,string name, string email,string city,string phone,string address,string password)
+        public void ChangeMainInformation(User user, string name, string email, string city, string phone, string address, string password)
         {
             user.NameSurname = name;
             user.Email = email;
@@ -216,14 +216,14 @@ namespace PetShelterClasses
             context.SaveChanges();
         }
 
-        public void ToAddRequest(User user,User ThisUser,Pet pet, string description,DateTime? sd, DateTime? ed)
+        public void ToAddRequest(User user, User ThisUser, Pet pet, string description, DateTime? sd, DateTime? ed)
         {
-            UsersPets needpet = context.UsersPets.FirstOrDefault(p => p.User.ID == ThisUser.ID && p.Description == description && p.Pet.ID == pet.ID&&p.Start==sd&&p.End==ed);
+            UsersPets needpet = context.UsersPets.FirstOrDefault(p => p.User.ID == ThisUser.ID && p.Description == description && p.Pet.ID == pet.ID && p.Start == sd && p.End == ed);
             GetterRequests g = new GetterRequests()
             {
                 Request = needpet,
                 User = user,
-                
+
             };
             if (user.GetterRequests == null)
             {
@@ -268,8 +268,20 @@ namespace PetShelterClasses
                 context.SaveChanges();
             }
             RestoreRequests();
-        
+
+        }
+        public List<GetterRequests> ToGetRequestsToMe(User user)
+        {
+            if (user.GetterRequests != null)
+            {
+              return   user.GetterRequests.FindAll(g => g.User.ID == user.ID);
+            }
+            else
+            {
+                List<GetterRequests> requests = new List<GetterRequests>();
+                return requests;
             }
         }
-    }    
+    }
+}   
 
