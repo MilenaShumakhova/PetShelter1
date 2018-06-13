@@ -70,35 +70,37 @@ namespace PetShelterClasses
             }
 
         }
-        public void RestoreExpectedPets(User Us) ///1
+        public void RestoreExpectedPets(User Us)
         {
-            List<Pet> FirstPets;
-            List<Pet> SecondPents = new List<Pet>();
-            FirstPets = context.Pets.Include(p => p.Users).ToList();
-            for (int i = 0; i < FirstPets.Count; i++)
+            try
             {
-                if (FirstPets[i].Users.Count != 0)
-                    SecondPents.Add(FirstPets[i]);
-            }
-            Us.ExpectedPets = new List<Pet>();
-            foreach (var pp in SecondPents)
-            {
-                foreach (var usp in pp.Users)
+
+
+                List<Pet> FirstPets;
+                List<Pet> SecondPents = new List<Pet>();
+                FirstPets = context.Pets.Include(p => p.Users).ToList();
+                for (int i = 0; i < FirstPets.Count; i++)
                 {
-                    if (usp.ID == Us.ID)
+                    if (FirstPets[i].Users.Count != 0)
+                        SecondPents.Add(FirstPets[i]);
+                }
+                Us.ExpectedPets = new List<Pet>();
+                foreach (var pp in SecondPents)
+                {
+                    foreach (var usp in pp.Users)
                     {
-                        Us.ExpectedPets.Add(pp);
+                        if (usp.ID == Us.ID)
+                        {
+                            Us.ExpectedPets.Add(pp);
+                        }
                     }
                 }
             }
+            catch
+            {
+                Us.ExpectedPets = new List<Pet>();
 
-
-            //}
-            //catch
-            //{
-            //    ExpectedPets = new List<Pet>();
-
-            //}
+            }
         }
 
 
@@ -116,7 +118,7 @@ namespace PetShelterClasses
             return u;
         }
 
-        public void ToRegistrate(User us)  ///1
+        public void ToRegistrate(User us)  
         {
             context.Users.Add(us);
             context.SaveChanges();
@@ -224,6 +226,7 @@ namespace PetShelterClasses
                 Request = needpet,
                 User = user,
                 StatusGiver= "Your request has been sent. Expect an answer!",
+                StatusGetter="This is a new request"
 
             };
             if (user.GetterRequests == null)
@@ -240,7 +243,7 @@ namespace PetShelterClasses
                 context.SaveChanges();
             }
         }
-        public List<GetterRequests> ToReturnListWithRequestsFromMe(User ThisUser)
+        public List<GetterRequests> ToReturnListWithRequestsFromMe(User ThisUser) //делегат2
         {
             RestoreRequests();
             List<GetterRequests> getterRequests = new List<GetterRequests>();
@@ -271,7 +274,7 @@ namespace PetShelterClasses
             RestoreRequests();
 
         }
-        public List<GetterRequests> ToGetRequestsToMe(User user)
+        public List<GetterRequests> ToGetRequestsToMe(User user)  //делегат2
         {
             if (user.GetterRequests != null)
             {
@@ -284,19 +287,20 @@ namespace PetShelterClasses
             }
         }
 
-        public void ChangeStatusToAccept(GetterRequests g)
+        public void ChangeStatusToAccept(GetterRequests g) //делегат
         {
             GetterRequests gr = context.GetterRequests.FirstOrDefault(gg => gg.ID == g.ID);
             gr.StatusGiver = "Your request has been accepted!";
-            gr.StatusGiver = "You made a request. The customer will contact you soon";
+            gr.StatusGetter = "You made a request. The customer will contact you soon";
             context.SaveChanges();
         }
-        public void ChangeStatusToDecline(GetterRequests g)
+        public void ChangeStatusToDecline(GetterRequests g) //делегат
         {
             GetterRequests gr = context.GetterRequests.FirstOrDefault(gg => gg.ID == g.ID);
             gr.StatusGiver = "Your request was rejected";
             context.SaveChanges();
         }
+
     }
    
 }   

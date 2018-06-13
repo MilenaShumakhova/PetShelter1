@@ -22,12 +22,15 @@ namespace Team
     /// </summary>
     public partial class Page4 : Page
     {
+        delegate void UsersStatuses(User user);
+        UsersStatuses us;
         User ThisUser;
         RepositoryDB rep;
         Context context;
-        public Page4(User us, RepositoryDB repo, Context cont)
+        public Page4(User user, RepositoryDB repo, Context cont)
         {
-            ThisUser = us;
+           
+            ThisUser = user;
             rep = repo;
             context = cont;
             InitializeComponent();
@@ -65,13 +68,13 @@ namespace Team
         private void Button_ClickAccept(object sender, RoutedEventArgs e)
         {
             GetterRequests g = ToMe.SelectedItem as GetterRequests;
-            rep.ChangeStatusToAccept(g); //делегаты!
+            rep.ChangeStatusToAccept(g);
         }
 
         private void Button_ClickDecline(object sender, RoutedEventArgs e)
         {
             GetterRequests g = ToMe.SelectedItem as GetterRequests;
-            rep.ChangeStatusToDecline(g); // делегаты!
+            rep.ChangeStatusToDecline(g); 
             var RequestsToMe = rep.ToGetRequestsToMe(ThisUser);
             ToMe.ItemsSource = RequestsToMe;
 
