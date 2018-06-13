@@ -56,5 +56,15 @@ namespace Team
 
            
         }
+
+        private void Button_ClickAccept(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_ClickDecline(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
