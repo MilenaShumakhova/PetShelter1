@@ -18,7 +18,7 @@
 
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Vertical" Width="230" VerticalAlignment="Center"  Grid.ColumnSpan="2"   Grid.Column="0">
-                <ListBox Name="ExpectedPets" DisplayMemberPath="Type" SelectionMode="Multiple" Height="150" ScrollViewer.VerticalScrollBarVisibility="Visible">
+                <ListBox Name="ExpectedPets"  DisplayMemberPath="Type" SelectionMode="Multiple" Height="150" ScrollViewer.VerticalScrollBarVisibility="Visible">
                 </ListBox>
 
                 <TextBlock HorizontalAlignment="Center" Margin="0 10 0 0">From:

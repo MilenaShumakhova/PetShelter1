@@ -69,6 +69,7 @@ namespace Team
         {
             GetterRequests g = ToMe.SelectedItem as GetterRequests;
             rep.ChangeStatusToAccept(g);
+            MessageBox.Show("You accepted this request");
         }
 
         private void Button_ClickDecline(object sender, RoutedEventArgs e)

@@ -32,6 +32,7 @@ namespace Team
             context = cont;
             InitializeComponent();
             ChoosePet.ItemsSource = repo.Pets;
+            
           
             
         }
