@@ -32,8 +32,9 @@ namespace Team
             context = cont;
             InitializeComponent();
             rep.RestoreRequests();
-            FromMe.ItemsSource =rep.ToReturnListWithRequestsFromMe(ThisUser);
-           
+            FromMe.ItemsSource=rep.ToReturnListWithRequestsFromMe(ThisUser);
+            
+         
 
         }
 
@@ -50,6 +51,8 @@ namespace Team
             GetterRequests giveRequests = FromMe.SelectedItem as GetterRequests;
             GiveRequestShow giveRequest = new GiveRequestShow(ThisUser, rep, context, giveRequests);
             giveRequest.Show();
+            MyProfile m = new MyProfile(ThisUser,rep,context);
+            m.Close();
         }
     }
 }

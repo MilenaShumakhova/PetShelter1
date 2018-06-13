@@ -246,5 +246,30 @@ namespace PetShelterClasses
             getterRequests = GetterRequests.FindAll(g => g.Request.User.ID == ThisUser.ID);
             return getterRequests;
         }
+        public void RemoveGetterRequest(GetterRequests requests)
+        {
+            List<GetterRequests> getters = new List<GetterRequests>();
+            foreach (var g in GetterRequests)
+            {
+                if (g.Request.ID == requests.Request.ID)
+                {
+                    getters.Add(g);
+                }
+            }
+            if (getters.Count == 1)
+            {
+                context.UsersPets.Remove(requests.Request);
+                context.GetterRequests.Remove(requests);
+                context.SaveChanges();
+            }
+            else
+            {
+                context.GetterRequests.Remove(requests);
+                context.SaveChanges();
+            }
+            RestoreRequests();
+        
+            }
+        }
     }    
-}
+

@@ -25,7 +25,7 @@ namespace Team
         RepositoryDB rep;
         Context context;
         GetterRequests giverRequests;
-        public GiveRequestShow(User us, RepositoryDB repo, Context cont,GetterRequests giver )
+        public GiveRequestShow(User us, RepositoryDB repo, Context cont,GetterRequests giver)
         {
             InitializeComponent();
             ThisUser = us;
@@ -47,6 +47,10 @@ namespace Team
 
         private void Button_ClickDelete(object sender, RoutedEventArgs e)
         {
+
+            rep.RemoveGetterRequest(giverRequests);
+            this.Close();
+            
 
         }
 
