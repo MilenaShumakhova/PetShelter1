@@ -6,7 +6,7 @@
           xmlns:sys="clr-namespace:System;assembly=mscorlib"
       xmlns:local="clr-namespace:Team"
       mc:Ignorable="d"  
-      d:DesignHeight="450" d:DesignWidth="800" Background="White"
+      d:DesignHeight="450" d:DesignWidth="800" Background="White" 
    
       Title="Page2">
      

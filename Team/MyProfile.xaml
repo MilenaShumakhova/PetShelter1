@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:Team"
         mc:Ignorable="d"
         Icon="/Images/footprint.png"
-        Title="MyProfile" Height="500" Width="640" WindowStartupLocation="CenterScreen">
+        Title="MyProfile" Height="500" Width="640" WindowStartupLocation="CenterScreen" MinWidth="450" MinHeight="450">
     <Window.Resources>
         <Storyboard x:Key="OpenMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="rectangle">
