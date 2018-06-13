@@ -66,6 +66,7 @@ namespace Team
         {
             GetterRequests g = ToMe.SelectedItem as GetterRequests;
             rep.ChangeStatusToAccept(g); //делегаты!
+            MessageBox.Show("You accepted this request");
         }
 
         private void Button_ClickDecline(object sender, RoutedEventArgs e)
@@ -74,6 +75,7 @@ namespace Team
             rep.ChangeStatusToDecline(g); // делегаты!
             var RequestsToMe = rep.ToGetRequestsToMe(ThisUser);
             ToMe.ItemsSource = RequestsToMe;
+            MessageBox.Show("You declined this request");
 
         }
     }

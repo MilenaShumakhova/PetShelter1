@@ -288,7 +288,7 @@ namespace PetShelterClasses
         {
             GetterRequests gr = context.GetterRequests.FirstOrDefault(gg => gg.ID == g.ID);
             gr.StatusGiver = "Your request has been accepted!";
-            gr.StatusGiver = "You made a request. The customer will contact you soon";
+            gr.StatusGetter = "You made a request. The customer will contact you soon";
             context.SaveChanges();
         }
         public void ChangeStatusToDecline(GetterRequests g)

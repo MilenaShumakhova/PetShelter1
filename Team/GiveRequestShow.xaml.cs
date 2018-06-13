@@ -41,6 +41,8 @@ namespace Team
             textBoxEmail.Text = giverRequests.User.Email;
             textBoxFrom.Text = giverRequests.Request.Start.ToString();
             textBoxTo.Text = giverRequests.Request.End.ToString();
+            textBoxStatus.Text = giverRequests.StatusGiver;
+            
             
 
         }
