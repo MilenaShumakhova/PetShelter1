@@ -31,6 +31,7 @@ namespace PetShelterClasses
         List<GetterRequests> ToGetRequestsToMe(User user);
         void ChangeStatusToAccept(GetterRequests g);
         void ChangeStatusToDecline(GetterRequests g);
+        void AddGrade(double d, User user, GetterRequests g);
 
     }
 }

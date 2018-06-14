@@ -36,9 +36,9 @@ namespace PetShelterClasses.Migrations
             var PetSn = new Pet { Type = "Snail" };
             var PetSna = new Pet { Type = "Snake" };
 
-            
-            context.Pets.AddOrUpdate(p => p.Type, PetBd, PetCt, PetCh,PetCk,PetDg,PetFerret,PetFish,PetPig,PetHm,PetHd,PetHo,PetIn,PetMs,PetRabbit,PetSn,PetSna);
-         
+
+            context.Pets.AddOrUpdate(p => p.Type, PetBd, PetCt, PetCh, PetCk, PetDg, PetFerret, PetFish, PetPig, PetHm, PetHd, PetHo, PetIn, PetMs, PetRabbit, PetSn, PetSna);
+
             context.SaveChanges();
         }
     }

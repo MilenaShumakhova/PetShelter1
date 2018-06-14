@@ -42,14 +42,25 @@ namespace Team
             textBoxFrom.Text = giverRequests.Request.Start.ToString();
             textBoxTo.Text = giverRequests.Request.End.ToString();
             textBoxStatus.Text = giverRequests.StatusGiver;
-            
-            
-
         }
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if(TextBlock.Text!="")
+            {
+                double v= Slider1.Value;
+                Mark oldmark = context.Marks.FirstOrDefault(m => m.RatedUser.ID == giverRequests.User.ID && m.Request.ID == giverRequests.ID);
+                if (oldmark != null)
+                {
+                    MessageBox.Show("You can not rate a user more than once!");
+                }
+                else
+                {
+                    rep.AddGrade(v, giverRequests.User, giverRequests);
+                }
+               
+            }
             this.Close();
         }
 
@@ -57,7 +68,7 @@ namespace Team
         {
             int val = Convert.ToInt32(e.NewValue);
             string msg = String.Format(" {0}", val);
-            this.textBlock1.Text = msg;
+            this.TextBlock.Text = msg;
         }
     }
 }

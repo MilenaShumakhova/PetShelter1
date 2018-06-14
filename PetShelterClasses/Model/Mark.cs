@@ -9,8 +9,9 @@ namespace PetShelterClasses.Model
     public class Mark
     {
         public int ID { get; set; }
-        public int Grade { get; set; }
+        public double Grade { get; set; }
         public User RatedUser { get; set; }
-
+        public GetterRequests Request { get; set; }
+       
     }
 }

@@ -43,7 +43,7 @@
             <TextBox Name="textBoxStatus" Background="LightSteelBlue"  ></TextBox>
             <TextBlock HorizontalAlignment="Center" FontSize="10"> Estimate a getter</TextBlock>
             <StackPanel Orientation="Horizontal">
-                <TextBox Name="textBlock1" FontSize="12"  Margin="10 0 0 0" Width="30" BorderBrush="White" Height="25"></TextBox>
+                <TextBox Name="TextBlock" FontSize="12"  Margin="10 0 0 0" Width="30" BorderBrush="White" Height="25"></TextBox>
                 <Slider x:Name="Slider1" Margin="3 2 0 0" Minimum="0" Maximum="5" Width="150" ValueChanged="Slider1_ValueChanged" IsSnapToTickEnabled="True"></Slider>
             </StackPanel>
           

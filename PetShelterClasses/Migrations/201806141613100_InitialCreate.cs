@@ -12,6 +12,8 @@ namespace PetShelterClasses.Migrations
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
+                        StatusGiver = c.String(),
+                        StatusGetter = c.String(),
                         User_ID = c.Int(),
                         Request_ID = c.Int(),
                     })
@@ -66,6 +68,21 @@ namespace PetShelterClasses.Migrations
                 .PrimaryKey(t => t.ID);
             
             CreateTable(
+                "dbo.Marks",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Grade = c.Double(nullable: false),
+                        RatedUser_ID = c.Int(),
+                        Request_ID = c.Int(),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Users", t => t.RatedUser_ID)
+                .ForeignKey("dbo.GetterRequests", t => t.Request_ID)
+                .Index(t => t.RatedUser_ID)
+                .Index(t => t.Request_ID);
+            
+            CreateTable(
                 "dbo.ExpectedPets",
                 c => new
                     {
@@ -85,16 +102,21 @@ namespace PetShelterClasses.Migrations
             DropForeignKey("dbo.GetterRequests", "Request_ID", "dbo.UsersPets");
             DropForeignKey("dbo.UsersPets", "Pet_ID", "dbo.Pets");
             DropForeignKey("dbo.UsersPets", "User_ID", "dbo.Users");
+            DropForeignKey("dbo.Marks", "Request_ID", "dbo.GetterRequests");
+            DropForeignKey("dbo.Marks", "RatedUser_ID", "dbo.Users");
             DropForeignKey("dbo.GetterRequests", "User_ID", "dbo.Users");
             DropForeignKey("dbo.ExpectedPets", "PetId", "dbo.Pets");
             DropForeignKey("dbo.ExpectedPets", "UserId", "dbo.Users");
             DropIndex("dbo.ExpectedPets", new[] { "PetId" });
             DropIndex("dbo.ExpectedPets", new[] { "UserId" });
+            DropIndex("dbo.Marks", new[] { "Request_ID" });
+            DropIndex("dbo.Marks", new[] { "RatedUser_ID" });
             DropIndex("dbo.UsersPets", new[] { "Pet_ID" });
             DropIndex("dbo.UsersPets", new[] { "User_ID" });
             DropIndex("dbo.GetterRequests", new[] { "Request_ID" });
             DropIndex("dbo.GetterRequests", new[] { "User_ID" });
             DropTable("dbo.ExpectedPets");
+            DropTable("dbo.Marks");
             DropTable("dbo.Users");
             DropTable("dbo.Pets");
             DropTable("dbo.UsersPets");

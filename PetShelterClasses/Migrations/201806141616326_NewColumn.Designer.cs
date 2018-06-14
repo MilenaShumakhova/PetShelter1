@@ -7,13 +7,13 @@ namespace PetShelterClasses.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class SecondNeColumn : IMigrationMetadata
+    public sealed partial class NewColumn : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(SecondNeColumn));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(NewColumn));
         
         string IMigrationMetadata.Id
         {
-            get { return "201806132059082_SecondNeColumn"; }
+            get { return "201806141616326_NewColumn"; }
         }
         
         string IMigrationMetadata.Source

@@ -259,12 +259,22 @@ namespace PetShelterClasses
             }
             if (getters.Count == 1)
             {
+                Mark mark=context.Marks.FirstOrDefault(m => m.Request.ID == requests.ID);
+                if (mark != null)
+                {
+                    mark.Request = null;
+                }
                 context.UsersPets.Remove(requests.Request);
                 context.GetterRequests.Remove(requests);
                 context.SaveChanges();
             }
             else
             {
+                Mark mark = context.Marks.FirstOrDefault(m => m.Request.ID == requests.ID);
+                if (mark != null)
+                {
+                    mark.Request = null;
+                }
                 context.GetterRequests.Remove(requests);
                 context.SaveChanges();
             }
@@ -298,6 +308,26 @@ namespace PetShelterClasses
             context.SaveChanges();
         }
 
+        public void AddGrade(double v, User user, GetterRequests g)
+        {
+            Mark usermark = new Mark()
+            {
+                RatedUser =user,
+                Grade = v,
+                Request=g,
+            };
+            context.Marks.Add(usermark);
+            context.SaveChanges();
+            List<Mark> marks = (context.Marks.Where(m => m.RatedUser.ID == user.ID)).ToList();
+            double sum = 0;
+            for (int i = 0; i < marks.Count; i++)
+            {
+                sum += marks[i].Grade;
+            }
+            double r = sum / marks.Count;
+            user.Rating = r;
+            context.SaveChanges();
+        }
     }
    
 }   

@@ -3,16 +3,16 @@ namespace PetShelterClasses.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class RemoveColumn : DbMigration
+    public partial class NewColumn : DbMigration
     {
         public override void Up()
         {
-            DropColumn("dbo.GetterRequests", "Type");
+            AddColumn("dbo.Marks", "Rating", c => c.Double(nullable: false));
         }
         
         public override void Down()
         {
-            AddColumn("dbo.GetterRequests", "Type", c => c.String());
+            DropColumn("dbo.Marks", "Rating");
         }
     }
 }
