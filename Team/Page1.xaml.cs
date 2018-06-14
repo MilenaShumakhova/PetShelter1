@@ -89,7 +89,7 @@ namespace Team
             User user = listbox_NeedableUsers.SelectedItem as User;
             if(pet==null&&sd==null&&ed==null)
             {
-                MessageBox.Show("Please, enter the main infortion about your pet!!");
+                MessageBox.Show("Please, enter the main infortion about your pet!");
             }
             else
             {
