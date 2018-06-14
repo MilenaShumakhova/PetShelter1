@@ -50,7 +50,7 @@ namespace Team
             if(TextBlock.Text!="")
             {
                 double v= Slider1.Value;
-                Mark oldmark = context.Marks.FirstOrDefault(m => m.RatedUser.ID == giverRequests.User.ID && m.Request.ID == giverRequests.ID);
+                Mark oldmark = context.Marks.FirstOrDefault(m => m.RatedUser.ID == giverRequests.User.ID && m.IRequest.ID == giverRequests.ID);
                 if (oldmark != null)
                 {
                     MessageBox.Show("You can not rate a user more than once!");
