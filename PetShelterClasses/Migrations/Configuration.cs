@@ -1,5 +1,6 @@
 namespace PetShelterClasses.Migrations
 {
+    using PetShelterClasses.Model;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -18,6 +19,9 @@ namespace PetShelterClasses.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+            Pet PetCt = new Pet { Type = "Cat" };
+            Pet PetDg = new Pet { Type = "Dog" };
+            context.Pets.AddOrUpdate(p => p.Type, PetCt, PetDg);
         }
     }
 }
