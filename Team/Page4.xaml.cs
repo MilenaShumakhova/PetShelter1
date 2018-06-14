@@ -45,44 +45,84 @@ namespace Team
 
         private void Button_ClickGive(object sender, RoutedEventArgs e)
         {
-            GetterRequests giveRequests = FromMe.SelectedItem as GetterRequests;
-            GiveRequestShow giveRequest = new GiveRequestShow(ThisUser, rep, context, giveRequests);
-            giveRequest.Show();
+            if(FromMe.SelectedItem!=null)
+            {
+                GetterRequests giveRequests = FromMe.SelectedItem as GetterRequests;
+                GiveRequestShow giveRequest = new GiveRequestShow(ThisUser, rep, context, giveRequests);
+                giveRequest.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please, select a request","Oops", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
            
         }
 
         private void Button_ClickGet(object sender, RoutedEventArgs e)
         {
-            GetterRequests getterRequests = ToMe.SelectedItem as GetterRequests;
-            GetterRequestShow getterRequest = new GetterRequestShow(ThisUser, rep, context,getterRequests);
-            getterRequest.Show();
+            if(ToMe.SelectedItem!=null)
+            {
+                GetterRequests getterRequests = ToMe.SelectedItem as GetterRequests;
+                GetterRequestShow getterRequest = new GetterRequestShow(ThisUser, rep, context, getterRequests);
+                getterRequest.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please, select a request", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+           
         }
 
         private void Button_ClickDelete(object sender, RoutedEventArgs e)
         {
-            GetterRequests request = FromMe.SelectedItem as GetterRequests;
-            rep.ChangeStatusToAccept(request);
-            FromMe.ItemsSource = rep.ToReturnListWithRequestsFromMe(ThisUser);
+            if(FromMe.SelectedItem!=null)
+            {
+                GetterRequests request = FromMe.SelectedItem as GetterRequests;
+                rep.ChangeStatusToAccept(request);
+                FromMe.ItemsSource = rep.ToReturnListWithRequestsFromMe(ThisUser);
+            }
+            else
+            {
+                MessageBox.Show("Please, select a request", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+    
 
 
         }
 
         private void Button_ClickAccept(object sender, RoutedEventArgs e)
         {
-            GetterRequests g = ToMe.SelectedItem as GetterRequests;
-            us=rep.ChangeStatusToAccept;
-            us.Invoke(g);
-            MessageBox.Show("You accepted this request");
+            if (ToMe.SelectedItem!=null)
+            {
+                GetterRequests g = ToMe.SelectedItem as GetterRequests;
+                us = rep.ChangeStatusToAccept;
+                us.Invoke(g);
+                MessageBox.Show("You accepted this request");
+            }
+
+            else
+            {
+                MessageBox.Show("Please, select a request", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void Button_ClickDecline(object sender, RoutedEventArgs e)
         {
-            GetterRequests g = ToMe.SelectedItem as GetterRequests;
-            us=rep.ChangeStatusToDecline;
-            us.Invoke(g);
-            var RequestsToMe = rep.ToGetRequestsToMe(ThisUser);
-            ToMe.ItemsSource = RequestsToMe;
-            MessageBox.Show("You declined this request");
+            if(ToMe.SelectedItem!=null)
+            {
+                GetterRequests g = ToMe.SelectedItem as GetterRequests;
+                us = rep.ChangeStatusToDecline;
+                us.Invoke(g);
+                var RequestsToMe = rep.ToGetRequestsToMe(ThisUser);
+                ToMe.ItemsSource = RequestsToMe;
+                MessageBox.Show("You declined this request");
+            }
+            else
+            {
+                MessageBox.Show("Please, select a request", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+           
 
         }
     }
