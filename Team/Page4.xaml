@@ -14,21 +14,40 @@
     </Page.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
+           
             <ColumnDefinition/>
 
 
         </Grid.ColumnDefinitions>
-        <TextBlock FontSize="20" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Margin="30 30 0 0" HorizontalAlignment="Left" > Giver's requests
+        <StackPanel Orientation="Vertical">
+            <!--<StackPanel Orientation="Horizontal" Margin="20">
+                <TextBlock FontSize="20" Grid.Column="1" Grid.ColumnSpan="2" Margin="210 0 0 0"  HorizontalAlignment="Center" > FromYou
 
-        </TextBlock>
+                </TextBlock>
+                <TextBlock FontSize="20" Grid.Column="1" Grid.ColumnSpan="2" Margin="130 0  0 0" HorizontalAlignment="Center"  > ToYou
+                </TextBlock>
 
-        <ListBox Name="FromMe"   ItemsSource="{Binding Source={StaticResource Requests}}"  HorizontalAlignment="Left" Width="200" Height="300" Grid.Column="1" Grid.ColumnSpan="2"  Background="LightSteelBlue">
-            <ListBox.ItemTemplate >
-                <DataTemplate>
-              
-                        <Grid>
-                         
+            </StackPanel>-->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <ListBox Name="FromMe"  ItemsSource="{Binding Source={StaticResource Requests}}"  HorizontalAlignment="Left" Width="200" Height="300" Grid.Column="1" Grid.ColumnSpan="2"  Background="LightSteelBlue">
+                    <ListBox.ItemTemplate >
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0"  Text="{Binding Path=Request.Pet.Type}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+                <ListBox Name="ToMe" ItemsSource="{Binding Source={StaticResource Requests}}" HorizontalAlignment="Right" Width="200" Height="300" Margin="10"  Grid.Column="1" Grid.ColumnSpan="2"  Background="LightSteelBlue" >
+                    <ListBox.ItemTemplate >
+                        <DataTemplate>
+
+                            <Grid>
+
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
                                     <RowDefinition/>
@@ -39,57 +58,31 @@
                                     <ColumnDefinition />
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Row="0"  Text="{Binding Path=Request.Pet.Type}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </StackPanel>
 
-                            
-                            <TextBlock Grid.Row="0"  Text="{Binding Path=Request.Pet.Type}"/>
-                            <!--<Button Name="ShowMeRequest"  Background="Pink" Grid.Column="2"  Width="70" Height="20" Click="Button_Click"  >Show</Button>-->
-                        </Grid>
-                       
-              
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        <TextBlock FontSize="20" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Margin="0 30 30 0" HorizontalAlignment="Right"  > Getter's requests
-        </TextBlock>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 200 0" >
 
-        <ListBox Name="ToMe" ItemsSource="{Binding Source={StaticResource Requests}}" HorizontalAlignment="Right" Width="200" Height="300" Margin="10"  Grid.Column="1" Grid.ColumnSpan="2"  Background="LightSteelBlue" >
-            <ListBox.ItemTemplate >
-                <DataTemplate>
+            <Button Height="30" Width="50" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Left" Background="Pink" Click="Button_ClickGive">Show
+            </Button>
+            <Button Height="30" Width="50" VerticalAlignment="Bottom"  Grid.Column="1"   Background="Pink" Click="Button_ClickDelete">Delete
+            </Button>
 
-                    <Grid>
-
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 230 0">
+            <Button Name="ToMeButton" Height="30" Width="50" VerticalAlignment="Bottom"  Grid.Column="1"   Background="Pink" Click="Button_ClickGet">Show
+            </Button>
+            <Button Height="30" Width="50" Background="Pink" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="Button_ClickAccept" >Accept</Button>
+            <Button Height="30" Width="50" Background="Pink" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right"  Click="Button_ClickDecline" >Decline</Button>
 
 
-                        <TextBlock Grid.Row="0"  Text="{Binding Path=Request.Pet.Type}"/>
-                        <!--<Button Name="ShowMeRequest"  Background="Pink" Grid.Column="2"  Width="70" Height="20" Click="Button_Click"  >Show</Button>-->
-                    </Grid>
-
-
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-   
-        <Button Height="30" Width="50" VerticalAlignment="Bottom" Grid.Column="1" Margin="70,0,0,30" HorizontalAlignment="Left" Background="Pink" Click="Button_ClickGive">Show
-
-        </Button>
-        <Button Name="ToMeButton" Height="30" Width="50" VerticalAlignment="Bottom" Margin="400 0 0 30" Grid.Column="1"   Background="Pink" Click="Button_ClickGet">Show
-
-        </Button>
-        <Button Height="30" Width="50" Background="Pink" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="00 0 10 30" Click="Button_ClickAccept" >Accept</Button>
-        <Button Height="30" Width="50" Background="Pink" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="00 0 150 30" Click="Button_ClickDecline" >Decline</Button>
-        <Button Height="30" Width="50" VerticalAlignment="Bottom" Margin="0 0 250 30" Grid.Column="1"   Background="Pink" Click="Button_ClickDelete">Delete
-
-        </Button>
+        </StackPanel>
+       
 
     </Grid>
 </Page>

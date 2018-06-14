@@ -15,13 +15,13 @@
     </Page.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150"/>
+          
             <ColumnDefinition/> 
-            <ColumnDefinition/>
+           
 
 
         </Grid.ColumnDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.ColumnSpan="2" Margin="120 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel>
                 <ComboBox Name="ChoosePet"  IsEditable="True" Height="35" IsReadOnly="True" HorizontalContentAlignment="Center" DisplayMemberPath="Type" Text="Choose a pet" >
 
@@ -77,13 +77,13 @@
                 <!--<ListBox Name="NeedableUsers" Height="250" Width="200" Margin="10"   Background="MediumSeaGreen" DisplayMemberPath="NameSurname"  >
 
                 </ListBox>-->
-                <StackPanel Orientation="Vertical">
-                    <ListBox Name="NeedableUsers" Width="200" Grid.Column="1" Height="300" Margin="30 65 0 0" HorizontalAlignment="Stretch" Background="AntiqueWhite"
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0 0 10 0">
+                    <ListBox Name="NeedableUsers" Width="200" Grid.Column="1" Height="320" Margin="30 50 0 0"  HorizontalAlignment="Center" VerticalAlignment="Center" Background="LightSteelBlue"
                          ItemsSource="{Binding Source={StaticResource PetGetters}}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
 
-                                <Border Name="border" BorderBrush="Black" Width="150" BorderThickness="1" Padding="5" Margin="5" >
+                                <Border Name="border" BorderBrush="Black" Width="150" BorderThickness="1" HorizontalAlignment="Stretch" Padding="5" Margin="5" >
                                     <Grid>
                                         <Grid.RowDefinitions>
                                             <RowDefinition/>
@@ -114,7 +114,7 @@
                         </ListBox.ItemTemplate>
 
                     </ListBox>
-                    <Button Height="20"  Background="MediumSeaGreen" Width="50" Margin="20 20 0 0 " Click="Button_Click_Choose">Choose</Button>
+                    <Button Height="20"  Background="MediumSeaGreen" Width="50" Margin="20 15 0 0 " Click="Button_Click_Choose">Choose</Button>
                 </StackPanel>
                 
             </StackPanel>
