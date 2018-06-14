@@ -14,6 +14,7 @@ namespace PetShelterClasses
         public DbSet<Pet> Pets { get; set; }
         public DbSet<UsersPets> UsersPets { get; set; }
         public DbSet<GetterRequests> GetterRequests { get; set; }
+        public DbSet<Mark> Marks { get; set; }
 
         public Context() : base("PetShelterSecond")
         {

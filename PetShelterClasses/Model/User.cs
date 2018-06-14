@@ -25,6 +25,7 @@ namespace PetShelterClasses
         public DateTime? StartGetter { get; set; }
         public DateTime? EndGetter { get; set; }
         public List<GetterRequests> GetterRequests { get; set; }
+        public List<Mark> Grades { get; set; }
 
 
         public string GetHash(string password)

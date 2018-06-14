@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="IRepositoryInterface.cs" />
     <Compile Include="Migrations\201806121532436_InitialCreate.cs" />
     <Compile Include="Migrations\201806121532436_InitialCreate.Designer.cs">
@@ -76,8 +77,13 @@
     <Compile Include="Migrations\201806132059082_SecondNeColumn.Designer.cs">
       <DependentUpon>201806132059082_SecondNeColumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806141303082_NewTableForMarks.cs" />
+    <Compile Include="Migrations\201806141303082_NewTableForMarks.Designer.cs">
+      <DependentUpon>201806141303082_NewTableForMarks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\GetterRequests.cs" />
+    <Compile Include="Model\Mark.cs" />
     <Compile Include="Model\Pet.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\UsersPets.cs" />
@@ -106,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806132059082_SecondNeColumn.resx">
       <DependentUpon>201806132059082_SecondNeColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806141303082_NewTableForMarks.resx">
+      <DependentUpon>201806141303082_NewTableForMarks.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

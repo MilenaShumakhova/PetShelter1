@@ -74,8 +74,6 @@ namespace PetShelterClasses
         {
             try
             {
-
-
                 List<Pet> FirstPets;
                 List<Pet> SecondPents = new List<Pet>();
                 FirstPets = context.Pets.Include(p => p.Users).ToList();
@@ -124,12 +122,11 @@ namespace PetShelterClasses
             context.SaveChanges();
         }
 
-        public bool ToCompare(string email)  
-        {
-
-            bool m = Users.All(us => us.Email != email);
-            return m;
-        }
+        //public bool ToCompare(string email)    
+        //{
+        //    bool m = Users.All(us => us.Email != email);
+        //    return m;
+        //}
 
         public void ToCreateUsersPet(Pet pet, string description, User us, DateTime? sd, DateTime? ed, double p)
         {
@@ -225,8 +222,8 @@ namespace PetShelterClasses
             {
                 Request = needpet,
                 User = user,
-                StatusGiver= "Your request has been sent. Expect an answer!",
-                StatusGetter="This is a new request"
+                StatusGiver= "Waiting answer!",
+                StatusGetter="This is a new request!"
 
             };
             if (user.GetterRequests == null)
@@ -243,7 +240,7 @@ namespace PetShelterClasses
                 context.SaveChanges();
             }
         }
-        public List<GetterRequests> ToReturnListWithRequestsFromMe(User ThisUser) //делегат2
+        public List<GetterRequests> ToReturnListWithRequestsFromMe(User ThisUser) 
         {
             RestoreRequests();
             List<GetterRequests> getterRequests = new List<GetterRequests>();
@@ -274,7 +271,7 @@ namespace PetShelterClasses
             RestoreRequests();
 
         }
-        public List<GetterRequests> ToGetRequestsToMe(User user)  //делегат2
+        public List<GetterRequests> ToGetRequestsToMe(User user)  
         {
             if (user.GetterRequests != null)
             {
@@ -287,14 +284,14 @@ namespace PetShelterClasses
             }
         }
 
-        public void ChangeStatusToAccept(GetterRequests g) //делегат
+        public void ChangeStatusToAccept(GetterRequests g)
         {
             GetterRequests gr = context.GetterRequests.FirstOrDefault(gg => gg.ID == g.ID);
             gr.StatusGiver = "Your request has been accepted!";
-            gr.StatusGetter = "You made a request. The customer will contact you soon";
+            gr.StatusGetter = "You made a request. Wait for an answer!";
             context.SaveChanges();
         }
-        public void ChangeStatusToDecline(GetterRequests g) //делегат
+        public void ChangeStatusToDecline(GetterRequests g) 
         {
             GetterRequests gr = context.GetterRequests.FirstOrDefault(gg => gg.ID == g.ID);
             gr.StatusGiver = "Your request was rejected";
