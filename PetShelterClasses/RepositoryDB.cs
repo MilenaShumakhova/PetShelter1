@@ -122,11 +122,11 @@ namespace PetShelterClasses
             context.SaveChanges();
         }
 
-        //public bool ToCompare(string email)    
-        //{
-        //    bool m = Users.All(us => us.Email != email);
-        //    return m;
-        //}
+        public bool ToCompare(string email)
+        {
+            bool m = Users.All(us => us.Email != email);
+            return m;
+        }
 
         public void ToCreateUsersPet(Pet pet, string description, User us, DateTime? sd, DateTime? ed, double p)
         {

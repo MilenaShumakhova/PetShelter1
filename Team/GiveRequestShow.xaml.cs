@@ -52,5 +52,12 @@ namespace Team
         {
             this.Close();
         }
+
+        private void Slider1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            int val = Convert.ToInt32(e.NewValue);
+            string msg = String.Format(" {0}", val);
+            this.textBlock1.Text = msg;
+        }
     }
 }
