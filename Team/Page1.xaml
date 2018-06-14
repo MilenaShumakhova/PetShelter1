@@ -87,7 +87,7 @@
                                         <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Address}"/>
                                         
                                         <TextBlock Grid.Row="2" Grid.Column="0" Text="Rating:"/>
-                                        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Grades}" ></TextBlock>
+                                        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Rating}" ></TextBlock>
                                     </Grid>
                                 </Border>
 
