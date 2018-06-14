@@ -14,22 +14,25 @@
     </Page.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-           
+
+         
             <ColumnDefinition/>
 
 
         </Grid.ColumnDefinitions>
-        <StackPanel Orientation="Vertical">
-            <!--<StackPanel Orientation="Horizontal" Margin="20">
-                <TextBlock FontSize="20" Grid.Column="1" Grid.ColumnSpan="2" Margin="210 0 0 0"  HorizontalAlignment="Center" > FromYou
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center"  VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" Margin="0 0 0 0"  VerticalAlignment="Center">
 
-                </TextBlock>
-                <TextBlock FontSize="20" Grid.Column="1" Grid.ColumnSpan="2" Margin="130 0  0 0" HorizontalAlignment="Center"  > ToYou
-                </TextBlock>
+                <StackPanel Margin="0 10 30 0">
+                    <TextBlock FontSize="15" Margin="0 0 0 30 "  HorizontalAlignment="Center"  > FromMe
 
-            </StackPanel>-->
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <ListBox Name="FromMe"  ItemsSource="{Binding Source={StaticResource Requests}}"  HorizontalAlignment="Left" Width="200" Height="300" Grid.Column="1" Grid.ColumnSpan="2"  Background="LightSteelBlue">
+                    </TextBlock>
+                    <Button Height="30" Width="50" Margin="0 0 0 10"   Background="MediumSeaGreen" Click="Button_ClickGive" >Show
+                    </Button>
+                    <Button Height="30" Width="50"    Background="MediumSeaGreen" Click="Button_ClickDelete" >Delete
+                    </Button>
+                </StackPanel>
+                <ListBox Name="FromMe"  ItemsSource="{Binding Source={StaticResource Requests}}" Margin="0 0 10 0"  HorizontalAlignment="Left" Width="150" Height="300"  Background="LightSteelBlue">
                     <ListBox.ItemTemplate >
                         <DataTemplate>
                             <Grid>
@@ -42,7 +45,17 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
 
-                <ListBox Name="ToMe" ItemsSource="{Binding Source={StaticResource Requests}}" HorizontalAlignment="Right" Width="200" Height="300" Margin="10"  Grid.Column="1" Grid.ColumnSpan="2"  Background="LightSteelBlue" >
+                <StackPanel Margin="30 10 30 0">
+                    <TextBlock FontSize="15" Margin="0 0 0 30 "  HorizontalAlignment="Center"  > ToMe
+
+                    </TextBlock>
+                    <Button Name="ToMeButton" Height="30" Width="50" VerticalAlignment="Bottom" Margin="0 0 0 10" Grid.Column="1"   Background="MediumSeaGreen" Click="Button_ClickGet">Show
+                    </Button>
+                    <Button Height="30" Width="50" Background="MediumSeaGreen" Grid.Column="1" VerticalAlignment="Bottom" Margin="0 0 0 10" HorizontalAlignment="Right" Click="Button_ClickAccept" >Accept</Button>
+                    <Button Height="30" Width="50" Background="MediumSeaGreen" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right"  Click="Button_ClickDecline" >Decline</Button>
+                </StackPanel>
+
+                <ListBox Name="ToMe" ItemsSource="{Binding Source={StaticResource Requests}}" HorizontalAlignment="Right" Width="150" Height="300" Margin="10"    Background="LightSteelBlue" >
                     <ListBox.ItemTemplate >
                         <DataTemplate>
 
@@ -66,23 +79,6 @@
             </StackPanel>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 200 0" >
-
-            <Button Height="30" Width="50" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Left" Background="Pink" Click="Button_ClickGive">Show
-            </Button>
-            <Button Height="30" Width="50" VerticalAlignment="Bottom"  Grid.Column="1"   Background="Pink" Click="Button_ClickDelete">Delete
-            </Button>
-
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 230 0">
-            <Button Name="ToMeButton" Height="30" Width="50" VerticalAlignment="Bottom"  Grid.Column="1"   Background="Pink" Click="Button_ClickGet">Show
-            </Button>
-            <Button Height="30" Width="50" Background="Pink" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="Button_ClickAccept" >Accept</Button>
-            <Button Height="30" Width="50" Background="Pink" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right"  Click="Button_ClickDecline" >Decline</Button>
-
-
-        </StackPanel>
-       
 
     </Grid>
 </Page>

@@ -58,25 +58,7 @@
 
             </StackPanel>
             <StackPanel   >
-                <!--<ContentControl Content="{Binding User}" >
-                    <ContentControl.ContentTemplate>
-                        <DataTemplate > 
-                            <StackPanel>
-                                <TextBlock Text="{Binding FullName}"/>
-                                <TextBlock Text="{Binding Email}"/>
-                                <TextBlock Text="{Binding Phone}"/>
-                                <TextBlock Text="{Binding Address}"/>
-                            </StackPanel>
-                         
-
-
-                        </DataTemplate>
-                    </ContentControl.ContentTemplate>
-                    
-                </ContentControl>-->
-                <!--<ListBox Name="NeedableUsers" Height="250" Width="200" Margin="10"   Background="MediumSeaGreen" DisplayMemberPath="NameSurname"  >
-
-                </ListBox>-->
+              
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0 0 10 0">
                     <ListBox Name="NeedableUsers" Width="200" Grid.Column="1" Height="320" Margin="30 50 0 0"  HorizontalAlignment="Center" VerticalAlignment="Center" Background="LightSteelBlue"
                          ItemsSource="{Binding Source={StaticResource PetGetters}}">
