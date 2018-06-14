@@ -22,9 +22,9 @@ namespace Team
     public partial class Page3 : Page
     {
         User ThisUser;
-        RepositoryDB rep;
+        IRepositoryInterface rep;
         Context context;
-        public Page3(User us, RepositoryDB repo, Context cont)
+        public Page3(User us, IRepositoryInterface repo, Context cont)
         {
             ThisUser = us;
             context = cont;

@@ -124,7 +124,7 @@ namespace PetShelterClasses
             context.SaveChanges();
         }
 
-        public bool ToCompare(string email)
+        public bool ToCompare(string email)  
         {
 
             bool m = Users.All(us => us.Email != email);

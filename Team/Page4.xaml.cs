@@ -23,11 +23,13 @@ namespace Team
     public partial class Page4 : Page
     {
         delegate void UsersStatuses(GetterRequests requests);
+        delegate List<GetterRequests> GetInfo(User user);
+        GetInfo gf;
         UsersStatuses us;
         User ThisUser;
-        RepositoryDB rep;
+        IRepositoryInterface rep;
         Context context;
-        public Page4(User user, RepositoryDB repo, Context cont)
+        public Page4(User user, IRepositoryInterface repo, Context cont)
         {
            
             ThisUser = user;
@@ -35,10 +37,10 @@ namespace Team
             context = cont;
             InitializeComponent();
             rep.RestoreRequests();
-            var RequestsFromMe= rep.ToReturnListWithRequestsFromMe(ThisUser);
-            FromMe.ItemsSource = RequestsFromMe;
-            var RequestsToMe = rep.ToGetRequestsToMe(ThisUser);
-            ToMe.ItemsSource = RequestsToMe;
+            gf = rep.ToReturnListWithRequestsFromMe;
+            FromMe.ItemsSource = gf.Invoke(ThisUser);
+            gf = rep.ToGetRequestsToMe;
+            ToMe.ItemsSource = gf.Invoke(ThisUser); 
         }
 
         private void Button_ClickGive(object sender, RoutedEventArgs e)

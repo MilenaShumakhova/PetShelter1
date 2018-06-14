@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 
 namespace PetShelterClasses
 {
-    interface IRepositoryInterface
+    public interface IRepositoryInterface
     {
+         List<User> Users { get; set; }
+         List<Pet> Pets { get; set; }
+         List<UsersPets> UsersPets { get; set; }
+         List<Pet> ExpectedPets { get; set; }
+         List<GetterRequests> GetterRequests { get; set; }
+
         void RestorePets();
         void RestoreRequests();
         void RestoreExpectedPets(User Us);

@@ -24,8 +24,8 @@ namespace Team
     {
         User ThisUser;
         Context context;
-        RepositoryDB rep;
-        public Page2(User us,RepositoryDB repo,Context cont)
+        IRepositoryInterface rep;
+        public Page2(User us,IRepositoryInterface repo,Context cont)
         {
             ThisUser = us;
             context = cont;

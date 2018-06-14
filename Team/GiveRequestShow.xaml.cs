@@ -22,10 +22,10 @@ namespace Team
     public partial class GiveRequestShow : Window
     {
         User ThisUser;
-        RepositoryDB rep;
+        IRepositoryInterface rep;
         Context context;
         GetterRequests giverRequests;
-        public GiveRequestShow(User us, RepositoryDB repo, Context cont,GetterRequests giver)
+        public GiveRequestShow(User us, IRepositoryInterface repo, Context cont,GetterRequests giver)
         {
             InitializeComponent();
             ThisUser = us;

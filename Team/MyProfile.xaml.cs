@@ -25,9 +25,9 @@ namespace Team
     {
         bool StateClosed = true;
         User ThisUser;
-        RepositoryDB rep;
+        IRepositoryInterface rep;
         Context context;
-        public MyProfile(User us, RepositoryDB repo,Context cont)
+        public MyProfile(User us, IRepositoryInterface repo,Context cont)
         {
             InitializeComponent();
             ThisUser = us;

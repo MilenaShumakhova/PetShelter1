@@ -22,10 +22,10 @@ namespace Team
     public partial class GetterRequestShow : Window
     {
         User ThisUser;
-        RepositoryDB rep;
+        IRepositoryInterface rep;
         Context context;
         GetterRequests getterRequest;
-        public GetterRequestShow(User user, RepositoryDB repo, Context cont,GetterRequests getter)
+        public GetterRequestShow(User user, IRepositoryInterface repo, Context cont,GetterRequests getter)
         {
             InitializeComponent();
             ThisUser = user;
@@ -40,7 +40,7 @@ namespace Team
             textBoxPhone.Text = getterRequest.Request.User.Phone;
             textBoxTo.Text = getterRequest.Request.End.ToString();
             textBoxType.Text = getterRequest.Request.Pet.Type;
-            textBoxStatus.Text = getterRequest.StatusGetter;
+            
         }
 
 

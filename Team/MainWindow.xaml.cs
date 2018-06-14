@@ -22,7 +22,7 @@ namespace Team
     public partial class MainWindow : Window
     {
         User us = new User();
-        RepositoryDB rep = new RepositoryDB();
+        IRepositoryInterface rep = new RepositoryDB();
         Context context = new Context();
         public User ThisUser = new User();
 

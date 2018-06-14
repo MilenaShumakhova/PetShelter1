@@ -23,9 +23,9 @@ namespace Team
     public partial class Page1 : Page
     {
         User ThisUser;
-        RepositoryDB rep;
+        IRepositoryInterface rep;
         Context context;
-        public Page1(User us,RepositoryDB repo,Context cont)
+        public Page1(User us,IRepositoryInterface repo,Context cont)
         {
             ThisUser = us;
             rep = repo;

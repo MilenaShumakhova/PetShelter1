@@ -25,9 +25,9 @@ namespace Team
         Context c;
         User us = new User();
         public User ThisUser = new User();
-        RepositoryDB repo;
+        IRepositoryInterface repo;
 
-        public RegistrationWindow(RepositoryDB r, Context context)
+        public RegistrationWindow(IRepositoryInterface r, Context context)
         {
             InitializeComponent();
             TextBoxFullName.Focus();
