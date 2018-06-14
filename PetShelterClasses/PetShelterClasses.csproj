@@ -53,23 +53,6 @@
     <Compile Include="Context.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="IRepositoryInterface.cs" />
-    <Compile Include="Migrations\201806141613100_InitialCreate.cs" />
-    <Compile Include="Migrations\201806141613100_InitialCreate.Designer.cs">
-      <DependentUpon>201806141613100_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806141616326_NewColumn.cs" />
-    <Compile Include="Migrations\201806141616326_NewColumn.Designer.cs">
-      <DependentUpon>201806141616326_NewColumn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806141633275_NewColumn1.cs" />
-    <Compile Include="Migrations\201806141633275_NewColumn1.Designer.cs">
-      <DependentUpon>201806141633275_NewColumn1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806141727133_NewName.cs" />
-    <Compile Include="Migrations\201806141727133_NewName.Designer.cs">
-      <DependentUpon>201806141727133_NewName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\GetterRequests.cs" />
     <Compile Include="Model\Mark.cs" />
     <Compile Include="Model\Pet.cs" />
@@ -81,20 +64,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806141613100_InitialCreate.resx">
-      <DependentUpon>201806141613100_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806141616326_NewColumn.resx">
-      <DependentUpon>201806141616326_NewColumn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806141633275_NewColumn1.resx">
-      <DependentUpon>201806141633275_NewColumn1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806141727133_NewName.resx">
-      <DependentUpon>201806141727133_NewName.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
