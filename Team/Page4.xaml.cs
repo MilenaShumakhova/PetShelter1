@@ -79,7 +79,7 @@ namespace Team
             if(FromMe.SelectedItem!=null)
             {
                 GetterRequests request = FromMe.SelectedItem as GetterRequests;
-                rep.ChangeStatusToAccept(request);
+                rep.RemoveGetterRequest(request);
                 FromMe.ItemsSource = rep.ToReturnListWithRequestsFromMe(ThisUser);
             }
             else

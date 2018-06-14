@@ -31,25 +31,19 @@ namespace Team
             rep = repo;
             context = cont;
             InitializeComponent();
-            ChoosePet.ItemsSource = repo.Pets;
-            
-          
-            
+            combobox_ChoosePet.ItemsSource = repo.Pets;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-
-            Pet pet = ChoosePet.SelectedItem as Pet;
-            
-            string description = Description.Text;
-            double p = Slider1.Value;
-            DateTime? sd = DateFrom.SelectedDate;
-            DateTime? ed = DateEnd.SelectedDate;
+            Pet pet = combobox_ChoosePet.SelectedItem as Pet;
+            string description = textbox_Description.Text;
+            double p = slider_Slider.Value;
+            DateTime? sd = datepicker_DateFrom.SelectedDate;
+            DateTime? ed = datepicker_DateEnd.SelectedDate;
             if (pet==null&&sd==null&&ed==null)
             {
-                MessageBox.Show("Please, enter the main infortion about your pet!");
+                MessageBox.Show("Please, enter the main information about your pet!");
             }
             else
             {
@@ -73,7 +67,7 @@ namespace Team
                     else
                     {
                         var NeedableUs = rep.ToCreateUsersList(pet, description, sd, ed, p, ThisUser);
-                        NeedableUsers.ItemsSource = NeedableUs;
+                        listbox_NeedableUsers.ItemsSource = NeedableUs;
                     }
                 }
             } 
@@ -87,19 +81,19 @@ namespace Team
 
         private void Button_Click_Choose(object sender, RoutedEventArgs e)
         {
-            Pet pet = ChoosePet.SelectedItem as Pet;
-            string description = Description.Text;
-            double p = Slider1.Value;
-            DateTime? sd = DateFrom.SelectedDate;
-            DateTime? ed = DateEnd.SelectedDate;
-            User user = NeedableUsers.SelectedItem as User;
+            Pet pet = combobox_ChoosePet.SelectedItem as Pet;
+            string description = textbox_Description.Text;
+            double p = slider_Slider.Value;
+            DateTime? sd = datepicker_DateFrom.SelectedDate;
+            DateTime? ed = datepicker_DateEnd.SelectedDate;
+            User user = listbox_NeedableUsers.SelectedItem as User;
             if(pet==null&&sd==null&&ed==null)
             {
                 MessageBox.Show("Please, enter the main infortion about your pet!");
             }
             else
             {
-                if (NeedableUsers.SelectedItem == null)
+                if (listbox_NeedableUsers.SelectedItem == null)
                 {
                     MessageBox.Show("Please, choose a getter!");
                 }

@@ -31,22 +31,22 @@ namespace Team
             context = cont;
             rep = repo;
             InitializeComponent();
-            ExpectedPets.ItemsSource = rep.Pets;
+            listbox_ExpectedPets.ItemsSource = rep.Pets;
         }
 
         private void Slider1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             int val = Convert.ToInt32(e.NewValue);
             string msg = String.Format("Current value: {0}", val);
-            this.textBlock1.Text = msg;
+            this.textblock_Value.Text = msg;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             List<Pet> pets = new List<Pet>();
-            for (int i = 0; i <ExpectedPets.SelectedItems.Count; i++)
+            for (int i = 0; i <listbox_ExpectedPets.SelectedItems.Count; i++)
             {
-                Pet pet = ExpectedPets.SelectedItems[i] as Pet;
+                Pet pet = listbox_ExpectedPets.SelectedItems[i] as Pet;
                 pets.Add(pet);
             }
             if (pets.Count == 0)
@@ -55,8 +55,8 @@ namespace Team
             }
             else
             {
-                DateTime? sd = DateFrom.SelectedDate;
-                DateTime? ed = DateEnd.SelectedDate;
+                DateTime? sd = datepicker_DateFrom.SelectedDate;
+                DateTime? ed = datepicker_DateEnd.SelectedDate;
                 if (sd == null || ed == null)
                 {
                     MessageBox.Show("You have entered an incorrect date!", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -71,7 +71,7 @@ namespace Team
                     }
                     else
                     {
-                        double p = Slider1.Value;
+                        double p = slider_Slider.Value;
                         rep.ToCreateExpectedPets(pets, ThisUser, sd, ed, p);
                         MessageBox.Show("Your request has been accepted!", "", MessageBoxButton.OK);
                     }

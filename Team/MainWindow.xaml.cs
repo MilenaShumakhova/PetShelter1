@@ -48,7 +48,6 @@ namespace Team
             if ((email=="") || (password==""))
             {
                 MessageBox.Show("Please, fill all fields!", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
-
             }
             else
             {
@@ -58,12 +57,10 @@ namespace Team
                     MyProfile profile = new MyProfile(ThisUser,rep,context);
                     profile.Show();
                     this.Close();
-
                 }
                 else
                 {
-                    MessageBox.Show("Input data are incorrect!", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
-                   
+                    MessageBox.Show("Input data are incorrect!", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);  
                 }
             }
         }
@@ -79,7 +76,6 @@ namespace Team
                 if ((TextBoxEmail.Text == String.Empty) || (PasswordSignin.Password == String.Empty))
                 {
                     MessageBox.Show("Please, fill all fields", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
-
                 }
                 else
                 {
@@ -94,12 +90,8 @@ namespace Team
                     {
                         MessageBox.Show("Input data are incorrect!", "Oops", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
-                    
-
                 }
-
             }
          }
-
     }
 }

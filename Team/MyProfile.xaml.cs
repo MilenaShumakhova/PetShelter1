@@ -36,18 +36,8 @@ namespace Team
             rep.RestorePets();
             rep.RestoreRequests();
             Page4 page4 = new Page4(ThisUser, rep, context);
-
-           ContentFrame.NavigationService.Navigate(page4);
-   
-         
+            ContentFrame.NavigationService.Navigate(page4);
         }
-
-        private void Menu_Click(object sender, RoutedEventArgs e)
-        {
-           
-        }
-
-
 
         private void ButtonMenu_Click(object sender, RoutedEventArgs e)
         {
@@ -61,7 +51,6 @@ namespace Team
                 Storyboard sb = this.FindResource("CloseMenu") as Storyboard;
                 sb.Begin();
             }
-
             StateClosed = !StateClosed;
         }
 
@@ -75,15 +64,12 @@ namespace Team
         {
             Page1 page1 = new Page1(ThisUser,rep,context);
             ContentFrame.NavigationService.Navigate(page1);
-           
         }
-
         private void RadioButton_ClickGetter(object sender, RoutedEventArgs e)
         {
             Page2 page2 = new Page2(ThisUser,rep,context);
             ContentFrame.NavigationService.Navigate(page2);
         }
-
         private void RadioButton_ClickSettings(object sender, RoutedEventArgs e)
         {
             Page3 page3 = new Page3(ThisUser,rep,context);
