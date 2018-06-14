@@ -285,7 +285,7 @@ namespace PetShelterClasses
         {
             if (user.GetterRequests != null)
             {
-              return   user.GetterRequests.FindAll(g => g.User.ID == user.ID&&(g.StatusGiver== "Your request has been accepted!"||g.StatusGiver== "Your request has been sent. Expect an answer!"));
+              return   user.GetterRequests.FindAll(g => g.User.ID == user.ID&&(g.StatusGiver== "Waiting answer!" || g.StatusGiver== "This is a new request!"));
             }
             else
             {
