@@ -17,7 +17,7 @@
 
 
             </Grid.ColumnDefinitions>
-            <StackPanel Orientation="Vertical" Width="230" VerticalAlignment="Center"  Grid.ColumnSpan="2"   Grid.Column="0">
+            <StackPanel Orientation="Vertical" Width="230" Margin="30 0 0 0" VerticalAlignment="Center"  Grid.ColumnSpan="2"   Grid.Column="0">
                 <ListBox Name="ExpectedPets"  DisplayMemberPath="Type" SelectionMode="Multiple" Height="150" ScrollViewer.VerticalScrollBarVisibility="Visible">
                 </ListBox>
 
