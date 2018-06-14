@@ -163,43 +163,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\girl-and-dog-sunset-malibu-dog-photographer.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\footprint.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\photo %281%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\e6bffcd2e194a6b1b8317b8f5126f7a409e150d6_Home-slider-2_v2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\pets-lineup-xlg.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Dating-With-Pets-700x394.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\84-rupert-johnson-jr,pzeDhZxJfESBLEc8ihdXxw.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\462329.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\menu-512.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\icons8-меню-64.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\icons8-список-64.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\icons8-назад-64.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\icons8-напоминания-50.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\icons8-настройки-50.png" />
@@ -211,28 +178,22 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\22056_126489077_20150315_1561485717.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\PetShelterClasses\PetShelterClasses.csproj">
       <Project>{8FE958B0-28A0-4968-BF27-A78BB3EFB0A5}</Project>
       <Name>PetShelterClasses</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\icons8-настройки-64.png" />
+    <Resource Include="Images\icons8-сообщение-50.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\icons8-сообщение-50.png" />
+    <Resource Include="Images\avatars-000217852885-q3ge9g-t500x500.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\icons8-давать-50.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\icons8-встреча-50.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\avatars-000217852885-q3ge9g-t500x500.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

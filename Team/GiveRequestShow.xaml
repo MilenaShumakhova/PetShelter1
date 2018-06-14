@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Team"
         mc:Ignorable="d"
-        Title="GiveRequestShow" Height="450" Width="500" WindowStartupLocation="CenterScreen"
+        Title="GiveRequestShow" Height="500" Width="500" WindowStartupLocation="CenterScreen"
        Icon="/Images/footprint.png">
     <Grid>
         <Grid.ColumnDefinitions>

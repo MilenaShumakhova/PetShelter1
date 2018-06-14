@@ -24,11 +24,13 @@ namespace Team
         User ThisUser;
         IRepositoryInterface rep;
         Context context;
-        public Page3(User us, IRepositoryInterface repo, Context cont)
+        Window _myProfile;
+        public Page3(User us, IRepositoryInterface repo, Context cont, Window myProfile)
         {
             ThisUser = us;
             context = cont;
             rep = repo;
+            _myProfile = myProfile;
             InitializeComponent();
             TextBoxFullName.Text = us.NameSurname;
             TextBoxEmail.Text = us.Email;
@@ -51,7 +53,12 @@ namespace Team
            
         }
 
-        
-      
+        private void Button_ClickLogOut (object sender, RoutedEventArgs e)
+        {
+            MainWindow main = new MainWindow();
+            _myProfile.Close();
+            main.Show();
+            
+        }
     }
 }

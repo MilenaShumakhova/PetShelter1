@@ -21,7 +21,7 @@
 
 
         </Grid.ColumnDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.ColumnSpan="2" Margin="120 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.ColumnSpan="2" Margin="90 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel>
                 <ComboBox Name="combobox_ChoosePet"  IsEditable="True" Height="35" IsReadOnly="True" HorizontalContentAlignment="Center" DisplayMemberPath="Type" Text="Choose a pet" >
 
@@ -45,7 +45,7 @@
                 <DatePicker Name="datepicker_DateEnd" Margin="0 10 0 10" DisplayDateStart="{x:Static sys:DateTime.Today}" Focusable="False">
 
                 </DatePicker>
-                <TextBlock>How much are you ready to pay per day?
+                <TextBlock>How much money are you ready to pay per day?
 
                 </TextBlock>
                 <Slider x:Name="slider_Slider"  Maximum="30000" Minimum="0" ValueChanged="Slider1_ValueChanged" TickFrequency="100" IsSnapToTickEnabled="True">
@@ -60,14 +60,15 @@
             <StackPanel   >
               
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0 0 10 0">
-                    <ListBox Name="listbox_NeedableUsers" Width="200" Grid.Column="1" Height="320" Margin="30 50 0 0"  HorizontalAlignment="Center" VerticalAlignment="Center" Background="LightSteelBlue"
+                    <ListBox Name="listbox_NeedableUsers" Width="250" Grid.Column="1" Height="320" Margin="30 50 0 0"  HorizontalAlignment="Center" VerticalAlignment="Center" Background="LightSteelBlue"
                          ItemsSource="{Binding Source={StaticResource PetGetters}}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
 
-                                <Border Name="border" BorderBrush="Black" Width="150" BorderThickness="1" HorizontalAlignment="Stretch" Padding="5" Margin="5" >
+                                <Border Name="border" BorderBrush="Black" Width="200" BorderThickness="1" HorizontalAlignment="Stretch" Padding="5" Margin="5" >
                                     <Grid>
                                         <Grid.RowDefinitions>
+                                            <RowDefinition/>
                                             <RowDefinition/>
                                             <RowDefinition/>
                                             <RowDefinition/>
@@ -76,19 +77,17 @@
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition />
                                             <ColumnDefinition />
+                                            
                                         </Grid.ColumnDefinitions>
 
                                         <TextBlock Grid.Row="0" Grid.Column="0" Text="Name:"/>
                                         <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=NameSurname}"/>
-                                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Email:"/>
-                                        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Email}"/>
-                                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Address:"/>
-                                        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Address}"/>
-                                        <TextBlock Grid.Row="3" Grid.Column="0" Text="Phone:"/>
-                                        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Path=Phone}"/>
-
-
-
+                                   
+                                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Address:"/>
+                                        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Address}"/>
+                                        
+                                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Rating:"/>
+                                        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Grades}" ></TextBlock>
                                     </Grid>
                                 </Border>
 

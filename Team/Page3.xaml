@@ -18,7 +18,7 @@
         </Grid.ColumnDefinitions>
 
 
-        <StackPanel Orientation="Vertical"  Grid.Row="2"  Grid.Column="1" Margin="90 120 0 45" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" >
+        <StackPanel Orientation="Vertical"  Grid.Row="2"  Grid.Column="1" Margin="90 150 0 45" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" >
             
             <TextBlock FontSize="15"   FontWeight="Bold" Margin="7"  > FullName*</TextBlock>
 
@@ -37,7 +37,7 @@
         
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 50 50 0" Grid.Column=" 0"  Grid.ColumnSpan="2"  >
 
-            <Image Grid.Column="1"   HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/Images/avatars-000217852885-q3ge9g-t500x500.jpg" Width="100" Height="70"></Image>
+            <Image Grid.Column="1"   HorizontalAlignment="Center"  VerticalAlignment="Top" Source="/Images/avatars-000217852885-q3ge9g-t500x500.jpg" Width="100" Height="100"></Image>
             <TextBox Name="TextBoxFullName" MaxLength="35" Height="27" Width="230" FontSize="15" Margin="0 10 0 10" ></TextBox>
 
             <TextBox Name="TextBoxEmail" Height="27" Width="230" MaxLength="35" FontSize="15" Margin="0 0 0 10"></TextBox>
@@ -48,7 +48,7 @@
             
             <StackPanel Orientation="Horizontal" Grid.Column="2" Margin="0 10"  Grid.ColumnSpan="2" HorizontalAlignment="Center"  >
                 <Button Name ="Change" Width="80" Height="30" FontSize="20" Background="MediumSeaGreen" Click="Change_Click"  >Change</Button>
-               
+                <Button Width="80"  Height="30" Background="MediumSeaGreen" FontSize="20" Margin="10 0 0 0" Click="Button_ClickLogOut">Log out</Button>
             </StackPanel>
 
 

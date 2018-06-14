@@ -6,12 +6,8 @@
         xmlns:local="clr-namespace:Team"
         mc:Ignorable="d"
         
-        Title="Sign in" Height="480" Width="640" MinHeight="450" MinWidth="400" WindowStartupLocation="CenterScreen" Background="White"
+        Title="Sign in" Height="550" Width="750" MinHeight="450" MinWidth="400" WindowStartupLocation="CenterScreen" Background="White"
         Icon="/Images/footprint.png">
-        
-    <!--<Window.Background >
-        <ImageBrush ImageSource="/Images/photo (1).jpg" Stretch="UniformToFill" TileMode="None" />
-    </Window.Background>-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>

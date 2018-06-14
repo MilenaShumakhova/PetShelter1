@@ -72,7 +72,7 @@ namespace Team
         }
         private void RadioButton_ClickSettings(object sender, RoutedEventArgs e)
         {
-            Page3 page3 = new Page3(ThisUser,rep,context);
+            Page3 page3 = new Page3(ThisUser,rep,context, this);
             ContentFrame.NavigationService.Navigate(page3);
         }
     }
