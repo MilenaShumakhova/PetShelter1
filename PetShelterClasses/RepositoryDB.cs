@@ -259,10 +259,10 @@ namespace PetShelterClasses
             }
             if (getters.Count == 1)
             {
-                Mark mark=context.Marks.FirstOrDefault(m => m.Request.ID == requests.ID);
+                Mark mark=context.Marks.FirstOrDefault(m => m.IRequest.ID == requests.ID);
                 if (mark != null)
                 {
-                    mark.Request = null;
+                    mark.IRequest = null;
                 }
                 context.UsersPets.Remove(requests.Request);
                 context.GetterRequests.Remove(requests);
@@ -270,10 +270,10 @@ namespace PetShelterClasses
             }
             else
             {
-                Mark mark = context.Marks.FirstOrDefault(m => m.Request.ID == requests.ID);
+                Mark mark = context.Marks.FirstOrDefault(m => m.IRequest.ID == requests.ID);
                 if (mark != null)
                 {
-                    mark.Request = null;
+                    mark.IRequest = null;
                 }
                 context.GetterRequests.Remove(requests);
                 context.SaveChanges();
@@ -314,7 +314,7 @@ namespace PetShelterClasses
             {
                 RatedUser =user,
                 Grade = v,
-                Request=g,
+                IRequest=g,
             };
             context.Marks.Add(usermark);
             context.SaveChanges();

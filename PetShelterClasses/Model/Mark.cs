@@ -11,7 +11,7 @@ namespace PetShelterClasses.Model
         public int ID { get; set; }
         public double Grade { get; set; }
         public User RatedUser { get; set; }
-        public GetterRequests Request { get; set; }
+        public GetterRequests IRequest { get; set; }
        
     }
 }

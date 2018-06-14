@@ -65,6 +65,10 @@
     <Compile Include="Migrations\201806141633275_NewColumn1.Designer.cs">
       <DependentUpon>201806141633275_NewColumn1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806141727133_NewName.cs" />
+    <Compile Include="Migrations\201806141727133_NewName.Designer.cs">
+      <DependentUpon>201806141727133_NewName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\GetterRequests.cs" />
     <Compile Include="Model\Mark.cs" />
@@ -87,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806141633275_NewColumn1.resx">
       <DependentUpon>201806141633275_NewColumn1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806141727133_NewName.resx">
+      <DependentUpon>201806141727133_NewName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
