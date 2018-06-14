@@ -53,9 +53,9 @@
     <Compile Include="Context.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="IRepositoryInterface.cs" />
-    <Compile Include="Migrations\201806141741352_InitialCreate.cs" />
-    <Compile Include="Migrations\201806141741352_InitialCreate.Designer.cs">
-      <DependentUpon>201806141741352_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201806141750336_InitialCreate.cs" />
+    <Compile Include="Migrations\201806141750336_InitialCreate.Designer.cs">
+      <DependentUpon>201806141750336_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\GetterRequests.cs" />
@@ -71,8 +71,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806141741352_InitialCreate.resx">
-      <DependentUpon>201806141741352_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806141750336_InitialCreate.resx">
+      <DependentUpon>201806141750336_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
