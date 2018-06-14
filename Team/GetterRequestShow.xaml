@@ -8,7 +8,7 @@
         Title="GetterRequestShow" WindowStartupLocation="CenterScreen" Height="450" Width="500"
         Icon="/Images/footprint.png">
     <Grid>
-        <Grid.ColumnDefinitions>
+        <!--<Grid.ColumnDefinitions>
             <ColumnDefinition Width="500"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
@@ -20,6 +20,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
+        
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0 15 0 0" HorizontalAlignment="Center"  Grid.Row="0">
             <TextBlock  >TypeOfPet</TextBlock>
             <TextBox Name="textBoxType" Background="LightSteelBlue" Margin="30 0 0 0" Width="150"></TextBox>
@@ -62,7 +63,42 @@
            
             <Button Click="Button_ClickBack"
                     >Back</Button>
+        </StackPanel>-->
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition/>
+
+
+        </Grid.ColumnDefinitions>
+ 
+            
+ 
+        <StackPanel Orientation="Vertical"  Grid.Row="2"  Grid.Column="0"  Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="200" VerticalAlignment="Center" >
+            <TextBlock  HorizontalAlignment="Center" >TypeOfPet</TextBlock>
+            <TextBox Name="textBoxType" Background="LightSteelBlue"   ></TextBox>
+            <TextBlock HorizontalAlignment="Center" >Description</TextBlock>
+            <TextBox  Name="textBoxDescription" Background="LightSteelBlue"     Height="50"></TextBox>
+            <TextBlock HorizontalAlignment="Center" >From</TextBlock>
+
+            <TextBox  Name="textBoxFrom" Background="LightSteelBlue"   ></TextBox>
+            <TextBlock HorizontalAlignment="Center" >To</TextBlock>
+            <TextBox Name="textBoxTo" Background="LightSteelBlue"  ></TextBox>
+            <TextBlock HorizontalAlignment="Center" >Giver</TextBlock>
+            <TextBox Name="textBoxGive" Background="LightSteelBlue"  ></TextBox>
+            <TextBlock  HorizontalAlignment="Center">Address</TextBlock>
+            <TextBox Name="textBoxAddress" Background="LightSteelBlue"  ></TextBox>
+            <TextBlock  HorizontalAlignment="Center">Email</TextBlock>
+
+            <TextBox  Name="textBoxEmail" Background="LightSteelBlue"  ></TextBox>
+            <TextBlock HorizontalAlignment="Center" >Phone</TextBlock>
+            <TextBox Name="textBoxPhone" Background="LightSteelBlue" ></TextBox>
+            <TextBlock HorizontalAlignment="Center" >Status</TextBlock>
+
+            <TextBox Name="textBoxStatus" Background="LightSteelBlue"  ></TextBox>
+            <Button Height="30" Margin="0 10 0 0 " Width="40" Background="MediumSeaGreen" Click="Button_Click">Back</Button>
         </StackPanel>
 
+       
     </Grid>
 </Window>

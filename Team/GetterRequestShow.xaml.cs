@@ -36,16 +36,18 @@ namespace Team
             textBoxDescription.Text = getterRequest.Request.Description;
             textBoxEmail.Text = getterRequest.Request.User.Email;
             textBoxFrom.Text = getterRequest.Request.Start.ToString();
-            textBoxGetter.Text = getterRequest.Request.User.NameSurname;
+            textBoxGive.Text = getterRequest.Request.User.NameSurname;
             textBoxPhone.Text = getterRequest.Request.User.Phone;
             textBoxTo.Text = getterRequest.Request.End.ToString();
             textBoxType.Text = getterRequest.Request.Pet.Type;
-            
+            textBoxStatus.Text = getterRequest.StatusGetter;
         }
 
 
 
-        private void Button_ClickBack(object sender, RoutedEventArgs e)
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
